@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+body {
+    margin: 0%;
+    padding: -100px;
+    height: 100vh;
+}
+
+.header {
+    background-color: rgb(47, 83, 55);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cuerpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d2c3b2;
+}
+
+.cuerpo>.titulo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    font-family: 'Lobster Two', cursive;
+    font-size: xx-large;
+}
+.contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.contenido>.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    
+}
+.formulario>input{
+    margin-top: 4%;
+    border-radius: 5px;
+    border-width: 1px;
+    height: 27px;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: medium;
+    width: 75%;
+    background-color: #e7e7e0;
+}
+.formulario>textarea{
+    margin-top: 4%;
+    border-radius: 5px;
+    border-width: 1px;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: medium;
+    width: 75%;
+    background-color: #e7e7e0;
+
+}
+.formulario>button{
+    border-radius: 40px;
+    border: none;
+    margin-top: 4%;
+    background-color: #4e7967;
+    height: 40px;
+    width: 25%;
+    font-family: 'Yusei Magic', sans-serif;
+    
+}
+.foto{
+    margin-left: 5%;
+}
+.foto>img{
+    width: 300px;
+}
+
+@keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
