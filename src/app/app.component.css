@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  background-color: #48535e;
+  color: #d4dbe4;
+}
+
+#header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;
+  position: relative;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+.tabs-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: #5b6a79;
+  box-shadow: 0 0 20px rgba(111, 111, 111, 0.2);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.tabs-container a {
+  text-decoration: none;
+  color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.tabs-container a:hover {
+  background-color: #92bd4c;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Carousel*/
+
+
+.position{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider{
+    background-image: url(../assets/imagenes/Banner1.png);
+    background-size: cover;
+    height: 100%;
+    width: 95%;
+    border-radius: 10px;
+    animation: animate 15s infinite;
+}
+
+@keyframes animate {
+
+    20%{
+        background-image: url(../assets/imagenes/Banner1.png);
+        background-size: cover;
+    }
+    40%{
+        background-image: url(../assets/imagenes/Banner3.png);
+        background-size: cover;
+    }
+    60%{
+        background-image: url(../assets/imagenes/Banner1.png);
+        background-size: cover;
+    }
+
+    80%{
+        background-image: url(../assets/imagenes/Banner3.png);
+        background-size: cover;
+    }
+
+    100%{
+        background-image: url(../assets/imagenes/Banner1.png);
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1300px) {
+    .slider{
+        height: 70%;
+        width: 70%;
+    }
+
+}
