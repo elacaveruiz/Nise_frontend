@@ -41,49 +41,6 @@ body {
     align-items: center;
     margin-top: 2%;
 }
-.contenido>.formulario {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    
-}
-.formulario>input{
-    margin-top: 4%;
-    border-radius: 5px;
-    border-width: 1px;
-    height: 27px;
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: medium;
-    width: 75%;
-    background-color: #e7e7e0;
-}
-.formulario>textarea{
-    margin-top: 4%;
-    border-radius: 5px;
-    border-width: 1px;
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: medium;
-    width: 75%;
-    background-color: #e7e7e0;
-
-}
-.formulario>button{
-    border-radius: 40px;
-    border: none;
-    margin-top: 4%;
-    background-color: #4e7967;
-    height: 40px;
-    width: 25%;
-    font-family: 'Yusei Magic', sans-serif;
-    
-}
-.foto{
-    margin-left: 5%;
-}
-.foto>img{
-    width: 300px;
-}
 
 @keyframes pulse {
     from {
@@ -95,4 +52,68 @@ body {
       transform: scale(1.8);
       opacity: 0;
     }
+
   }
+.cuerpecito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+}
+.contenido>.input-field{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width:  350px;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 0 15px;
+    border: 2px solid #fff;
+    outline: none;
+    
+}
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 19px;
+    pointer-events: none;
+    transition: .3s;
+}
+input:focus ~ label{
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    
+}
+.imagen{
+    justify-content: center;
+    align-items: center;
+}
+.imagen>img{
+    width: 50%;
+    margin-left: 15%;
+}
+.contenido>button{
+    height: 45px;
+    width: 65px;
+    margin-bottom: 15%;
+    background-color:  rgb(47, 83, 55);
+    border-radius: 25px;
+    border: 0.5px solid black;
+}
+
+
