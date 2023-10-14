@@ -1,41 +1,14 @@
 <body>
-    <header id="header">
-        <div class="bannner-container">
-            <div class="slider position slide">
-            </div>
-        </div>
-        <nav class="tabs-container">
-          <a href="#" class="tab">Inicio</a>
-          <a href="#" class="tab">Adopcion</a>
-          <a href="#" class="tab">Veterinarios Cercanos</a>
-          <a href="#" class="tab">¿Quienes Somos?</a>
-          <a href="#" class="tab">Inicio de Sesión</a>
-        </nav>
-      </header>
-  
-      <main>
-        <section class="section">
-          <h1>HTML</h1>
-          <p>Learn about HTML</p>
-        </section>
-        <section class="section">
-          <h1>CSS</h1>
-          <p>Learn about CSS</p>
-        </section>
-        <section class="section">
-          <h1>JavaScript</h1>
-          <p>Learn about JavaScript</p>
-        </section>
-        <section class="section">
-          <h1>React</h1>
-          <p>Learn about React</p>
-        </section>
-        <section class="section">
-          <h1>Svelte</h1>
-          <p>Learn about Svelte</p>
-        </section>
-      </main>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
-  </body>
+  <nav class="tabs-container">
+    <a routerLink="Inicio" routerLinkActive="active">Inicio</a>
+    <a routerLink="Adopcion" routerLinkActive="active">Adopcion</a>
+    <a routerLink="Adopcion" routerLinkActive="active">Veterinarios Cercanos</a>
+    <a routerLink="Adopcion" routerLinkActive="active">¿Quienes Somos?</a>
+    <a routerLink="Adopcion" routerLinkActive="active">Inicio de Sesión</a>
+  </nav>
+  <router-outlet></router-outlet>
+</body>
 
+
+
+  
