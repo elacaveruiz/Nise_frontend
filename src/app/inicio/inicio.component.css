@@ -1,91 +1,141 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+/* LOS IMPORTES AQUI */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yusei+Magic&display=swap');
 
-*,
-*::before,
-*::after {
+
+/*CONFIGURACION DE LA PAGINA PRINCIPAL EN BASE A SECTIONS*/
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lobster', sans-serif;
+  
 }
-
 body {
-  font-family: Lato, sans-serif;
-  background-color: #48535e;
-  color: #d4dbe4;
-}
-
-
-h1 {
-  font-size: 40px;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 18px;
-  letter-spacing: 5px;
-}
-
-
-.section {
   height: 100vh;
+  background-image: url('https://i.pinimg.com/736x/53/9e/13/539e13e44efe00470c0f5df89201ba23.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+a:hover{
+  color: #092;
+}
+
+header{
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
 }
 
-/*Carousel*/
-
-
-.position{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.slider{
-    background-image: url(../../assets/imagenes/Banner1.png);
-    background-size: cover;
-    margin-top: 10px;
-    height: 91%;
-    width: 95%;
-    border-radius: 10px;
-    animation: animate 15s infinite;
+.navbar .links {
+  display: flex;
+  gap: 2rem;
 }
 
-@keyframes animate {
-
-    20%{
-        background-image: url(../../assets/imagenes/Banner1.png);
-        background-size: cover;
-    }
-    40%{
-        background-image: url(../../assets/imagenes/Banner3.png);
-        background-size: cover;
-    }
-    60%{
-        background-image: url(../../assets/imagenes/Banner1.png);
-        background-size: cover;
-    }
-
-    80%{
-        background-image: url(../../assets/imagenes/Banner3.png);
-        background-size: cover;
-    }
-
-    100%{
-        background-image: url(../../assets/imagenes/Banner1.png);
-        background-size: cover;
-    }
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
 
-@media (max-width: 1300px) {
-    .slider{
-        height: 70%;
-        width: 70%;
-    }
+.action_btn {
+  background-color: black;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+  font-size: 16px;
+}
 
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/*Dropdown para la parte responsive*/
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 100px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  height: 300px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive*/
+
+@media(max-width: 992px){
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+  .navbar .toggle_btn {
+    display: block;
+    
+  }
+  .dropdown_menu {
+    display: block;
+  }
+}
+
+.logo img{
+  width: 100px;
+  border-radius: 30px;
 }
