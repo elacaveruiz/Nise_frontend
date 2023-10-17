@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+body{
+    background: rgb(105, 116, 167); 
+    display: flex; /* Si quito este flex se muestran los bordes blancos d arriba*/
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+}
+
+h3, p{
+    font-family: 'Yusei Magic';
+}
+
+h2{
+    font-family: 'Margarine';
+    text-align: center;
+}
+
+.titulo{
+    margin-left: 3rem;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.categorias{
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; /* Permitir envolvimiento y alineación hacia abajo */
+    margin-top: 32rem;
+}
+
+
+/* 
+.container{
+    display: flex;
+    justify-content: flex-start; 
+    flex-direction: column; 
+    flex-wrap: wrap; 
+    margin: 0;
+    padding: 0;
+} */
+
+
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap; 
+    /* padding: 0 36px; */
+    perspective: 2500px;
+    /* margin: 0 50px; */
+}
+
+.cover_image{
+    width: 20rem;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+
+    z-index: -1;
+}
+
+.card:hover .wrapper { /* Con esto se mueve la imagen con hover*/
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after { /*Estas son las sombras*/
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper::before { /* Sombras en la animacion 3D*/
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+        90deg, 
+        rgba(2,0,36,0.7288165266106443) 0%, 
+        rgba(46,63,85,0.5551470588235294) 52%, 
+        rgba(14,14,14,0.5775560224089635) 100%
+    );
+}
+
+.wrapper::after { /* Sombras en la cover imagen*/
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 46%,
+        rgba(12, 13, 19, 0.5) 68%,
+        rgba(12, 13, 19) 97%
+    );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+    opacity: 1;
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+}
+
+
+.character {
+    width: 17.5rem;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+
+@media (max-width: 600px) {
+
+    body{
+        display: flex;
+        flex-flow: column;
+        height: auto;
+    }
+
+    .categorias{
+        margin-left: 0;
+        width: 100%;
+        margin-top: 15rem;
+    }
+
+    .cover_image{
+        width: 15rem;
+        height: 21rem;
+        object-fit: cover;
+    }
+
+    .container{ 
+        height: 17rem;
+        width: 21rem;
+        padding: 9rem;
+    }
+  }
