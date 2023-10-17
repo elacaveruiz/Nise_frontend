@@ -14,6 +14,7 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { RegistroProtectoraComponent } from './registro-protectora/registro-prot
     QuienesSomosComponent,
     ContactanosComponent,
     LoginRegistroComponent,
-    RegistroProtectoraComponent
+    RegistroProtectoraComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
