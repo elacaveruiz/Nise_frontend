@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+body{
+  background-color: #d2c3b2;
+}
+
+.body{
+  background-color:
+    #d2c3b2;
+  margin: 100px auto;
+  width: 70%;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo{
+  font-family: 'Lobster Two', cursive;
+  font-size:3.5vmax;
+  color: #4e7967;
+}
+
+.info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desc{
+  width: 70%;
+  text-align: center;
+}
+
+.vetes{
+  border-radius: 10px;
+  background-color: #bcceba;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0;
+  box-shadow: 6px 5px 8px 2px dimgray;
+  font-family: 'Lobster Two', cursive;
+  transition-duration: 0.5s;
+}
+.buttoncontacta{
+  border-radius: 10px;
+  background-color: #bcceba;
+  transition-duration: 0.5s;
+  padding: 10px;
+  box-shadow: 4px 3px 6px 1px dimgray;
+  border: none;
+}
+.bordervetes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.buttoncontacta:hover{
+  background-color: #94a294;
+  transition-duration: 0.5s;
+}
+.vetes:hover{
+  background-color:#4e7967;;
+  transition-duration: 0.5s;
+}
+.imagevetes{
+  width: 50%;
+  border-radius: 5px;
+}
+.mapa{
+  align-self: center;
+  width: 50%;
+  height: 400px;
+  border-radius: 5px;
+}
+
