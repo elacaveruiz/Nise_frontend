@@ -6,6 +6,7 @@ import { VeterinariosComponent } from './veterinarios/veterinarios.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
+import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Inicio',pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'Quienes_somos', component: QuienesSomosComponent},
   {path: 'Contacta', component: ContactanosComponent},
   {path: 'Login', component: LoginRegistroComponent},
+  {path: 'protectoraregistro', component: RegistroProtectoraComponent },
   
 ];
 

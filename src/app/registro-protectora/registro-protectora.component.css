@@ -5,7 +5,7 @@ body{
   background-image: linear-gradient(to bottom, #c1b7ab, #c3b8ad, #c5b9ae, #c6bab0, #c8bbb2, #c9bcb3, #c9bdb4, #cabeb5, #cabeb5, #cabfb5, #cabfb6, #cabfb6);
 }
 .doggo{
-  background-image: url("../assets/imagenes/adorable-perro-basenji-marron-blanco-sonriendo-dando-maximo-cinco-aislado-blanco.jpg");
+  background-image: url("../../assets/imagenes/registroprotectoraperro.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
@@ -19,11 +19,11 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 350px;
+    max-width: 520px;
     background-color: #e7e7e0;
     padding: 20px;
     border-radius: 20px;
-    margin: 100px auto;
+    margin: 90px auto;
     padding: 40px 70px;
     box-shadow: 5px 4px 7px 2px dimgray;
     font-size: 22px;
@@ -100,7 +100,7 @@ body{
   .form label .input + span {
     position: absolute;
     left: 10px;
-    top: 15px;
+    top: 25px;
     color: grey;
     font-size: 0.9em;
     cursor: text;
@@ -108,12 +108,12 @@ body{
   }
   
   .form label .input:placeholder-shown + span {
-    top: 15px;
+    top: 20px;
     font-size: 0.9em;
   }
   
   .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
+    top: 40px;
     font-size: 0.6em;
     font-weight: 600;
   }
@@ -127,9 +127,11 @@ body{
     outline: none;
     background-color: #4e7967;
     padding: 10px;
+    margin-top: 25px;
     border-radius: 10px;
     color: #fff;
-    font-size: 16px;
+    font-size: 27px;
+    font-family: 'Lobster Two', cursive;
     transition-duration: 0.5s;
   }
   
