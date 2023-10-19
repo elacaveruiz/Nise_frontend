@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
-body{
+section{
     background: rgb(105, 116, 167); 
     display: flex; /* Si quito este flex se muestran los bordes blancos d arriba*/
-    flex-flow: column wrap;
+    justify-content: space-around;  
+
+
+    flex-direction: column; 
+    flex-wrap: wrap; 
     width: 100%;
     height: 100%;
-}
-
-h3, p{
     font-family: 'Yusei Magic';
 }
 
@@ -20,28 +21,20 @@ h2{
 .titulo{
     margin-left: 3rem;
     text-align: left;
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+
+.texto{
+    margin-top: 13rem;
 }
 
 .categorias{
     display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap; /* Permitir envolvimiento y alineación hacia abajo */
-    margin-top: 32rem;
+    align-items: center;
+    justify-content: space-around;  
+    flex-flow: row wrap;
+    margin-top: 12rem;
 }
-
-
-/* 
-.container{
-    display: flex;
-    justify-content: flex-start; 
-    flex-direction: column; 
-    flex-wrap: wrap; 
-    margin: 0;
-    padding: 0;
-} */
-
-
 
 .card {
     width: var(--card-width);
@@ -56,10 +49,18 @@ h2{
     /* margin: 0 50px; */
 }
 
+
+.container{
+    width: 19rem;
+    height: 25rem;
+}
+
 .cover_image{
-    width: 20rem;
-    height: 30rem;
+    width: 19rem;
+    height: 25rem;
     object-fit: cover;
+    box-shadow: 3px 3px 10px black;
+    border-radius: 1.25%;
 }
 
 .wrapper {
@@ -120,7 +121,7 @@ h2{
 
 
 .character {
-    width: 17.5rem;
+    width: 16.5rem;
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
@@ -129,7 +130,7 @@ h2{
 
 .card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate3d(-7%, -10%, 100px);
 }
 
 @media (max-width: 600px) {
