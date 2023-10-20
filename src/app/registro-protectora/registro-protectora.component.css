@@ -5,7 +5,6 @@ body{
   background-image: linear-gradient(to bottom, #c1b7ab, #c3b8ad, #c5b9ae, #c6bab0, #c8bbb2, #c9bcb3, #c9bdb4, #cabeb5, #cabeb5, #cabfb5, #cabfb6, #cabfb6);
 }
 .doggo{
-  background-image: url("../../assets/imagenes/adorable-perro-basenji-marron-blanco-sonriendo-dando-maximo-cinco-aislado-blanco.jpg");
   background-image: url("../../assets/imagenes/registroprotectoraperro.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -14,7 +13,32 @@ body{
   padding: -100px;
   height: 100vh;
   overflow: hidden;
+
+  /* Aqui empieza el scrollbar */
+  overflow-y: scroll
 }
+
+.doggo::-webkit-scrollbar { /* width de tod0 el scrolllbar. ESTO ES DE PRIMERO, SI NO NO LO AGARRA*/
+  width: 12px;
+}
+
+.doggo::-webkit-scrollbar-track{ /* Carril de la barra*/
+  border-radius: 10px;
+}
+
+.doggo::-webkit-scrollbar-thumb{ /* Barra*/
+  background-color: #4e7967;
+  border-radius: 40px;
+  border: 1px solid rgba(241, 242, 243, 0.6);
+}
+
+.doggo::-webkit-scrollbar-track-piece{ /* Parte interna del carril de la barra*/
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+}
+
+/* Aqui termina el scrollbar */
+
 
 .form {
     display: flex;
