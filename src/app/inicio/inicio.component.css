@@ -88,6 +88,8 @@ header{
 }
 
 /*Dropdown para la parte responsive*/
+
+
 .dropdown_menu {
   display: none;
   position: absolute;
@@ -104,6 +106,7 @@ header{
 
 .dropdown_menu.open {
   height: 300px;
+  z-index: 1;
 }
 
 .dropdown_menu li {
@@ -138,4 +141,35 @@ header{
 .logo img{
   width: 100px;
   border-radius: 30px;
+}
+
+/* CONFIGURACIO DEL SECTION */
+
+.prueba {
+  margin: 5%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.texto {
+  text-align: justify;
+  font-family: 'Yusei Magic', sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+.img{
+  width: 250px;
+  border-radius: 15px;
+}
+
+.boton{
+  margin-top: 5%;
+  margin-bottom: 10%;
+  padding-left: 17%;
+
 }
