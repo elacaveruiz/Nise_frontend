@@ -15,11 +15,6 @@ export class ProtectoraService {
     this.protectoraURL = 'http://localhost:8080/nise/protectora';
    }
 
-
-  // getProtectoraList(): Observable<Protectora[]> {
-  //   return this.httpClient.get<Protectora[]>('${this.baseURL}');
-  // }
-
    //LISTAR
   public findAll(): Observable<Protectora[]> {
     return this.http.get<Protectora[]>(this.protectoraURL);
@@ -30,9 +25,7 @@ export class ProtectoraService {
   public save(protectora: Protectora) {
     return this.http.post<Protectora>(this.protectoraURL, protectora);
   }
-  // crearProtectora(protectora: Protectora): Observable<Object>{
-  //   return this.http.post('${this.baseURL}', protectora);
-  // }
+ 
 
 
 
