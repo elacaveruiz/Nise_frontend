@@ -1,14 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 body{
-
   overflow: hidden;
   background-image: linear-gradient(to bottom, #c1b7ab, #c3b8ad, #c5b9ae, #c6bab0, #c8bbb2, #c9bcb3, #c9bdb4, #cabeb5, #cabeb5, #cabfb5, #cabfb6, #cabfb6);
+  display: flex;
+  font-family: 'Yusei Magic';
 }
+
+.img{
+  width: 40%;
+  display: block;
+}
+
+img{
+  height: 100%;
+  display: block;
+}
+
 .doggo{
-  background-image: url("../../assets/imagenes/registroprotectoraperro.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
+  /* background-image: url("../../assets/imagenes/registroprotectoraperro.jpg"); */
+  /* background-repeat: no-repeat;
+  background-attachment: fixed; */
+  width: 60%;
+  /* background-size: contain; */
   margin: 0%;
   padding: -100px;
   height: 100vh;
@@ -56,6 +71,7 @@ body{
   
   .title {
     font-family: 'Lobster Two', cursive;
+    /* font-family: 'Margarine', cursive; */
     font-size: 38px;
     color: #4e7967;
     position: relative;

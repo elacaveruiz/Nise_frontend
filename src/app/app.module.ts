@@ -16,6 +16,9 @@ import { LoginRegistroComponent } from './login-registro/login-registro.componen
 import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
 import { InicioComponent } from './inicio/inicio.component';
 
+import { HttpClientModule } from '@angular/common/http'
+import { ProtectoraModule } from './protectoras-module/protectora.module';
+
 
 @NgModule({
   declarations: [
@@ -31,11 +34,15 @@ import { InicioComponent } from './inicio/inicio.component';
     ContactanosComponent,
     LoginRegistroComponent,
     RegistroProtectoraComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    HttpClientModule,
+    ProtectoraModule, //importo el nuevo module que he creado
+
   ],
     providers: [],
     bootstrap: [AppComponent]
