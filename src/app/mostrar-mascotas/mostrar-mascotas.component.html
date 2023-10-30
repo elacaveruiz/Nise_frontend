@@ -1,16 +1,35 @@
 <body>
-    <section>
+    <section class="top_bar">
+        <img src="../../assets/imagenes/logonise.png">
         <h2>Nuestros gatos en adopción</h2>
     </section>
 
+    <section class="filtros">
+        <h3>Filtrar</h3>
+
+        <div class="dropdown_menu">
+            <button> Especie <i class='bx bxs-down-arrow'></i> </button>
+            
+
+            <!-- <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+            <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+            <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+            <li><a routerLink="/Quienes_somos" routerLinkActive="active">¿Quienes Somos?</a></li>
+            <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+            <li><a href="/Login" class="action_btn">Inicio de sesión</a></li> -->
+          </div>
+    </section>
+
     <section>
-        <div class="card">
-            <img src="../../assets/imagenes/mostar_mascotas/gato1.jpg" class="img_mascota">
-            <div class="datosAnimal">
-                <h3>Luna</h3>
-                <p>Datos de la mascota</p>
+        <a routerLink="/InformacionMascota" routerLinkActive="active">
+            <div class="card">
+                    <img src="../../assets/imagenes/mostar_mascotas/gato1.jpg" class="img_mascota">
+                    <div class="datosAnimal">
+                        <h3>Luna</h3>
+                        <p>Datos de la mascota</p>
+                    </div>
             </div>
-        </div>
+         </a>
 
         <div class="card">
             <img src="../../assets/imagenes/mostar_mascotas/gato2.jpg" class="img_mascota">

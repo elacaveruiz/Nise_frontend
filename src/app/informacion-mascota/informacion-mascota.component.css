@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+section{
+    background: rgb(105, 116, 167); 
+    width: 100%;
+    height: 100%;
+    font-family: 'Yusei Magic'; 
+}
+
+h1{
+    font-family: 'Margarine';
+    font-weight: bold;
+}
+
+.logo{
+    height: 5rem;
+    width: auto;
+    margin: 1rem 0 2rem 2rem;
+}
+
+img{
+    height: auto;
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+#ficha{
+    background-color: aliceblue;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+span{
+    display: block;
+    font-size: .8rem;
+    margin-top: -1rem;
+}
+
+#caracteristicas{
+    line-height: 1.15rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.boton{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;  
+}
+
+p{
+    font-size: 1.2rem;
+}
+

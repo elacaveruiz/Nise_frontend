@@ -1,0 +1,25 @@
+<h1>Protectoras listar working!</h1>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr></tr>
+            <th>Nombre</th>
+            <th>Localidad</th>
+            <th>Telefono</th>
+            <th>email</th>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let protectora of protectoras">
+            <td> {{protectora.nombre }} </td>
+            <td> {{protectora.localidad }} </td>
+            <td> {{protectora.telefono }} </td>
+            <td> {{protectora.email }} </td>
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>

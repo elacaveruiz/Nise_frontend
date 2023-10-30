@@ -8,6 +8,8 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 import { MostrarMascotasComponent } from './mostrar-mascotas/mostrar-mascotas.component';
 import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
+import { InformacionMascotaComponent } from './informacion-mascota/informacion-mascota.component';
+import { protectoraComponent } from './protectoras-module/protectora.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Inicio',pathMatch: 'full'},
@@ -19,6 +21,12 @@ const routes: Routes = [
   {path: 'Login', component: LoginRegistroComponent},
   {path: 'MostrarMascotas', component: MostrarMascotasComponent},
   {path: 'protectoraregistro', component: RegistroProtectoraComponent },
+  {path: 'InformacionMascota', component: InformacionMascotaComponent},
+
+
+
+  {path: 'protectoras', component: protectoraComponent}
+
   
 ];
 
