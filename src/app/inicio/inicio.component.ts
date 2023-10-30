@@ -13,3 +13,13 @@ export class InicioComponent{
     this.isActive = !this.isActive;    
   }  
 }
+
+export class MostrarMascotasComponent{
+
+  isActive = false;
+
+  toggleClass() {
+    this.isActive = !this.isActive;    
+  }  
+}
+

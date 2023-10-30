@@ -5,11 +5,12 @@
     bottom: 0;
     display: flex;
     width: 100%;
-    height: 70px;
-    background-color: #5b6a79;
+    height: 65px;
+    /* background-color: #5b6a79; */
     box-shadow: 0 0 20px rgba(111, 111, 111, 0.2);
-    font-family: 'Lobster', sans-serif;
+    /* font-family: 'Lobster', sans-serif; */
     font-size: 18px;
+    backdrop-filter: blur(5px);
   }
   .sticky {
     position: fixed;
@@ -25,9 +26,11 @@
     flex: 1;
     letter-spacing: 2px;
     transition: all 0.3s ease;
+    z-index: 1;
   }
   
   .tabs-container a:hover {
-    background-color: #92bd4c;
+    /* background-color: #92bd4c; */
+    background-color: rgb(65, 114, 69);
     border-radius: 50px;
   }

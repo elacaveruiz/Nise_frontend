@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
 section{
     background: rgb(105, 116, 167); 
     display: flex; /* Si quito este flex se muestran los bordes blancos d arriba*/
@@ -11,6 +12,9 @@ section{
     width: 100%;
     height: 100%;
     font-family: 'Yusei Magic';
+    background-image: url(../../assets/imagenes/adopcion/aa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h2{
@@ -19,13 +23,12 @@ h2{
 }
 
 .titulo{
-    margin-left: 3rem;
     text-align: left;
-    margin-top: 1rem;
+    margin: 2rem 0 13rem 3rem;
 }
 
 .texto{
-    margin-top: 13rem;
+    margin-top: 15rem;
 }
 
 .categorias{
@@ -33,7 +36,7 @@ h2{
     align-items: center;
     justify-content: space-around;  
     flex-flow: row wrap;
-    margin-top: 12rem;
+    /* margin-top: 13rem; */
 }
 
 .card {
@@ -52,7 +55,7 @@ h2{
 
 .container{
     width: 19rem;
-    height: 25rem;
+    height: 22rem;
 }
 
 .cover_image{
@@ -60,7 +63,7 @@ h2{
     height: 25rem;
     object-fit: cover;
     box-shadow: 3px 3px 10px black;
-    border-radius: 1.25%;
+    border-radius: 2%;
 }
 
 .wrapper {
