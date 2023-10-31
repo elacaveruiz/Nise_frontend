@@ -8,7 +8,6 @@ import { ProtectoraRegistroComponent } from './protectora-registro/protectora-re
 const routes: Routes = [
   {
     path: 'protectora', component: protectoraComponent, children: [
-      {path: '', component: protectoraComponent},
       {path: 'protectorasListar', component: ProtectorasListarComponent}, //path -> nombre q le doy
       {path: 'protectorasCrear', component: ProtectoraRegistroComponent},
     ]
