@@ -1,0 +1,25 @@
+<h2>Listado vacunas</h2>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr></tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Animal</th>
+            <th>Numero Dosis</th>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let vacuna of vacunas">
+            <td> {{vacuna.id }} </td>
+            <td> {{vacuna.nombre }} </td>
+            <td> {{vacuna.tipoAnimal }} </td>
+            <td> {{vacuna.num_dosis }} </td>
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>

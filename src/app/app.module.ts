@@ -18,6 +18,9 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { HttpClientModule } from '@angular/common/http'
 import { ProtectoraModule } from './protectoras-module/protectora.module';
+import { MascotasModule } from './mascotas-module/mascotas.module';
+import { VacunaModule } from './vacunas-module/vacuna.module';
+import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 
 
 @NgModule({
@@ -42,6 +45,9 @@ import { ProtectoraModule } from './protectoras-module/protectora.module';
 
     HttpClientModule,
     ProtectoraModule, //importo el nuevo module que he creado
+    MascotasModule,
+    VacunaModule,
+    VeterinarioModule,
 
   ],
     providers: [],

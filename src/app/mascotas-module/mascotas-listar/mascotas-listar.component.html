@@ -1,0 +1,35 @@
+<h1>Mascotas listar working!</h1>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr></tr>
+            <th>Nombre</th>
+            <th>raza</th>
+            <th>edad</th>
+            <th>disponibilidad</th>
+            <th>chip</th>
+            <th>tipo Animal</th>
+            <th>tipo Sexo</th>
+            <th>tipo Tamanyo</th>
+            <th>fecha Entrada Protectora</th>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let mascota of mascotas">
+            <td> {{mascota.nombre }} </td>
+            <td> {{mascota.raza }} </td>
+            <td> {{mascota.edad }} </td>
+            <td> {{mascota.disponibilidad }} </td>
+            <td> {{mascota.chip }} </td>
+            <td> {{mascota.tipoAnimal }} </td>
+            <td> {{mascota.tipoSexo }} </td>
+            <td> {{mascota.tipoTamanyo }} </td>
+            <td> {{mascota.fecha_entrada_protectora}} </td>
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>
