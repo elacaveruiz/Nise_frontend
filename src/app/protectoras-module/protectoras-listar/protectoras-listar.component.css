@@ -224,7 +224,7 @@
   height: 4px;
   top: calc(50% - 2px);
   }
-  
+  /*prueba*/
   
   .add-btn:hover .add-icon::after {
   right: 15px;
