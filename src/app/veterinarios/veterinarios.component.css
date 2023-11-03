@@ -1,99 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
-body{
-  background-color: #d2c3b2;
+
+section{
+  padding: 2rem 9%;
 }
 
-.relleno{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  font-family: 'Lobster Two', cursive;
-  text-align: center;
-  font-size:25px;
-  margin-bottom: 120px;
-}
-
-.relleno img{
-  height: 230px;
-  margin-left: 15px;
-  border-radius: 10px;
-  box-shadow: 6px 5px 8px 2px dimgray;
-}
-
-.body{
-  background-color:
-    #d2c3b2;
-  margin: 100px auto;
-  width: 70%;
-  padding: 5% 10%;
-  display: flex;
-  flex-direction: column;
-}
-
-.titulo{
-  font-family: 'Lobster Two', cursive;
-  font-size:3.5vmax;
-  color: #4e7967;
-  margin-bottom: 35px;
-}
-
-.info{
-  width: 50%;
+.home{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.desc{
-  width: 70%;
   text-align: center;
+  min-height: 100vh;
+  background-image: url(../../assets/imagenes/pawprints);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(230, 176, 140);
 }
+
+.home h1{
+  margin-top: 130px;
+  margin-bottom: 40px;
+}
+
+.home .content{
+  max-width: 45rem;
+}
+
+
+.home .content span{
+  font-size: 1.6rem;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  line-height: 1.5;
+  font-family: 'Lobster Two', cursive;
+  text-align: center;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.5s both;
+}
+
+.home .content p{
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  line-height: 1.5;
+  font-family: 'Yusei Magic', sans-serif;
+  text-align: center;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.5s both;
+}
+
 
 .vetes{
+  margin: 20px auto;
   border-radius: 10px;
-  background-color: #bcceba;
-  padding: 30px;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  margin: 20px 0;
-  box-shadow: 6px 5px 8px 2px dimgray;
-  font-family: 'Lobster Two', cursive;
-  transition-duration: 0.5s;
+  background-color: rgb(230, 176, 140);
 }
-.buttoncontacta{
-  border-radius: 10px;
-  background-color: #bcceba;
-  transition-duration: 0.5s;
-  padding: 10px;
-  box-shadow: 4px 3px 6px 1px dimgray;
-  border: none;
-}
-.bordervetes{
+
+.vetes div{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
 }
 
-.buttoncontacta:hover{
-  background-color: #94a294;
-  transition-duration: 0.5s;
+.vetes div img{
+  max-width:22vmax;
+  margin-bottom: 10px;
 }
-.vetes:hover{
-  background-color:#4e7967;;
-  transition-duration: 0.5s;
+.vetes div iframe{
+  max-width:22vmax;
+  margin-top: 10px;
 }
-.imagevetes{
-  width: 50%;
-  border-radius: 5px;
-}
-.mapa{
-  align-self: center;
-  width: 50%;
-  height: 300px;
-  border-radius: 5px;
-}
-
