@@ -14,12 +14,4 @@ export class InicioComponent{
   }  
 }
 
-export class MostrarMascotasComponent{
-
-  isActive = false;
-
-  toggleClass() {
-    this.isActive = !this.isActive;    
-  }  
-}
 

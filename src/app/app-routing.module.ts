@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'vacunas', component: VacunasComponent},
   {path: 'veterinarios', component: VeterinarioComponent},
 
-  
+
 ];
 
 @NgModule({

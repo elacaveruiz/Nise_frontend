@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./quienes-somos.component.css']
 })
 export class QuienesSomosComponent {
+  isActive = false;
 
+  toggleClass() {
+    this.isActive = !this.isActive;    
+  }  
 }
