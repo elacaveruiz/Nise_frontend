@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login-registro',
@@ -7,6 +7,4 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class LoginRegistroComponent {
 
-
-
-}
+  }

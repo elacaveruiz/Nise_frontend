@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'Inicio', component: InicioComponent},
   {path: 'Adopcion', component: AdopcionComponent},
   {path: 'Veterinario', component: VeterinariosComponent}, 
-  {path: 'Quienes_somos', component: QuienesSomosComponent},
+  {path: 'Ayudanos', component: QuienesSomosComponent},
   {path: 'Contacta', component: ContactanosComponent},
   {path: 'Login', component: LoginRegistroComponent},
   {path: 'MostrarMascotas', component: MostrarMascotasComponent},

@@ -7,12 +7,12 @@
         <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
         <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
         <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
-        <a routerLink="/Quienes_somos" routerLinkActive="active"class="a4">¿Quienes Somos?</a>
+        <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
         <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
     </nav>
 
     <div class="inicio_sesion">
-      <button href="#" class="action_btn">Inicio de sesión</button>
+      <button routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</button>
     </div>
     <div class="toggle_btn" (click)="toggleClass()" >
       <img src="../../assets/imagenes/menu.png"  alt="">
@@ -22,7 +22,7 @@
       <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
       <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
       <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
-      <li><a routerLink="/Quienes_somos" routerLinkActive="active">¿Quienes Somos?</a></li>
+      <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
       <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
       <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
     </div>
@@ -41,6 +41,102 @@
     </div>
 
 </section>
+<section>
 
+    <div class="container"> 
+        <div class="slider">
+
+            <div class="box1 box">
+                <div class="bg"></div>
+                <div class="details">
+                    <h1>I'm the first Box</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Integer lacinia dui lectus. Donec scelerisque ipsum
+                        diam, ac mattis orci pellentesque eget. 
+                    </p>
+                    
+                </div>
+
+                <div class="illustration"><div class="inner"></div></div>
+            </div>
+                            
+            
+            <div class="box2 box">
+                <div class="bg"></div>
+                <div class="details">
+                    <h1>I'm the second Box</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Integer lacinia dui lectus. Donec scelerisque ipsum
+                        diam, ac mattis orci pellentesque eget. 
+                    </p>
+                    
+                </div>
+
+                <div class="illustration"><div class="inner"></div></div>
+            </div>
+                            
+            <div class="box3 box">
+                <div class="bg"></div>
+                <div class="details">
+                    <h1>I'm the third Box</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Integer lacinia dui lectus. Donec scelerisque ipsum
+                        diam, ac mattis orci pellentesque eget. 
+                    </p>
+                    
+                </div>
+
+                <div class="illustration"><div class="inner"></div></div>
+            </div>
+                            
+            <div class="box4 box">
+                <div class="bg"></div>
+                <div class="details">
+                    <h1>I'm the fourth Box</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Integer lacinia dui lectus. Donec scelerisque ipsum
+                        diam, ac mattis orci pellentesque eget. 
+                    </p>
+                    
+                </div>
+
+                <div class="illustration"><div class="inner"></div></div>
+            </div>
+                            
+            <div class="box5 box">
+                <div class="bg"></div>
+                <div class="details">
+                    <h1>I'm the fifth Box</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Integer lacinia dui lectus. Donec scelerisque ipsum
+                        diam, ac mattis orci pellentesque eget. 
+                    </p>
+                    
+                </div>
+
+                <div class="illustration"><div class="inner"></div></div>
+            </div>
+                            
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="prev" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#fff"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="next" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#fff"/></svg>
+        <div class="trail">
+                <div class="box1 active">1</div>
+                <div class="box2">2</div>
+                <div class="box3">3</div>
+                <div class="box4">4</div>
+                <div class="box5">5</div>
+        </div>
+    </div>   
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+   
+</section>
 <app-footer></app-footer>
 

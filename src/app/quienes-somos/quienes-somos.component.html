@@ -1,2 +1,59 @@
-<p>quienes-somos works!</p>
-<app-navbar></app-navbar>
+<header>
+
+    <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+    <nav class="navbar">
+        <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+        <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
+        <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
+        <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
+        <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
+    </nav>
+
+    <div class="inicio_sesion">
+      <button routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</button>
+    </div>
+    <div class="toggle_btn" (click)="toggleClass()" >
+      <img src="../../assets/imagenes/menu.png"  alt="">
+    </div>
+    <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+      <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+      <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+      <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+      <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+      <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+      <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
+    </div>
+
+</header>
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Ayudanos a mejorar</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eligendi voluptates similique pariatur voluptate ex, corrupti consequatur iusto.
+        At amet placeat necessitatibus dolor nihil! Delectus perspiciatis tempore distinctio odit modi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Minus sint ea ducimus est totam doloremque qui harum ab odit fuga corporis,
+        suscipit assumenda illum maiores inventore blanditiis. Possimus, doloremque labore?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Est commodi temporibus magni, alias minus quia beatae eum sit saepe sequi officia deleniti iure doloremque rerum unde explicabo, tenetur molestias! Iure?
+        <br/><br/>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eligendi voluptates similique pariatur voluptate ex, corrupti consequatur iusto.
+        At amet placeat necessitatibus dolor nihil! Delectus perspiciatis tempore distinctio odit modi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Minus sint ea ducimus est totam doloremque qui harum ab odit fuga corporis,
+        suscipit assumenda illum maiores inventore blanditiis. Possimus, doloremque labore?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Est commodi temporibus magni, alias minus quia beatae eum sit saepe sequi officia deleniti iure doloremque rerum unde explicabo, tenetur molestias! Iure?
+        </p>
+        <textarea cols="150" rows="10"></textarea>
+        <button class="pipo">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                </svg>
+              </div>
+            </div>
+            <span>Postear comentario</span>
+          </button>
+    </div>
+</section>
+<app-footer></app-footer>
