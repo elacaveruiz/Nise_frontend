@@ -1,0 +1,37 @@
+<h3>Anadir veterinario</h3>
+
+<form (ngSubmit) = "onSubmit()"  #veterinarioForm="ngForm">
+
+    <div class="form-group">
+        <label> Nombre </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "veterinario.nombre" name= "Nombre">
+    </div>
+
+    <div class="form-group">
+        <label> Localidad </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "veterinario.direccion" name= "localidad">
+    </div>
+
+    <div class="form-group">
+        <label> Telefono </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "veterinario.telefono" name= "telefono">
+    </div>
+
+    <div class="form-group">
+        <label> email </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "veterinario.email" name= "email">
+    </div>
+
+    <div class="form-group">
+        <label> link mapa </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "veterinario.mapa" name= "mapa">
+    </div>
+
+    <button type="submit">Guardar</button>
+
+</form>
