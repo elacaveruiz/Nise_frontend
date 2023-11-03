@@ -1,0 +1,25 @@
+<h3>Añadir vacunas</h3>
+
+<form (ngSubmit) = "onSubmit()"  #vacunaForm="ngForm">
+
+    <div class="form-group">
+        <label> Nombre </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "vacuna.nombre" name= "Nombre">
+    </div>
+
+    <div class="form-group">
+        <label> Tipo animal </label> <!-- Hay q crear y adaptar el select para esto -->
+        <input type="text" class="form-control"
+            [(ngModel)] = "vacuna.tipoAnimal" name= "tipoAnimal">
+    </div>
+
+    <div class="form-group">
+        <label> Numero de dosis </label>
+        <input type="text" class="form-control"
+            [(ngModel)] = "vacuna.num_dosis" name= "num_dosis">
+    </div>
+
+    <button type="submit">Guardar</button>
+
+</form>
