@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+body {
+    margin: 0%;
+    padding: -100px;
+    height: 100vh;
+}
+
+.header {
+    background-color: rgb(47, 83, 55);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cuerpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d2c3b2;
+}
+
+.cuerpo>.titulo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    font-family: 'Lobster Two', cursive;
+    font-size: xx-large;
+}
+.contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+@keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+
+  }
+.cuerpecito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+}
+.contenido>.input-field{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width:  350px;
+    height: 60px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 0 15px;
+    border: 2px solid #fff;
+    outline: none;
+    
+}
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 19px;
+    pointer-events: none;
+    transition: .3s;
+}
+input:focus ~ label{
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    
+}
+.imagen{
+    justify-content: center;
+    align-items: center;
+}
+.imagen>img{
+    width: 50%;
+    margin-left: 15%;
+}
+.contenido>button{
+    height: 45px;
+    width: 65px;
+    margin-bottom: 15%;
+    background-color:  rgb(47, 83, 55);
+    border-radius: 25px;
+    border: 0.5px solid black;
+}
+
+

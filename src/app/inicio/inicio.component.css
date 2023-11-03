@@ -82,7 +82,7 @@ header .navbar a:hover{
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
-  
+
 }
 
 .action_btn {
@@ -222,7 +222,7 @@ header .navbar a:hover{
   }
   .toggle_btn {
     display: block;
-    
+
   }
   .dropdown_menu {
     display: block;
@@ -358,6 +358,7 @@ section{
 /* FIN CONFIGURACION DEL RESPONSIVE DEL SECTION 1*/
 
 /* FIN CONFIGURACION DEL SECTION 1 */
+
 /* Prueba*/
 
 .container {
