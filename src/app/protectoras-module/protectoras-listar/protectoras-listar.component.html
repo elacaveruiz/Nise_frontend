@@ -1,6 +1,13 @@
-<h1>Protectoras listar working!</h1>
+<div class="cuerpo">
+    <div class="cabecera">
+<h1>Protectoras</h1>
+<button class="icon-btn add-btn">
+    <div class="add-icon"></div>
+    <div class="btn-txt">Añadir</div>
+</button>
+</div>
 
-<table class="table table-striped">
+<table class="">
 
     <thead>
         <tr></tr>
@@ -8,6 +15,7 @@
             <th>Localidad</th>
             <th>Telefono</th>
             <th>email</th>
+            <th>Opciones</th>
     </thead>
     <tbody>
         <tr *ngFor= "let protectora of protectoras">
@@ -15,7 +23,10 @@
             <td> {{protectora.localidad }} </td>
             <td> {{protectora.telefono }} </td>
             <td> {{protectora.email }} </td>
-
+            <td>
+                <i class='bx bxs-message-square-edit'></i>
+                <i class='bx bxs-message-square-x '></i>
+            </td>
         </tr>
 
 
@@ -23,3 +34,5 @@
 
 
 </table>
+
+</div>

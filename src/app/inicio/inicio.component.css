@@ -31,7 +31,7 @@ header {
   left: 0;
   right: 0;
   background: #fff;
-  padding: 1rem 9%;
+  padding: 0.50rem 9%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,7 +43,7 @@ header {
 
 
 header .logo img{
-  width: 100px;
+  width: 75px;
 }
 
 header .navbar a{
@@ -82,7 +82,7 @@ header .navbar a:hover{
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
-  
+
 }
 
 .action_btn {
@@ -222,7 +222,7 @@ header .navbar a:hover{
   }
   .toggle_btn {
     display: block;
-    
+
   }
   .dropdown_menu {
     display: block;

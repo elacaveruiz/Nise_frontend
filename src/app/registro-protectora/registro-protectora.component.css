@@ -68,7 +68,7 @@ img{
     box-shadow: 5px 4px 7px 2px dimgray;
     font-size: 22px;
   }
-  
+
   .title {
     font-family: 'Lobster Two', cursive;
     /* font-family: 'Margarine', cursive; */
@@ -79,7 +79,7 @@ img{
     align-items: center;
     padding-left: 30px;
   }
-  
+
   .title::before,.title::after {
     position: absolute;
     content: "";
@@ -89,46 +89,46 @@ img{
     left: 0px;
     background-color: #4e7967;
   }
-  
+
   .title::before {
     width: 18px;
     height: 18px;
     background-color: #4e7967;
   }
-  
+
   .title::after {
     width: 18px;
     height: 18px;
     animation: pulse 1s linear infinite;
   }
-  
+
   .message, .signin {
     color: rgba(88, 87, 87, 0.822);
     font-size: 18px;
   }
-  
+
   .signin {
     text-align: center;
   }
-  
+
   .signin a {
     color: #4e7967;
   }
-  
+
   .signin a:hover {
     text-decoration: underline #4e7967;
   }
-  
+
   .flex {
     display: flex;
     width: 100%;
     gap: 6px;
   }
-  
+
   .form label {
     position: relative;
   }
-  
+
   .form label .input {
     width: 100%;
     padding: 10px 0px 20px 10px;
@@ -136,8 +136,8 @@ img{
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
   }
-  
-  
+
+
   .form label .input + span {
     position: absolute;
     left: 10px;
@@ -147,22 +147,22 @@ img{
     cursor: text;
     transition: 0.3s ease;
   }
-  
+
   .form label .input:placeholder-shown + span {
     top: 20px;
     font-size: 0.9em;
   }
-  
+
   .form label .input:focus + span,.form label .input:valid + span {
     top: 40px;
     font-size: 0.6em;
     font-weight: 600;
   }
-  
+
   .form label .input:valid + span {
     color: #4e7967;
   }
-  
+
   .submit {
     border: none;
     outline: none;
@@ -175,18 +175,18 @@ img{
     font-family: 'Lobster Two', cursive;
     transition-duration: 0.5s;
   }
-  
+
   .submit:hover {
     background-color: #406354;
     transition-duration: 0.5s;
   }
-  
+
   @keyframes pulse {
     from {
       transform: scale(0.9);
       opacity: 1;
     }
-  
+
     to {
       transform: scale(1.8);
       opacity: 0;
