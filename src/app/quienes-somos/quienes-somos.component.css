@@ -1,0 +1,374 @@
+/* LOS IMPORTES AQUI */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yusei+Magic&display=swap');
+
+/* CONFIGURACION PRINCIPAL DEL HTML*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: 'Lobster', sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+
+/* CONFIGURACION DE PARTES DEL DOCUMENTO EN RESPONSIVE*/
+@media(max-width: 992px){
+  html{
+    font-size: 55%;
+  }
+}
+/* FIN CONFIGURACION DE PARTES DEL DOCUMENTO EN RESPONSIVE*/
+/* FIN CONFIGURACION PRINCIPAL DEL HTML*/
+
+/* CONFIGURACION DEL HEADER Y NAVBAR*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+header .logo img{
+  width: 100px;
+}
+
+header .navbar a{
+  font-size: 1.4rem;
+  padding: 0 1.5rem;
+  color: #666;
+}
+/*
+.a1{
+  animation: bounce-top 0.9s both;
+}
+
+.a2{
+  animation: bounce-top 0.9s 0.2s both;
+}
+
+.a3{
+  animation: bounce-top 0.9s 0.4s both;
+}
+
+.a4{
+  animation: bounce-top 0.9s 0.6s both;
+}
+.a5{
+  animation: bounce-top 0.9s 0.8s both;
+}
+*/
+
+header .navbar a:hover{
+  color: #092;
+}
+
+
+.toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  
+}
+
+.action_btn {
+  background-color: black;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.action_btn:hover{
+  background-color: #092;
+}
+
+/* CONFIGURACION DEL RESPONSIVE DEL NAVBAR */
+@media(max-width: 1450px){
+  header .navbar a{
+    font-size: 1.0rem;
+    padding: 0 0.3rem;
+    color: #666;
+    animation: bounce-top 0.9s both;
+  }
+}
+/* FIN CONFIGURACION DEL RESPONSIVE DEL NAVBAR */
+
+/* CONFIGURACION DE ANIMACIONES DEL NAVBAR*/
+
+@keyframes bounce-top {
+  0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+}
+
+/* FIN CONFIGURACION DE ANIMACIONES DEL NAVBAR*/
+/* FIN CONFIGURACION DEL HEADER Y NAVBAR*/
+
+/* INICIO DE LA CONFIGURACION DEL DROPDOWN */
+
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 100px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  height: 300px;
+  z-index: 1;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.dropdown_menu li a {
+  color: black;
+}
+.dropdown_menu li a:hover {
+  color: #092;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dropdown_menu .action_btn:hover {
+  color: #fff !important;
+}
+
+/* FIN DE LA CONFIGURACION DEL DROPDOWN */
+
+/* INICIO DEL FUNCIONAMIENTO DEL DROPDOWN RESPONSIVE*/
+
+@media(max-width: 992px){
+  .navbar, .inicio_sesion {
+    display: none;
+  }
+  .toggle_btn {
+    display: block;
+    
+  }
+  .dropdown_menu {
+    display: block;
+  }
+  .dropdown_menu li .action_btn {
+    color: #fff;
+  }
+}
+
+/* FIN DEL FUNCIONAMIENTO DEL DROPDOWN RESPONSIVE*/
+
+/* CONFIGURACION DEL SECTION 1*/
+section{
+    padding: 1rem 9%;
+  }
+  
+  .home{
+    display: flex;
+    flex-direction: column;
+    padding: 10rem;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../../assets/imagenes/fondo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(8, 8, 8);
+    
+  }
+  
+  .home .content{
+    max-width: 80rem;
+  }
+  
+  .home .content h3{
+    padding: 0 0 2rem 0;
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
+  }
+
+  .home .content p{
+    font-size: 1.2rem;
+    padding: 1rem 2rem 0 2rem;
+    border-radius: 1rem;
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: justify;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.5s both;
+    backdrop-filter: blur(5px);
+    color: #092;
+  }
+
+  .home .content textarea{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    margin: 2rem 0 0 0;
+  }
+
+  @media(max-width: 992px){
+    section{
+      padding: 2rem;
+    }
+    .home .content h3{
+      padding:7rem 0 0 0;
+      font-size: 4.5rem;
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
+      animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1.5s both;
+    }
+  }
+
+  .pipo {
+    font-family: inherit;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #b8d94d 0%,#b8ff66 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    margin: 1em 0 0 0 ;
+  }
+  
+  .pipo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .pipo:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pipo span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+  }
+  
+  .pipo svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+  }
+  
+  .pipo .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+  }
+  
+  .pipo:hover .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .pipo:hover svg {
+    transform: rotate(45deg);
+  }
+  
+  @media(max-width: 1450px){
+    .pipo {
+    font-family: inherit;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #b8d94d 0%,#b8ff66 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    margin: 1em 25em 0 25em ;
+  }
+  
+  }
+
