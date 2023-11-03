@@ -1,38 +1,36 @@
 <div class="cuerpo">
     <div class="cabecera">
-<h1>Protectoras</h1>
-<button class="icon-btn add-btn">
+    <h1>Protectoras</h1>
+    <button class="icon-btn add-btn">
     <div class="add-icon"></div>
     <div class="btn-txt">Añadir</div>
-</button>
-</div>
-
-<table class="">
-
+    </button>
+    </div>
+    
+    
+    <main class="table">
+    <section class="table__body">
+    <table>
     <thead>
-        <tr></tr>
-            <th>Nombre</th>
-            <th>Localidad</th>
-            <th>Telefono</th>
-            <th>email</th>
-            <th>Opciones</th>
+    <tr>
+    <th> Nombre </th>
+    <th> Localidad</th>
+    <th> Teléfono</th>
+    <th> Email</th>
+    <th> Opciones</th>
+    </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let protectora of protectoras">
-            <td> {{protectora.nombre }} </td>
-            <td> {{protectora.localidad }} </td>
-            <td> {{protectora.telefono }} </td>
-            <td> {{protectora.email }} </td>
-            <td>
-                <i class='bx bxs-message-square-edit'></i>
-                <i class='bx bxs-message-square-x '></i>
-            </td>
-        </tr>
-
-
+    <tr *ngFor= "let protectora of protectoras">
+    <td> {{protectora.nombre}}</td>
+    <td> {{protectora.localidad}} </td>
+    <td> {{protectora.telefono}} </td>
+    <td>{{protectora.email}}</td>
+    <td><i class='bx bxs-message-square-edit'></i>
+    <i class='bx bxs-message-square-x '></i></td>
+    </tr>
     </tbody>
-
-
-</table>
-
-</div>
+    </table>
+    </section>
+    </main>
+    
