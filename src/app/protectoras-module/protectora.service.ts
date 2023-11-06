@@ -12,7 +12,7 @@ export class ProtectoraService {
   private protectoraURL: string;
 
   constructor(private http: HttpClient) {
-    this.protectoraURL = 'http://localhost:8080/nise/protectora';
+    this.protectoraURL = 'http://localhost:8080/protectora';
    }
 
    //LISTAR
