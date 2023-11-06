@@ -11,11 +11,12 @@ import { VeterinarioComponent } from './veterinario.component';
 
 
 
+
 @NgModule({
   declarations: [
     VeterinarioComponent,
     VeterinariosListarComponent,
-    VeterinariosCrearComponent
+    VeterinariosCrearComponent,
   ],
   imports: [
     BrowserModule,
