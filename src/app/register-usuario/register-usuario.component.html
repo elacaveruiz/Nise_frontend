@@ -1,0 +1,56 @@
+<p>Registrar protectora Module</p>
+<p>Aqui pondremos nuestro formulario registro uwu</p>
+
+<h3>Registrar protectoras</h3>
+
+<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="nombre">nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre">
+    </div>
+
+    <div>
+        <label for="telefono">telefono:</label>
+        <input type="text" id="telefono" formControlName="telefono">
+    </div>
+
+    <div>
+      <label for="direccion">direccion:</label>
+      <input type="text" id="direccion" formControlName="direccion">
+    </div>
+
+    <div>
+      <label for="email">email:</label>
+      <input type="text" id="email" formControlName="email">
+    </div>
+
+    <div>
+        <label for="dni">dni:</label>
+        <input type="text" id="dni" formControlName="dni">
+    </div>
+
+    <div>
+        <label for="preferenciaTipoAnimal">preferenciaTipoAnimal:</label>
+        <input type="text" id="preferenciaTipoAnimal" formControlName="preferenciaTipoAnimal">
+    </div>
+
+    <div>
+        <label for="preferenciaTipoTamanyo">preferenciaTipoTamanyo:</label>
+        <input type="text" id="preferenciaTipoTamanyo" formControlName="preferenciaTipoTamanyo">
+    </div>
+
+    <div>
+        <label for="preferenciaSexo">preferenciaSexo:</label>
+        <input type="text" id="preferenciaSexo" formControlName="preferenciaSexo">
+    </div>
+
+    <div formGroupName="loginDTO">
+      <label for="username">username:</label>
+      <input type="text" id="username" formControlName="username">
+      <label for="password">password:</label>
+      <input type="text" id="password" formControlName="password">
+    </div>
+    
+    <button type="submit">Registrar</button>
+  </form>
