@@ -7,6 +7,7 @@ import { VeterinarioRoutingModule } from './veterinario-routing.module';
 import { VeterinariosListarComponent } from './veterinarios-listar/veterinarios-listar.component';
 import { VeterinariosCrearComponent } from './veterinarios-crear/veterinarios-crear.component';
 import { VeterinarioComponent } from './veterinario.component';
+import { VeterinariosMainComponent } from './veterinarios-main/veterinarios-main.component';
 
 
 
@@ -16,6 +17,7 @@ import { VeterinarioComponent } from './veterinario.component';
     VeterinarioComponent,
     VeterinariosListarComponent,
     VeterinariosCrearComponent,
+    VeterinariosMainComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { VeterinarioComponent } from './veterinario.component';
     FormsModule,
   ],
   exports: [
-    VeterinariosListarComponent,
+    VeterinariosMainComponent,
   ]
 })
 export class VeterinarioModule { } //esto se cambia
