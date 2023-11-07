@@ -5,24 +5,39 @@
         <p>Te presentamos una serie de veterinarios dedicados a brindar atención de alta calidad a tus mascotas cerca de ti. Estos profesionales se preocupan por la salud y la felicidad de tus compañeros peludos, desde chequeos de rutina hasta servicios especializados, nuestros veterinarios están aquí para cuidar de tus mascotas. Descubre sus servicios y confía en su experiencia para mantenerlos en las mejores condiciones. <br/>¡Conoce a los veterinarios locales listos para ayudarte!</p>
     </div>
 </section>
-<section class="vetes">
+<section class="bgvetes" *ngFor="let veterinario of veterinarios; let i = index">
+<div *ngIf="i % 2 === 0; then modelo1Template else modelo2Template"></div>
+
+
+<ng-template #modelo1Template>
+    <div class="vetes">
+        <div>
+            <h1>{{veterinario.nombre}}</h1>
+            <p>{{veterinario.direccion}}</p>
+            <p>{{veterinario.telefono}}</p>
+            <p>{{veterinario.email}}</p>
+        </div>
+        <div>
+            <img src="https://universidadeuropea.com/resources/media/images/salidas-veterinaria-1200x630_oti17Ra.original.jpg">
+            <iframe [src]="veterinario.mapa" frameBorder="0" style="border: 0" allowfullscreen></iframe>
+            
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #modelo2Template>
+<div class="vetes">
     <div>
-        <h1>Veterinario 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deleniti labore, ducimus delectus eaque reprehenderit, iure facere, temporibus praesentium accusantium eligendi veritatis quae consequatur natus velit maxime tenetur soluta quis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. In quia architecto obcaecati perspiciatis eos reiciendis nostrum alias ad dolorum exercitationem quasi sunt, repudiandae possimus suscipit ut distinctio maxime illo cupiditate?</p>
+        <img src="https://universidadeuropea.com/resources/media/images/salidas-veterinaria-1200x630_oti17Ra.original.jpg">
+        <iframe [src]="veterinario.mapa"></iframe>
     </div>
     <div>
-        <img src="https://universidadeuropea.com/resources/media/images/salidas-veterinaria-1200x630_oti17Ra.original.jpg" alt="">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12678.385561758816!2d-6.010744571685822!3d37.399376197436816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c07d24e08d3%3A0x2c1e0c5efd32ff8a!2sVETERINARIA%20ALAMEDA%20SEVILLA!5e0!3m2!1ses!2ses!4v1697814701761!5m2!1ses!2ses" frameborder="0"></iframe>
+        <h1>{{veterinario.nombre}}</h1>
+        <p>{{veterinario.direccion}}</p>
+        <p>{{veterinario.telefono}}</p>
+            <p>{{veterinario.email}}</p>
     </div>
-</section>
-<section class="vetes">
-    <div>
-        <img src="https://www.promedco.com/images/NOTICIAS_2020/reducir-estres-de-mascotas-1.jpg" alt="">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12678.385561758816!2d-6.010744571685822!3d37.399376197436816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c07d24e08d3%3A0x2c1e0c5efd32ff8a!2sVETERINARIA%20ALAMEDA%20SEVILLA!5e0!3m2!1ses!2ses!4v1697814701761!5m2!1ses!2ses" frameborder="0"></iframe>
-    </div>
-    <div>
-        <h1>Veterinario 2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore deleniti labore, ducimus delectus eaque reprehenderit, iure facere, temporibus praesentium accusantium eligendi veritatis quae consequatur natus velit maxime tenetur soluta quis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quos voluptates voluptatum perspiciatis, omnis at voluptatem nihil tenetur quia aspernatur maxime ea minus reiciendis. Laboriosam nostrum tempore maiores earum quidem!</p>
-    </div>
+</div>
+</ng-template>
 </section>
 

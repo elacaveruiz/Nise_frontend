@@ -38,6 +38,9 @@ section{
   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.5s both;
 }
 
+.bgvetes{
+  background-color: rgb(116, 90, 75);
+}
 
 .vetes{
   margin: 20px auto;
@@ -46,7 +49,8 @@ section{
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: rgb(230, 176, 140);
+  background-color: #502D16;
+  color: white;
 }
 
 .vetes div{
@@ -57,11 +61,18 @@ section{
   width: 100%;
 }
 
+.vetes div h1{
+  text-align: center;
+  padding: 15px;
+}
+
+.vetes div p{
+  text-align: center;
+  padding: 0 15px;
+}
+
 .vetes div img{
   max-width:22vmax;
+  margin-top: 20px;
   margin-bottom: 10px;
-}
-.vetes div iframe{
-  max-width:22vmax;
-  margin-top: 10px;
 }
