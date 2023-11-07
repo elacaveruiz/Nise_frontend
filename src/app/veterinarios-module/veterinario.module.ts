@@ -11,7 +11,6 @@ import { VeterinarioComponent } from './veterinario.component';
 
 
 
-
 @NgModule({
   declarations: [
     VeterinarioComponent,
@@ -21,8 +20,10 @@ import { VeterinarioComponent } from './veterinario.component';
   imports: [
     BrowserModule,
     VeterinarioRoutingModule,
-    FormsModule
+    FormsModule,
   ],
- 
+  exports: [
+    VeterinariosListarComponent,
+  ]
 })
 export class VeterinarioModule { } //esto se cambia
