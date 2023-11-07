@@ -1,3 +1,5 @@
+//Aqui ponemos todos los links de la app
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
