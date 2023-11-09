@@ -2,51 +2,44 @@
 
 <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
 
-    <div>
-      <label for="nombre">nombre:</label>
-      <input type="text" id="nombre" formControlName="nombre">
+    <div class="campo">
+      
+      <input type="text" size="40" id="nombre" formControlName="nombre" placeholder="Nombre">
     </div>
 
-    <div>
-        <label for="telefono">telefono:</label>
-        <input type="text" id="telefono" formControlName="telefono">
+    <div class="campo">
+        <input type="text" size="40" id="telefono" formControlName="telefono" placeholder="Teléfono">
     </div>
 
-    <div>
-      <label for="direccion">direccion:</label>
-      <input type="text" id="direccion" formControlName="direccion">
+    <div class="campo">
+      <input type="text" size="40" id="direccion" formControlName="direccion" placeholder="Dirección">
     </div>
 
-    <div>
-      <label for="email">email:</label>
-      <input type="text" id="email" formControlName="email">
+    <div class="campo">
+      <input type="text" size="40" id="email" formControlName="email" placeholder="Email">
     </div>
 
-    <div>
-        <label for="dni">dni:</label>
-        <input type="text" id="dni" formControlName="dni">
+    <div class="campo">
+        <input type="text" size="40" id="dni" formControlName="dni" placeholder="DNI">
     </div>
 
-    <div>
-        <label for="preferenciaTipoAnimal">preferenciaTipoAnimal:</label>
-        <input type="text" id="preferenciaTipoAnimal" formControlName="preferenciaTipoAnimal">
+    <div class="campo">
+        <input type="text" size="40" id="preferenciaTipoAnimal" formControlName="preferenciaTipoAnimal" placeholder="Animal preferido">
     </div>
 
-    <div>
-        <label for="preferenciaTipoTamanyo">preferenciaTipoTamanyo:</label>
-        <input type="text" id="preferenciaTipoTamanyo" formControlName="preferenciaTipoTamanyo">
+    <div class="campo">
+        <input type="text" size="40" id="preferenciaTipoTamanyo" formControlName="preferenciaTipoTamanyo" placeholder="Tamaño preferido">
     </div>
 
-    <div>
-        <label for="preferenciaSexo">preferenciaSexo:</label>
-        <input type="text" id="preferenciaSexo" formControlName="preferenciaSexo">
+    <div class="campo">
+        <input type="text" size="40" id="preferenciaSexo" formControlName="preferenciaSexo" placeholder="Sexo preferido">
     </div>
 
-    <div formGroupName="loginDTO">
-      <label for="username">username:</label>
-      <input type="text" id="username" formControlName="username">
-      <label for="password">password:</label>
-      <input type="text" id="password" formControlName="password">
+    <div formGroupName="loginDTO" class="dto">
+      <div class="campos_login">
+      <input type="text" size="40" id="username" formControlName="username" placeholder="Username"></div>
+      <div class="campos_login">
+      <input type="text" size="40" id="password" formControlName="password" placeholder="Contraseña"></div>
     </div>
 
     <button type="submit">Registrar</button>
