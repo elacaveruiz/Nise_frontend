@@ -1,5 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
-
+import { Component, ElementRef, HostListener} from '@angular/core';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
