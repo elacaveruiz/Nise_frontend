@@ -39,7 +39,10 @@ section{
 }
 
 .bgvetes{
-  background-color: rgb(116, 90, 75);
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vetes{
@@ -75,4 +78,67 @@ section{
   max-width:22vmax;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.card {
+  width: 500px;
+  height: 200px;
+  background-color: #be9481;
+  background: linear-gradient(90deg, rgba(41,17,6,1) 0%, rgba(101,54,33,1) 37%, rgba(138,77,46,1) 100%);
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.card .card-para {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.card-content {
+  transform: translateY(50%);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card-content {
+  transform: translateY(0%);
 }
