@@ -7,6 +7,8 @@ import { MascotasRoutingModule } from './mascotas-routing.module';
 import { MascotasListarComponent } from './mascotas-listar/mascotas-listar.component';
 import { MascotasCrearComponent } from './mascotas-crear/mascotas-crear.component';
 import { MascotasComponent } from './mascotas.component';
+import { MascotasDetailComponent } from './mascotas-detail/mascotas-detail.component';
+import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.component';
 
 
 
@@ -14,7 +16,9 @@ import { MascotasComponent } from './mascotas.component';
   declarations: [
     MascotasComponent,
     MascotasListarComponent,
-    MascotasCrearComponent
+    MascotasCrearComponent,
+    MascotasDetailComponent,
+    MascotasEditarComponent
   ],
   imports: [
     BrowserModule,

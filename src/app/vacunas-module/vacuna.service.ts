@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Vacuna } from './vacuna';
 
 @Injectable({
@@ -8,25 +8,41 @@ import { Vacuna } from './vacuna';
 })
 export class VacunaService {
 
-  private vacunasURL: string;
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    this.vacunasURL = 'http://localhost:8080/vacuna';
-   }
-
+  private vacunaURL = "http://localhost:8080/vacuna"
 
   //LISTAR
-  public findAll(): Observable<Vacuna[]> {
-    return this.http.get<Vacuna[]>(this.vacunasURL);
+  getVacunaList(): Observable<Vacuna[]>{
+    return this.httpClient.get<Vacuna[]>(`${this.vacunaURL}`);
+  }
+
+  //LISTAR ONE BY ONE -- DETAIL
+  getVacunaById(id: number): Observable<Vacuna>{
+    return this.httpClient.get<Vacuna>(`${this.vacunaURL}/${id}`);
+  }
+  // public detail(id: number): Observable<Vacuna> {
+  //   return this.httpClient.get<Vacuna>(this.vacunaURL + `detalle/${id}`);
+  // }
+
+  //CREAR
+  createVacuna(vacuna: Vacuna): Observable<Object>{
+    return this.httpClient.post(`${this.vacunaURL}`, vacuna);
+  }
+  // saveVacuna(vacuna: Vacuna): Observable<Vacuna> {
+  //   return this.httpClient.post<Vacuna>(this.vacunaURL, vacuna);
+  // }
+
+  //EDITAR
+  updateVacuna(id: number, vacuna: Vacuna): Observable<Object>{
+    return this.httpClient.put(`${this.vacunaURL}/${id}`, vacuna);
   }
 
 
-  //GUARDAR
-  public save(vacuna: Vacuna){
-    return this.http.post<Vacuna>(this.vacunasURL, vacuna);
+  //BORRAR
+  deleteVacuna(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.vacunaURL}/${id}`);
   }
-
-
 
 
 }

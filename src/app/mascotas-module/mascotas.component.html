@@ -1,13 +1,5 @@
 <h2>Mascotas Module</h2>
-<a routerLink = "['/protectora/menu1']">Menu 1</a>
-<a routerLink = "['/protectora/menu2']">Menu 2</a>
-<a routerLink = "['/protectora/menu3']">Menu 3 </a>
+<a routerLink = "/mascotas/mascotasListar" routerLinkActive="active">Listar</a>
+<a routerLink = "/mascotas/mascotasCrear" routerLinkActive="active">Crear</a>
 
-
-<app-mascotas-listar></app-mascotas-listar>
-<app-mascotas-crear></app-mascotas-crear>
-
-<!-- <button>
-<a routerLink="/protectorasCrear" routerLinkActive="active"> Crear protectora Lo amarillo es lo que tengo en protectora-routing.module -->
-    
-<!-- </a></button> --> 
+<router-outlet></router-outlet>
