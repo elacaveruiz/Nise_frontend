@@ -16,14 +16,18 @@ import { LoginRegistroComponent } from './login-registro/login-registro.componen
 import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
 import { InicioComponent } from './inicio/inicio.component';
 
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para los formularios
+import { DataTablesModule } from 'angular-datatables';
+
 import { ProtectoraModule } from './protectoras-module/protectora.module';
 import { MascotasModule } from './mascotas-module/mascotas.module';
 import { VacunaModule } from './vacunas-module/vacuna.module';
 import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
+
 
 
 @NgModule({
@@ -51,6 +55,7 @@ import { RegisterProtectoraComponent } from './register-protectora/register-prot
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DataTablesModule,
     ProtectoraModule, //importo el nuevo module que he creado
     MascotasModule,
     VacunaModule,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Mascotas } from '../mascotas';
+import { Mascota } from '../mascotas';
 import { MascotasService } from '../mascotas.service';
+import { Router } from '@angular/router';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-mascotas-listar',
@@ -9,15 +11,33 @@ import { MascotasService } from '../mascotas.service';
 })
 export class MascotasListarComponent implements OnInit{
 
-  mascotas: Mascotas[];
+  mascotas: Mascota[];
 
-  constructor(private mascotasService: MascotasService){
-
-  }
+  constructor(private mascotasService: MascotasService,
+    private router: Router){}
   
-  ngOnInit() {
-    this.mascotasService.findAll().subscribe(data => {
+  ngOnInit(): void {
+    this.getMascotas();
+  }
+
+  private getMascotas(){
+    this.mascotasService.getMascotaList().subscribe(data => {
       this.mascotas = data;
+    });
+  }
+
+  mascotaDetails(id: number){
+    this.router.navigate(['mascota-details', id]);
+  }
+
+  updateMascota(id: number){
+    this.router.navigate(['update-mascota', id]);
+  }
+
+  deleteMascota(id: number){
+    this.mascotasService.deleteMascota(id).subscribe(data => {
+      console.log(data);
+      this.getMascotas();
     })
   }
 

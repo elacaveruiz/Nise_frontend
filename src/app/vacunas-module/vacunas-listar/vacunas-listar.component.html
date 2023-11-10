@@ -1,25 +1,26 @@
-<h2>Listado vacunas</h2>
+<div class = "row">
+    <h2> Vacunas List</h2>
+</div>
 
-<table class="table table-striped">
-
+<table class = "table table-striped table-bordered">
     <thead>
-        <tr></tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Animal</th>
-            <th>Numero Dosis</th>
+        <tr>
+            <th> Nombre </th>
+            <th> tipoAnimal </th>
+            <th> num_dosis </th>
+            <th> Actions </th>
+        </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let vacuna of vacunas">
-            <td> {{vacuna.id }} </td>
-            <td> {{vacuna.nombre }} </td>
-            <td> {{vacuna.tipoAnimal }} </td>
-            <td> {{vacuna.num_dosis }} </td>
-
+        <tr *ngFor = "let vacuna of vacunas" >
+            <td> {{ vacuna.nombre }} </td>
+            <td> {{ vacuna.tipoAnimal }} </td>
+            <td> {{ vacuna.num_dosis }} </td>
+            <td>
+                <button [routerLink]="['update-vacuna', vacuna.id]" class="btn btn-primary">Update</button>
+                <button (click) = "deleteVacuna(vacuna.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button [routerLink]="['vacuna-details', vacuna.id]" class="btn btn-primary">Detail</button>
+            </td>
         </tr>
-
-
     </tbody>
-
-
 </table>

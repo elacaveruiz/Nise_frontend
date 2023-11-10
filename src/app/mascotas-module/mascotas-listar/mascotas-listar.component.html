@@ -1,9 +1,10 @@
-<h1>Mascotas listar working!</h1>
+<div class = "row">
+    <h2> Mascotas List</h2>
+</div>
 
-<table class="table table-striped">
-
+<table class = "table table-striped table-bordered">
     <thead>
-        <tr></tr>
+        <tr>
             <th>Nombre</th>
             <th>raza</th>
             <th>edad</th>
@@ -13,6 +14,8 @@
             <th>tipo Sexo</th>
             <th>tipo Tamanyo</th>
             <th>fecha Entrada Protectora</th>
+            <th> Actions </th>
+        </tr>
     </thead>
     <tbody>
         <tr *ngFor= "let mascota of mascotas">
@@ -25,11 +28,11 @@
             <td> {{mascota.tipoSexo }} </td>
             <td> {{mascota.tipoTamanyo }} </td>
             <td> {{mascota.fecha_entrada_protectora}} </td>
-
+            <td>
+                <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
+                <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button [routerLink]="['mascota-details', mascota.id]" class="btn btn-primary">Detail</button>
+            </td>
         </tr>
-
-
     </tbody>
-
-
 </table>

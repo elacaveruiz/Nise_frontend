@@ -1,9 +1,7 @@
-<h3>Registrar mascotas</h3>
-
 <div class="row">
     <div class="card col-md-6 offset-md-3 offset-md-3">
         <div class="row">
-            <h3 class="text-center"> Create mascota </h3>
+            <h3 class="text-center"> Update mascota </h3>
             <hr />
             <div class="card-body">
                 <form (ngSubmit)="onSubmit()">
@@ -15,15 +13,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label> descripcion</label>
-                        <input type="text" class="form-control" id="descripcion" [(ngModel)]="mascota.descripcion"
-                            name="descripcion">
-                    </div>
-
-                    <div class="form-group">
                         <label> raza</label>
                         <input type="text" class="form-control" id="raza" [(ngModel)]="mascota.raza"
                             name="raza">
+                    </div>
+
+                    <div class="form-group">
+                        <label> edad</label>
+                        <input type="text" class="form-control" id="edad" [(ngModel)]="mascota.edad"
+                            name="edad">
                     </div>
 
                     <div class="form-group">
@@ -34,7 +32,7 @@
 
                     <div class="form-group">
                         <label> chip</label>
-                        <input type="text" class="form-control" id="raza" [(ngModel)]="mascota.chip"
+                        <input type="text" class="form-control" id="chip" [(ngModel)]="mascota.chip"
                             name="chip">
                     </div>
 
@@ -52,7 +50,7 @@
 
                     <div class="form-group">
                         <label> tipoTamanyo</label>
-                        <input type="text" class="form-control" id="raza" [(ngModel)]="mascota.tipoTamanyo"
+                        <input type="text" class="form-control" id="edad" [(ngModel)]="mascota.tipoTamanyo"
                             name="tipoTamanyo">
                     </div>
 

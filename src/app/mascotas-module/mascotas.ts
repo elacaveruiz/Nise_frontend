@@ -1,4 +1,4 @@
-export class Mascotas {
+export class Mascota {
     id: number;
     nombre: string;
     descripcion: string;

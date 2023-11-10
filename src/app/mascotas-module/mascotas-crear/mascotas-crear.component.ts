@@ -1,32 +1,40 @@
-import { Component } from '@angular/core';
-import { Mascotas } from '../mascotas';
+import { Component, OnInit } from '@angular/core';
+import { Mascota } from '../mascotas';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MascotasService } from '../mascotas.service';
+import { data, error } from 'jquery';
 
 @Component({
   selector: 'app-mascotas-crear',
   templateUrl: './mascotas-crear.component.html',
   styleUrls: ['./mascotas-crear.component.css']
 })
-export class MascotasCrearComponent {
+export class MascotasCrearComponent implements OnInit{
 
-  mascota: Mascotas;
+  mascota: Mascota = new Mascota();
+  constructor(private mascotaSerice: MascotasService,
+    private router: Router){}
 
-  constructor(
-    private route: ActivatedRoute,
-      private router: Router,
-        private mascotaService: MascotasService) {
-          this.mascota = new Mascotas();
-        }
-  
-  onSubmit() {
-    this.mascotaService.save(this.mascota).subscribe(result =>
-      this.gotoMascotasListar());
+  ngOnInit(): void {
+    
   }
 
-
-  gotoMascotasListar(){
-    this.router.navigate(['/Inicio']);
+  saveMascota(){
+    this.mascotaSerice.createMascota(this.mascota).subscribe(data => {
+      console.log(data);
+      this.gotoMascotaList();
+    },
+    error => console.log(error))
   }
+
+  gotoMascotaList(){
+    this.router.navigate(['/mascotasListar']);
+  }
+
+  onSubmit(){
+    console.log(this.mascota);
+    this.saveMascota();
+  }
+
 
 }

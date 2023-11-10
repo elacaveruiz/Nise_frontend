@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Vacuna } from '../vacuna';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VacunaService } from '../vacuna.service';
@@ -8,25 +8,32 @@ import { VacunaService } from '../vacuna.service';
   templateUrl: './vacunas-crear.component.html',
   styleUrls: ['./vacunas-crear.component.css']
 })
-export class VacunasCrearComponent {
+export class VacunasCrearComponent implements OnInit{
 
-  vacuna: Vacuna;
+  vacuna: Vacuna = new Vacuna();
+  constructor(private vacunaService: VacunaService,
+    private router: Router){}
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private vacunaService: VacunaService){
-      this.vacuna = new Vacuna();
-    }
-
-  onSubmit() {
-    this.vacunaService.save(this.vacuna).subscribe(result =>
-      this.gotoVacunasList());
+  ngOnInit(): void {
+    
   }
 
-
-  gotoVacunasList(){
-    this.router.navigate(['/vacuna/vacunasListar']);
+  saveVacuna(){
+    this.vacunaService.createVacuna(this.vacuna).subscribe( data => {
+      console.log(data);
+      this.gotoVacunaList();
+    },
+    error => console.log(error))
   }
+
+  gotoVacunaList(){
+    this.router.navigate(['/vacunasListar']);
+  }
+
+  onSubmit(){
+    console.log(this.vacuna);
+    this.saveVacuna();
+  }
+
 
 }

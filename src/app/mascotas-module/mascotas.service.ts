@@ -1,27 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Mascotas } from './mascotas';
+import { Mascota } from './mascotas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MascotasService {
 
-  private mascotasURL: string;
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private http: HttpClient) { 
-    this.mascotasURL = 'http://localhost:8080/animal'
-  }
+  private mascotaURL= "http://localhost:8080/animal"
 
   //LISTAR
-  public findAll(): Observable<Mascotas[]> {
-    return this.http.get<Mascotas[]>(this.mascotasURL);
+  getMascotaList(): Observable<Mascota[]>{
+    return this.httpClient.get<Mascota[]>(`${this.mascotaURL}`);
   }
 
+  //LISTAR ONE BY ONE -- DETAIL
+  getMascotaById(id: number): Observable<Mascota>{
+    return this.httpClient.get<Mascota>(`${this.mascotaURL}/${id}`);
+  }
 
   //CREAR
-  public save(mascotas: Mascotas) {
-    return this.http.post<Mascotas>(this.mascotasURL, mascotas);
+  createMascota(mascota: Mascota): Observable<Object>{
+    return this.httpClient.post(`${this.mascotaURL}`, mascota);
   }
+
+  //EDITAR
+  updateMascota(id: number, mascota: Mascota): Observable<Object>{
+    return this.httpClient.put(`${this.mascotaURL}/${id}`, mascota);
+  }
+
+  //BORRAR
+  deleteMascota(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.mascotaURL}/${id}`);
+  }
+
 }
