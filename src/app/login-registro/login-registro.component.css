@@ -122,3 +122,14 @@
     transform: translateX(85%) !important;
 
 }
+
+
+.modal-body{
+    background: url(../../assets/imagenes/fondomodal.png);
+    background-size: cover;
+    background-position: center;
+    
+}
+.modal-title{
+    color:white;
+}
