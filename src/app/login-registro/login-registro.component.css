@@ -117,9 +117,9 @@
     text-decoration: underline;
 }
 .modalCenter{
-    top: 10% !important;
+    top: 2% !important;
     transform: translateY(-35%) !important;
-    transform: translateX(85%) !important;
+    transform: translateX(100%) !important;
 
 }
 
