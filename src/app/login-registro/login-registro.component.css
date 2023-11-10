@@ -116,6 +116,8 @@
 .register-link>a:hover{
     text-decoration: underline;
 }
+
+/**aqui empieza lo del modal**/
 .modalCenter{
     top: 10% !important;
     transform: translateY(-35%) !important;
