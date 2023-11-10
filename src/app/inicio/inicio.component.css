@@ -266,7 +266,7 @@ section{
 
 .home .content span{
   font-size: 1.4rem;
-  color: #092;
+  color: black;
   padding: 1rem 8rem 0 0;
   line-height: 1.5;
   font-family: 'Yusei Magic', sans-serif;
@@ -276,7 +276,7 @@ section{
 
 .home .content p{
   font-size: 1.1rem;
-  color: #092;
+  color: black;
   padding: 1rem 8rem 0 0;
   line-height: 1.5;
   font-family: 'Yusei Magic', sans-serif;
