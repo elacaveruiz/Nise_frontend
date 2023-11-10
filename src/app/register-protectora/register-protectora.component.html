@@ -1,39 +1,44 @@
 <body>
+  
+
   <div class="img">
-      <img src="../../assets/imagenes/registroprotectoraperro.jpg">
+    <img src="../../assets/imagenes/registroprotectoraperro.jpg">
   </div>
   <div class="doggo">
-    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="form">
-        <p class="title">Registro de protectoras</p>
-        <p class="message">Regístrate como protectora</p>
-        <div>
-          <label for="nombre">nombre:</label>
-          <input type="text" id="nombre" formControlName="nombre">
-        </div>
-
-        <div>
-            <label for="localidad">localidad:</label>
-            <input type="text" id="localidad" formControlName="localidad">
-        </div>
-
-        <div>
-          <label for="telefono">telefono:</label>
-          <input type="text" id="telefono" formControlName="telefono">
-        </div>
-
-        <div>
-          <label for="email">email:</label>
-          <input type="text" id="email" formControlName="email">
-        </div>
-
-        <div formGroupName="loginDTO">
-          <label for="username">username:</label>
-          <input type="text" id="username" formControlName="username">
-          <label for="password">password:</label>
-          <input type="text" id="password" formControlName="password">
-        </div>
-
-        <button type="submit">Registrar</button>
+    <form class="form" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <p class="title">Registro de protectoras</p>
+      <p class="message">Regístrate como protectora</p>
+      
+        <label>
+          <input required="" placeholder="" class="input" type="text" id="nombre" formControlName="nombre">
+          <span>Nombre:</span>
+        </label>
+  
+        <label>
+            <input required="" placeholder="" class="input" type="text" id="localidad" formControlName="localidad">
+            <span>Localidad:</span>
+        </label>
+  
+        <label>
+          <input required="" placeholder="" class="input" type="text" id="telefono" formControlName="telefono">
+          <span>telefono:</span>
+        </label>
+  
+        <label>
+          <input required="" placeholder="" class="input" type="text" id="email" formControlName="email">
+          <span>email:</span>
+        </label>
+  
+        <label formGroupName="loginDTO">
+          <input required="" placeholder="" class="input" type="text" id="username" formControlName="username">
+          <span>username:</span>
+        </label>
+        <label formGroupName="loginDTO">  
+          <input required="" placeholder="" class="input" type="text" id="password" formControlName="password">
+          <span>password:</span>
+        </label>
+        
+        <button class="submit" type="submit">Registrar</button>
       </form>
-    </div>
-    </body>
+  </div>
+  </body>
