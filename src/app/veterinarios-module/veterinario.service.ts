@@ -9,7 +9,7 @@ import { Veterinario } from './veterinario';
 export class VeterinarioService {
   constructor(private httpClient: HttpClient) {}
 
-  private veterinarioURL = "http://localhost:8080/veterinarios"
+  private veterinarioURL = "http://localhost:8080/veterinario"
 
   //LISTAR
   getVeterinarioList(): Observable<Veterinario[]>{
@@ -20,7 +20,6 @@ export class VeterinarioService {
   getVeterinarioById(id: number): Observable<Veterinario>{
     return this.httpClient.get<Veterinario>(`${this.veterinarioURL}/${id}`);
   }
-
 
   //CREAR
   createVeterinario(veterinario: Veterinario): Observable<Object>{
@@ -38,5 +37,5 @@ export class VeterinarioService {
     return this.httpClient.delete(`${this.veterinarioURL}/${id}`);
   }
 
-  
+
 }

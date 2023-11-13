@@ -19,4 +19,4 @@ describe('VeterinariosDetailComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-//revisar paths
+

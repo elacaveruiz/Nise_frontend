@@ -24,4 +24,4 @@ export class VeterinariosDetailComponent implements OnInit{
     });
   }
 }
-//revisar paths
+

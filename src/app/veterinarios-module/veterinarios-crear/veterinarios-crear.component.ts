@@ -35,4 +35,3 @@ export class VeterinariosCrearComponent implements OnInit {
     this.saveVeterinario();
   }
 }
-//mirar rutas

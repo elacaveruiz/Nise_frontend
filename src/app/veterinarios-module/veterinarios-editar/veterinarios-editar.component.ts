@@ -3,7 +3,6 @@ import { FormGroup } from '@angular/forms';
 import { Veterinario } from '../veterinario';
 import { VeterinarioService } from '../veterinario.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { data, error } from 'jquery';
 
 
