@@ -15,7 +15,7 @@ export class VeterinariosCrearComponent implements OnInit {
     private router: Router){}
 
   ngOnInit(): void {
-    
+
   }
 
   saveVeterinario(){
@@ -35,3 +35,4 @@ export class VeterinariosCrearComponent implements OnInit {
     this.saveVeterinario();
   }
 }
+//mirar rutas
