@@ -7,18 +7,36 @@ import { Veterinario } from './veterinario';
   providedIn: 'root'
 })
 export class VeterinarioService {
+  constructor(private httpClient: HttpClient) {}
 
-  private veterinarioURL: string;
+  private veterinarioURL = "http://localhost:8080/veterinarios"
 
-  constructor(private http: HttpClient) { 
-    this.veterinarioURL = 'http://localhost:8080/veterinario';
+  //LISTAR
+  getVeterinarioList(): Observable<Veterinario[]>{
+    return this.httpClient.get<Veterinario[]>(`${this.veterinarioURL}`);
   }
 
-  public findAll(): Observable<Veterinario[]> {
-    return this.http.get<Veterinario[]>(this.veterinarioURL);
+  //LISTAR ONE BY ONE -- DETAIL
+  getVeterinarioById(id: number): Observable<Veterinario>{
+    return this.httpClient.get<Veterinario>(`${this.veterinarioURL}/${id}`);
   }
 
-  public save(veterinario : Veterinario) {
-    return this.http.post<Veterinario>(this.veterinarioURL, veterinario);
+
+  //CREAR
+  createVeterinario(veterinario: Veterinario): Observable<Object>{
+    return this.httpClient.post(`${this.veterinarioURL}`, veterinario);
   }
+
+  //EDITAR
+  updateVeterinario(id: number, veterinario: Veterinario): Observable<Object>{
+    return this.httpClient.put(`${this.veterinarioURL}/${id}`, veterinario);
+  }
+
+
+  //BORRAR
+  deleteVeterinario(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.veterinarioURL}/${id}`);
+  }
+
+  
 }

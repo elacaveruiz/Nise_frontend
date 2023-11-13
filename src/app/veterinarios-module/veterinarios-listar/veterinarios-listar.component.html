@@ -8,6 +8,7 @@
             <th>direccion</th>
             <th>telefono</th>
             <th>email</th>
+            <th>Botones</th>
     </thead>
     <tbody>
         <tr *ngFor= "let veterinario of veterinarios">
@@ -15,6 +16,9 @@
             <td> {{veterinario.direccion }} </td>
             <td> {{veterinario.telefono }} </td>
             <td> {{veterinario.email }} </td>
+            <td><button  class="btn btn-primary">Update</button>
+                <button  style="margin-left: 10px"  class = "btn btn-danger"> Delete</button>
+                <button [routerLink]="['veterinario-details', veterinario.id]" class="btn btn-primary">Detail</button></td>
 
         </tr>
 
