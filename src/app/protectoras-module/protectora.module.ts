@@ -3,7 +3,9 @@ import { ProtectoraRoutingModule } from './protectora-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { protectoraComponent } from './protectora.component';
 import { ProtectorasListarComponent } from './protectoras-listar/protectoras-listar.component';
-import { ProtectoraRegistroComponent } from './protectora-registro/protectora-registro.component';
+import { ProtectorasCrearComponent } from './protectoras-crear/protectoras-crear.component';
+import { ProtectorasEditarComponent } from './protectoras-editar/protectoras-editar.component';
+import { ProtectorasDetailComponent } from './protectoras-detail/protectoras-detail.component';
 import { FormsModule } from '@angular/forms'; //para los formularios
 
 
@@ -11,7 +13,9 @@ import { FormsModule } from '@angular/forms'; //para los formularios
   declarations: [
     protectoraComponent,
     ProtectorasListarComponent,
-    ProtectoraRegistroComponent
+    ProtectorasCrearComponent,
+    ProtectorasEditarComponent,
+    ProtectorasDetailComponent,
   ],
   imports: [
     BrowserModule,

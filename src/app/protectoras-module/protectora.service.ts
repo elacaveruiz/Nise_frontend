@@ -8,25 +8,32 @@ import { Protectora } from './protectora';
 })
 export class ProtectoraService {
 
+  private protectoraURL = "http://localhost:8080/protectora"
 
-  private protectoraURL: string;
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-    this.protectoraURL = 'http://localhost:8080/protectora';
-   }
-
-   //LISTAR
-  public findAll(): Observable<Protectora[]> {
-    return this.http.get<Protectora[]>(this.protectoraURL);
+  //LISTAR PROTECTORAS
+  getProtectoraList(): Observable<Protectora[]>{
+    return this.httpClient.get<Protectora[]>(`${this.protectoraURL}`)
+  }
+  
+  //LISTAR ONE BY ONE -- DETAIL
+  getProtectoraById(id: number): Observable<Protectora>{
+    return this.httpClient.get<Protectora>(`${this.protectoraURL}/${id}`);
   }
 
-
-  //CREAR(?)
-  public save(protectora: Protectora) {
-    return this.http.post<Protectora>(this.protectoraURL, protectora);
+  //CREAR
+  createProtectora(protectora: Protectora): Observable<Object>{
+    return this.httpClient.post(`${this.protectoraURL}`, protectora);
   }
- 
 
+  //EDITAR
+  updateProtectora(id: number, protectora: Protectora): Observable<Object>{
+    return this.httpClient.put(`${this.protectoraURL}/${id}`, protectora);
+  }
 
-
+  //ELIMINAR
+  deleteProtectora(id: number): Observable<any>{
+    return this.httpClient.delete(`${this.protectoraURL}/${id}`);
+  }
 }
