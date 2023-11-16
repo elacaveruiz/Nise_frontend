@@ -1,3 +1,4 @@
+/*
 .cuerpo{
   display: flex;
   flex-direction: column;
@@ -31,6 +32,8 @@
   align-items: center;
   }
   /**esto para la tabla**/
+
+  /*
   body {
   min-height: 100vh;
   display: flex;
@@ -118,6 +121,8 @@
   
   
   /**los iconos**/
+
+  /*
   .icon-btn {
   width: 50px;
   height: 50px;
@@ -226,6 +231,7 @@
   }
   /*prueba*/
   
+  /*
   .add-btn:hover .add-icon::after {
   right: 15px;
   height: 4px;
@@ -235,3 +241,4 @@
   width: 40px;
   }
   
+  */

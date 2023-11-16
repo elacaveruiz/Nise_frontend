@@ -3,7 +3,6 @@ import { FormGroup } from '@angular/forms';
 import { Vacuna } from '../vacuna';
 import { VacunaService } from '../vacuna.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { data, error } from 'jquery';
 
 @Component({

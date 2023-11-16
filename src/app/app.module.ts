@@ -19,7 +19,6 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para los formularios
-import { DataTablesModule } from 'angular-datatables';
 
 import { ProtectoraModule } from './protectoras-module/protectora.module';
 import { MascotasModule } from './mascotas-module/mascotas.module';
@@ -55,7 +54,6 @@ import { RegisterProtectoraComponent } from './register-protectora/register-prot
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule,
     ProtectoraModule, //importo el nuevo module que he creado
     MascotasModule,
     VacunaModule,
