@@ -1,5 +1,5 @@
 
-<header>
+<header *ngIf="rol === ''">
 
     <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
 
@@ -10,10 +10,10 @@
         <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
         <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
     </nav>
-
     <div class="inicio_sesion">
       <button routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</button>
     </div>
+
     <div class="toggle_btn" (click)="toggleClass()" >
       <img src="../../assets/imagenes/menu.png"  alt="">
     </div>
@@ -28,6 +28,102 @@
     </div>
 
 </header>
+
+<header *ngIf="rol === 'USUARIO'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+      <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
+      <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
+      <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
+      <a routerLink="/Perfil" routerLinkActive="active"class="a5">Mi perfil</a>
+  </nav>
+  <div class="inicio_sesion">
+    <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</button>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+    <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+    <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+    <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Mi perfil</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</a></li>
+  </div>
+
+</header>
+
+<header *ngIf="rol === 'PROTECTORA'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+      <a routerLink="/mascotas/mascotasListar" routerLinkActive="active"class="a2">Gestionar Mascotas</a>
+      <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Gestionar Adopciones</a>
+      <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Notificaciones</a>
+      <a routerLink="/Perfil" routerLinkActive="active"class="a5">Nuestro perfil</a>
+  </nav>
+  <div class="inicio_sesion">
+    <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</button>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Gestionar Mascotas</a></li>
+    <li><a routerLink="/Veterinario" routerLinkActive="active">Gestionar Adopciones</a></li>
+    <li><a routerLink="/Ayudanos" routerLinkActive="active">Notificaciones</a></li>
+    <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Nuestro perfil</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</a></li>
+  </div>
+
+</header>
+
+<header *ngIf="rol === 'ADMIN'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/Adopcion" routerLinkActive="active"class="admin">Gestion de Usuarios</a>
+      <a routerLink="/protectora/protectorasListar" routerLinkActive="active"class="admin">Gestion de Protectoras</a>
+      <a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active"class="admin">Gestion de Veterinarios</a>
+      <a routerLink="/vacuna/vacunasListar" routerLinkActive="active"class="admin">Gestion de Vacunas</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Protectoras</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Usuarios</a>
+  </nav>
+  <div class="inicio_sesion">
+    <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</button>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Gestion de Usuarios</a></li>
+    <li><a routerLink="/protectora/protectorasListar" routerLinkActive="active">Gestion de Protectoras</a></li>
+    <li><a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active">Gestion de Veterinarios</a></li>
+    <li><a routerLink="/vacuna/vacunasListar" routerLinkActive="active">Gestion de Vacunas</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Protectoras</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Usuarios</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar de sesión</a></li>
+  </div>
+
+</header>
+
 <section class="home" id="home">
 
     <div class="content">

@@ -51,6 +51,12 @@ header .navbar a{
   padding: 0 1.5rem;
   color: #666;
 }
+
+.admin{
+  font-size: 1.0rem !important;
+  padding: 0 0.8rem !important;
+  color: #666;
+}
 /*
 .a1{
   animation: bounce-top 0.9s both;
@@ -179,8 +185,9 @@ header .navbar a:hover{
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: scroll;
   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
 }
 
 .dropdown_menu.open {
