@@ -17,6 +17,7 @@ import { VacunasComponent } from './vacunas-module/vacuna.component';
 import { VeterinarioComponent } from './veterinarios-module/veterinario.component';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
+import { UsuariosComponent } from './usuarios-module/usuario.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'veterinarios', component: VeterinarioComponent},
   {path: 'registerProtectora', component: RegisterProtectoraComponent},
   {path: 'registerUsuario', component: RegisterUsuarioComponent},
+  {path: 'usuarios', component: UsuariosComponent},
 
 
 ];

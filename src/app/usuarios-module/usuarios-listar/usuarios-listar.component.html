@@ -1,0 +1,38 @@
+<div class = "row">
+    <h2> Usuarios List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>telefono</th>
+            <th>direccion</th>
+            <th>email</th>
+            <th>dni</th>
+            <th>preferenciaTipoAnimal</th>
+            <th>preferenciaTipoTamanyo</th>
+            <th>preferenciaSexo</th>
+            <th>Username</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let usuario of usuarios">
+            <td> {{usuario.nombre }} </td>
+            <td> {{usuario.telefono }} </td>
+            <td> {{usuario.direccion }} </td>
+            <td> {{usuario.email }} </td>
+            <td> {{usuario.dni }} </td>
+            <td> {{usuario.preferenciaTipoAnimal }} </td>
+            <td> {{usuario.preferenciaTipoTamanyo }} </td>
+            <td> {{usuario.preferenciaSexo }} </td>
+            <td> Aqui va el username </td>
+            <td>
+                <!-- <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
+                <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+                <button [routerLink]="['mascota-details', usuario.id]" class="btn btn-primary">Detail</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

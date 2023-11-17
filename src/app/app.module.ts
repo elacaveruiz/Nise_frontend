@@ -26,6 +26,7 @@ import { VacunaModule } from './vacunas-module/vacuna.module';
 import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
+import { UsuarioModule } from './usuarios-module/usuario.module';
 import { PerfilComponent } from './perfil/perfil.component';
 
 
@@ -52,7 +53,7 @@ import { PerfilComponent } from './perfil/perfil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -60,6 +61,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     MascotasModule,
     VacunaModule,
     VeterinarioModule,
+    UsuarioModule,
 
   ],
     providers: [],

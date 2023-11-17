@@ -16,7 +16,7 @@ export class ProtectoraService {
   getProtectoraList(): Observable<Protectora[]>{
     return this.httpClient.get<Protectora[]>(`${this.protectoraURL}`)
   }
-  
+
   //LISTAR ONE BY ONE -- DETAIL
   getProtectoraById(id: number): Observable<Protectora>{
     return this.httpClient.get<Protectora>(`${this.protectoraURL}/${id}`);
