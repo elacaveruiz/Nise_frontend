@@ -1,16 +1,15 @@
 
 <div class="body">
     <div class="wrapper">
-        <form action="">
+        <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="tex" placeholder="Nombre de usuario"
+                <input formControlName="username" type="tex" placeholder="Nombre de usuario"
                 required>
 
             </div>
             <div class="input-box">
-                <input type="password"
-                placeholder="Contraseña" required>
+                <input type="password" formControlName="password" placeholder="Contraseña" required>
 
             </div>
             <div class="remember-forgot">
@@ -20,27 +19,9 @@
             <button type="submit" class="btn">Conectarse</button>
             <div class="register-link">
                 <p>¿No tienes una cuenta? </p>
-                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a type="button" routerLink="/registerUsuario" routerLinkActive="active">
                     Regístrate
                 </a>
             </div>
         </form>
     </div>
-    <!-- Button trigger modal -->
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modalCenter">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Regístrate como usuario</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body bg-dark">
-          <app-register-usuario></app-register-usuario>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

@@ -8,14 +8,20 @@
   .cabecera{
   display: flex;
   flex-direction: row;
+  margin-top: 2rem;
   }
   .cabecera>h1{
   backdrop-filter: blur(15px);
   padding: 0 1rem 0 1rem;
-  border-radius: 2rem;
+  border-radius: 3px;
   }
   
-  
+  .logo img{
+    width: 80px;
+    backdrop-filter: blur(15px);
+    border-radius: 3px;
+  }
+
   * {
   margin: 0;
   padding: 0;

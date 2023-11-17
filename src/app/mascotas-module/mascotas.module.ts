@@ -25,6 +25,9 @@ import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.compo
     MascotasRoutingModule,
     FormsModule
   ],
+  exports: [
+    MascotasListarComponent,
+  ]
  
 })
 export class MascotasModule { }
