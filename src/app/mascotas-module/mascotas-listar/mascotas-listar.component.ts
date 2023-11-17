@@ -15,9 +15,15 @@ export class MascotasListarComponent implements OnInit{
 
   constructor(private mascotasService: MascotasService,
     private router: Router){}
+
+    username : string = '';
   
   ngOnInit(): void {
     this.getMascotas();
+
+    const nombre = JSON.parse(localStorage.getItem('datos')!);
+    this.username = nombre.username;
+
   }
 
   private getMascotas(){
