@@ -26,7 +26,6 @@ import { VacunaModule } from './vacunas-module/vacuna.module';
 import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
-import { ChatComponent } from './components/chat/chat.component';
 import { UsuarioModule } from './usuarios-module/usuario.module';
 import { PerfilComponent } from './perfil/perfil.component';
 
@@ -49,7 +48,6 @@ import { PerfilComponent } from './perfil/perfil.component';
     InicioComponent,
     RegisterUsuarioComponent,
     RegisterProtectoraComponent,
-    ChatComponent,
     PerfilComponent,
   ],
   imports: [
