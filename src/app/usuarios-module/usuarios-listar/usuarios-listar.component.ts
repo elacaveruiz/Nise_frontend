@@ -3,7 +3,7 @@ import { Usuario } from '../usuario';
 import { loginDTO } from '../loginDTO';
 import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
+
 
 @Component({
   selector: 'app-usuarios-listar',

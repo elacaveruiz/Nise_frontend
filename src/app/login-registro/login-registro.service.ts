@@ -11,39 +11,42 @@ export class LoginUsuarioService {
 
   private registerUsuarioURL: string;
   private prueba : string;
-  datosActualizados: Subject<any> = new Subject<any>();
 
 
 
-  constructor(private http: HttpClient, private router : Router) { 
+  constructor(private http: HttpClient, private router : Router) {
     this.registerUsuarioURL= 'http://localhost:8080/login';
     this.prueba= 'http://localhost:8080/token/info';
   }
 
 
   //CREAR
-  public login(loginDTO: loginDTO){
-    this.router.navigate(['/Inicio']);
-    return this.http.post<loginDTO>(this.registerUsuarioURL, loginDTO);
-    
+  public async login(loginDTO: loginDTO){
+    setTimeout(async () => {
+      const httpData = await this.DataSynchronous();
+      localStorage.setItem('dato', JSON.stringify(httpData));
+      this.router.navigate(['/Inicio']);
+    },500);
+    return await this.http.post<loginDTO>(this.registerUsuarioURL, loginDTO).toPromise();
+
   }
+
 
  public datos(){
   let parametros = new HttpParams();
-  parametros = parametros.append('token', JSON.parse(localStorage.getItem('tokenObject')!).token);
-  parametros = parametros.append('frontendKey', 'gatitoPresumido2023'); 
-
-
+  parametros = parametros.append('token', JSON.parse(localStorage.getItem('token')!).token);
+  parametros = parametros.append('frontendKey', 'gatitoPresumido2023');
   const opciones = {
     params: parametros
   }
-//  return this.http.post(`${this.prueba}`, parametros).subscribe(datos => {
-    // Cuando los datos estén disponibles, emite el evento con los datos
-//    this.datosActualizados.next(datos);
-//  });
-
   return this.http.post(`${this.prueba}`, parametros);
-  
+
+ }
+
+ public async DataSynchronous(){
+  const respuesta = await this.datos().toPromise();
+
+  return respuesta;
  }
 
 }
