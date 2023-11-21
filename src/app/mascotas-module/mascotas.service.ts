@@ -37,4 +37,19 @@ export class MascotasService {
     return this.httpClient.delete(`${this.mascotaURL}/${id}`);
   }
 
+
+  //INTERFAZ USUARIO
+    mostrarPerros(): Observable<Mascota[]>{
+      return this.httpClient.get<Mascota[]>(`${this.mascotaURL}/buscar/tipo?tipoAnimal=0`)
+    }
+
+    mostrarGatos(): Observable<Mascota[]>{
+      return this.httpClient.get<Mascota[]>(`${this.mascotaURL}/buscar/tipo?tipoAnimal=1`)
+    }
+
+    mostrarOtros(): Observable<Mascota[]>{
+      return this.httpClient.get<Mascota[]>(`${this.mascotaURL}/buscar/tipo?tipoAnimal=2`)
+    }
+
+
 }
