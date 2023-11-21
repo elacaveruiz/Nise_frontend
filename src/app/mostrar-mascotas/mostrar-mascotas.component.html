@@ -7,17 +7,26 @@
     <section class="filtros">
         <h3>Filtrar</h3>
 
-        <div class="dropdown_menu">
+        <!-- <div class="dropdown_menu">
             <button> Especie <i class='bx bxs-down-arrow'></i> </button>
-            
-
-            <!-- <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+            <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
             <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
             <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
             <li><a routerLink="/Quienes_somos" routerLinkActive="active">¿Quienes Somos?</a></li>
             <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
-            <li><a href="/Login" class="action_btn">Inicio de sesión</a></li> -->
-          </div>
+            <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
+        </div> -->
+
+        <div class="form-group">
+            <label for="especie"><b>Especie: </b></label>
+            <select class="form-control" name="especie">
+                <option value="" selected></option>
+                <option value="">Perro</option>
+                <option value="">Gato</option>
+                <option value="">Otros</option>
+            </select>
+        </div>
+
     </section>
 
     <section>
@@ -54,7 +63,7 @@
                 <p>Datos de la mascota</p>
             </div>
         </div>
-        
+
         <div class="card">
             <img src="../../assets/imagenes/mostar_mascotas/gato5.jpg" class="img_mascota">
             <div class="datosAnimal">
