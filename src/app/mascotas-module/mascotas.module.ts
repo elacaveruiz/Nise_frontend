@@ -9,6 +9,9 @@ import { MascotasCrearComponent } from './mascotas-crear/mascotas-crear.componen
 import { MascotasComponent } from './mascotas.component';
 import { MascotasDetailComponent } from './mascotas-detail/mascotas-detail.component';
 import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.component';
+import { MostrarGatosComponent } from './mostrar-gatos/mostrar-gatos.component';
+import { MostrarOtrosComponent } from './mostrar-otros/mostrar-otros.component';
+import { MostrarPerrosComponent } from './mostrar-perros/mostrar-perros.component';
 
 
 
@@ -18,7 +21,10 @@ import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.compo
     MascotasListarComponent,
     MascotasCrearComponent,
     MascotasDetailComponent,
-    MascotasEditarComponent
+    MascotasEditarComponent,
+    MostrarGatosComponent,
+    MostrarOtrosComponent,
+    MostrarPerrosComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,6 @@ import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.compo
   exports: [
     MascotasListarComponent,
   ]
- 
+
 })
 export class MascotasModule { }
