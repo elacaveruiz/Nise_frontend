@@ -1,7 +1,11 @@
 import { Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginUsuarioService } from '../login-registro/login-registro.service';
-import { timer } from 'rxjs';
+
+
+import { Usuario } from './usuario';
+import { UsuarioService } from '../usuarios-module/usuario.service';
+import { Protectora } from './protectora';
 
 
 @Component({
@@ -12,72 +16,43 @@ import { timer } from 'rxjs';
 export class InicioComponent implements OnInit {
 
   rol : any = '';
-  token : any = '';
-  datos : any;
+  username: string;
+  usuarios: Usuario;
+  protectoras: Protectora;
+  id: number;
 
-  constructor( private router :Router, private LoginUsuarioService: LoginUsuarioService){}
+  constructor( private router :Router, private LoginUsuarioService: LoginUsuarioService, private UsuarioService: UsuarioService){}
   ngOnInit(){
-    const token = JSON.parse(localStorage.getItem('tokenObject')!);
-    this.token = token?.token || '';
+     let user = JSON.parse(localStorage.getItem('dato')!);
+     this.username = user?.username;
+     this.rol= user.rol;
 
-    setTimeout(() => {
-      if (token !== null && token !== undefined && token !== '') { 
-        this.LoginUsuarioService.datos().subscribe(result =>{
-          window.localStorage.setItem('datos', JSON.stringify(result));
-        });
-        if (!localStorage.getItem('pipo')) {
-          // Establece la variable 'reloaded' en el almacenamiento local
-          localStorage.setItem('pipo', 'true');
-          // Recarga la página
-          location.reload();
-        }
-      }
-        if (!localStorage.getItem('reloaded')) {
-          // Establece la variable 'reloaded' en el almacenamiento local
-          localStorage.setItem('reloaded', 'true');
-          // Recarga la página
-          location.reload();
-        }
-     
-       }, 1000);
-
-
-
-
-//    this.LoginUsuarioService.datos();
-
-//   this.LoginUsuarioService.datosActualizados.subscribe(datos => {
-//      // Aquí puedes actualizar tu interfaz de usuario con los nuevos datos
-//      this.datos = localStorage.setItem('datos', JSON.stringify(datos));
-//    });
-
-
-    const perico = JSON.parse(localStorage.getItem('datos')!);
-    this.rol = perico?.rol || '';
-    
-      
+     if(this.rol === 'PROTECTORA'){
+      this.protectoraPerfil();
+     }
   }
-
 
   isActive = false;
 
   toggleClass() {
-    this.isActive = !this.isActive;    
-  }  
+    this.isActive = !this.isActive;
+  }
 
 
   public logout(){
     localStorage.clear();
     this.rol = '';
-    this.token = '';
     this.router.navigate(['']);
   }
 
-
-
-
-
-  
+ private protectoraPerfil(){
+  this.UsuarioService.getProtectoraUsername(this.username)
+  .subscribe(data => {
+    this.protectoras = data;
+    this.id = data.id;
+    localStorage.setItem('id', JSON.stringify(data.id));
+    })
+  }
 }
 
 

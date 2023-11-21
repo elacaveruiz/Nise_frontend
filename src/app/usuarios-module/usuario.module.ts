@@ -7,6 +7,7 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 import { UsuariosListarComponent } from './usuarios-listar/usuarios-listar.component';
 import { UsuariosDetailComponent } from './usuarios-detail/usuarios-detail.component';
 import { UsuariosComponent } from './usuario.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -15,13 +16,14 @@ import { UsuariosComponent } from './usuario.component';
   declarations: [
     UsuariosComponent,
     UsuariosListarComponent,
-    UsuariosDetailComponent
+    UsuariosDetailComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
     UsuarioRoutingModule,
     FormsModule
   ],
- 
+
 })
 export class UsuarioModule { } //esto se cambia

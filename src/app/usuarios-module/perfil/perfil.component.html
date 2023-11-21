@@ -1,0 +1,77 @@
+
+<div *ngIf="rol === 'USUARIO' || rol === 'ADMIN' && rol !== ''">
+
+<div class = "row" >
+    <h2> Bienvenido {{usuarios.nombre}}</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>nombre</th>
+            <th>telefono</th>
+            <th>direccion</th>
+            <th>email</th>
+            <th>dni</th>
+            <th>Animal Preferido</th>
+            <th>Tamaño del Animal</th>
+            <th>Preferencia de Sexo</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{username}} </td>
+            <td> {{usuarios.nombre }} </td>
+            <td> {{usuarios.telefono }} </td>
+            <td> {{usuarios.direccion }} </td>
+            <td> {{usuarios.email }} </td>
+            <td> {{usuarios.dni }} </td>
+            <td> {{usuarios.preferenciaTipoAnimal }} </td>
+            <td> {{usuarios.preferenciaTipoTamanyo }} </td>
+            <td> {{usuarios.preferenciaSexo }} </td>
+            <td>
+                <!-- <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
+                <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+                <button [routerLink]="['mascota-details', usuarios.id]" class="btn btn-primary">Detail</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+<div *ngIf="rol === 'PROTECTORA'">
+<div class = "row">
+    <h2> Bienvenido {{protectoras.nombre}}</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>nombre</th>
+            <th>telefono</th>
+            <th>direccion</th>
+            <th>email</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{username}} </td>
+            <td> {{protectoras.nombre }} </td>
+            <td> {{protectoras.telefono }} </td>
+            <td> {{protectoras.localidad }} </td>
+            <td> {{protectoras.email }} </td>
+            <td>
+                <!-- <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
+                <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+                <button [routerLink]="['mascota-details', usuarios.id]" class="btn btn-primary">Detail</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
