@@ -54,6 +54,12 @@ header .navbar a{
 
 .admin{
   font-size: 1.0rem !important;
+  padding: 0 0.6rem !important;
+  color: #666;
+}
+
+.usuario{
+  font-size: 1.3rem !important;
   padding: 0 0.8rem !important;
   color: #666;
 }
@@ -187,7 +193,7 @@ header .navbar a:hover{
   border-radius: 10px;
   overflow-y: scroll;
   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
+
 }
 
 .dropdown_menu.open {

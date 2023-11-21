@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginUsuarioService } from './login-registro.service';
 import { HttpParams } from '@angular/common/http';
+import { loginDTO } from './loginDTO';
 @Component({
   selector: 'app-login-registro',
   templateUrl: './login-registro.component.html',
@@ -16,17 +17,14 @@ export class LoginRegistroComponent {
         username: '',
         password: '',
       });
-  } 
-
-  onSubmit(){
-    const registroData= this.loginform.value;
-    console.log(registroData);
-
-    this.LoginUsuarioService.login(registroData).subscribe(result => {
-    window.localStorage.setItem('tokenObject', JSON.stringify(result));
-    });
   }
 
+  async onSubmit(){
+    const registroData= this.loginform.value;
+    let httpData = await this.LoginUsuarioService.login(registroData);
+    localStorage.setItem('token', JSON.stringify(httpData));
+
+  }
 
 
 }

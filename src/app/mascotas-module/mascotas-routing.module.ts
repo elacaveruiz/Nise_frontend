@@ -5,8 +5,10 @@ import { MascotasListarComponent } from './mascotas-listar/mascotas-listar.compo
 import { MascotasCrearComponent } from './mascotas-crear/mascotas-crear.component';
 import { MascotasEditarComponent } from './mascotas-editar/mascotas-editar.component';
 import { MascotasDetailComponent } from './mascotas-detail/mascotas-detail.component';
-
-
+import { MascotasProtectoraComponent } from './mascotas-protectora/mascotas-protectora.component';
+import { MostrarGatosComponent } from './mostrar-gatos/mostrar-gatos.component';
+import { MostrarPerrosComponent } from './mostrar-perros/mostrar-perros.component';
+import { MostrarOtrosComponent } from './mostrar-otros/mostrar-otros.component';
 
 
 const routes: Routes = [
@@ -14,8 +16,13 @@ const routes: Routes = [
     path: 'mascotas', component: MascotasComponent, children: [
       {path: 'mascotasListar', component: MascotasListarComponent},
       {path: 'mascotasCrear', component: MascotasCrearComponent},
+      {path: 'mascotasProtectora', component: MascotasProtectoraComponent},
       {path: 'mascotasListar/update-mascota/:id', component: MascotasEditarComponent},
       {path: 'mascotasListar/mascota-details/:id', component: MascotasDetailComponent},
+
+      {path: 'mostrarGatos', component: MostrarGatosComponent},
+      {path: 'mostrarPerros', component: MostrarPerrosComponent},
+      {path: 'mostrarOtros', component: MostrarOtrosComponent},
     ]
 
   }

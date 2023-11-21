@@ -17,11 +17,11 @@ export class MascotasListarComponent implements OnInit{
     private router: Router){}
 
     username : string = '';
-  
+
   ngOnInit(): void {
     this.getMascotas();
 
-    const nombre = JSON.parse(localStorage.getItem('datos')!);
+    const nombre = JSON.parse(localStorage.getItem('dato')!);
     this.username = nombre.username;
 
   }
