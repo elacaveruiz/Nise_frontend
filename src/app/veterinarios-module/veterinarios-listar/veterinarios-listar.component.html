@@ -17,7 +17,7 @@
             <td> {{veterinario.telefono }} </td>
             <td> {{veterinario.email }} </td>
             <td><button  [routerLink]="['update-veterinario', veterinario.id]" class="btn btn-primary">Update</button>
-                <button  style="margin-left: 10px"  class = "btn btn-danger"> Delete</button>
+                <button  (click)="deleteVeterinario(veterinario.id)" style="margin-left: 10px"  class = "btn btn-danger"> Delete</button>
                 <button [routerLink]="['veterinario-details', veterinario.id]" class="btn btn-primary">Detail</button></td>
 
         </tr>
