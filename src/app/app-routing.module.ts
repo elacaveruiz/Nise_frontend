@@ -12,7 +12,7 @@ import { MostrarMascotasComponent } from './mostrar-mascotas/mostrar-mascotas.co
 import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
 import { InformacionMascotaComponent } from './informacion-mascota/informacion-mascota.component';
 import { protectoraComponent } from './protectoras-module/protectora.component';
-import { MascotasComponent } from './mascotas-module/mascotas.component';
+import { AnimalComponent } from './animal-module/animal.component';
 import { VacunasComponent } from './vacunas-module/vacuna.component';
 import { VeterinarioComponent } from './veterinarios-module/veterinario.component';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
 
 
   {path: 'protectoras', component: protectoraComponent},
-  {path: 'mascotas', component: MascotasComponent},
+  {path: 'animal', component: AnimalComponent},
   {path: 'vacunas', component: VacunasComponent},
   {path: 'veterinarios', component: VeterinarioComponent},
   {path: 'registerProtectora', component: RegisterProtectoraComponent},
