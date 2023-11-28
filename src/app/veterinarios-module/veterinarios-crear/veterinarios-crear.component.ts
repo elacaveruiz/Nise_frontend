@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Veterinario } from '../veterinario';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VeterinarioService } from '../veterinario.service';
@@ -8,24 +8,30 @@ import { VeterinarioService } from '../veterinario.service';
   templateUrl: './veterinarios-crear.component.html',
   styleUrls: ['./veterinarios-crear.component.css']
 })
-export class VeterinariosCrearComponent {
+export class VeterinariosCrearComponent implements OnInit {
 
-  veterinario : Veterinario;
+  veterinario : Veterinario = new Veterinario();
+  constructor(private veterinarioService: VeterinarioService,
+    private router: Router){}
 
-  constructor(
-    private route: ActivatedRoute,
-      private router: Router,
-        private veterinarioService: VeterinarioService){
-    this.veterinario = new Veterinario();
-        }
+  ngOnInit(): void {
 
-
-  onSubmit(){
-    this.veterinarioService.save(this.veterinario).subscribe(result =>
-      this.gotoInicio());
   }
 
-  gotoInicio() {
-    this.router.navigate(['/Inicio']);
-   } 
+  saveVeterinario(){
+    this.veterinarioService.createVeterinario(this.veterinario).subscribe( data => {
+      console.log(data);
+      this.gotoVeterinarioList();
+    },
+    error => console.log(error))
+  }
+
+  gotoVeterinarioList(){
+    this.router.navigate(['/veterinariosListar']);
+  }
+
+  onSubmit(){
+    console.log(this.veterinario);
+    this.saveVeterinario();
+  }
 }

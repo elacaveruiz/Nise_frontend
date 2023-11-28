@@ -16,9 +16,9 @@ export class VeterinariosMainComponent {
   }
 
   ngOnInit() {
-    this.veterinarioService.findAll().subscribe(data => {
-      this.veterinarios = data;
-    })
+    //this.veterinarioService.findAll().subscribe(data => {
+    //this.veterinarios = data;
+    //})
   }
 
 }
