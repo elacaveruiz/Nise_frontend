@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para los formularios
 
 import { ProtectoraModule } from './protectoras-module/protectora.module';
-import { MascotasModule } from './mascotas-module/mascotas.module';
+import { AnimalModule } from './animal-module/animal.module';
 import { VacunaModule } from './vacunas-module/vacuna.module';
 import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
@@ -57,7 +57,7 @@ import { UsuarioModule } from './usuarios-module/usuario.module';
     FormsModule,
     ReactiveFormsModule,
     ProtectoraModule, //importo el nuevo module que he creado
-    MascotasModule,
+    AnimalModule,
     VacunaModule,
     VeterinarioModule,
     UsuarioModule,

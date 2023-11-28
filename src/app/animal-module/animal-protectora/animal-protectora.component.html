@@ -1,0 +1,39 @@
+<div class = "row">
+    <h2> Mascotas de {{username}}</h2>
+    <a routerLink="/Inicio" routerLinkActive="active"> Inicio</a>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>raza</th>
+            <th>edad</th>
+            <th>disponibilidad</th>
+            <th>chip</th>
+            <th>tipo Animal</th>
+            <th>tipo Sexo</th>
+            <th>tipo Tamanyo</th>
+            <th>fecha Entrada Protectora</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let animal of animales">
+            <td> {{animal.nombre }} </td>
+            <td> {{animal.raza }} </td>
+            <td> {{animal.edad }} </td>
+            <td> {{animal.disponibilidad }} </td>
+            <td> {{animal.chip }} </td>
+            <td> {{animal.tipoAnimal }} </td>
+            <td> {{animal.tipoSexo }} </td>
+            <td> {{animal.tipoTamanyo }} </td>
+            <td> {{animal.fechaEntradaProtectora}} </td>
+            <td>
+                <button [routerLink]="['update-animal', animal.id]" class="btn btn-primary">Update</button>
+                <!-- <button (click) = "deleteAnimal(animal.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+                <button [routerLink]="['animal-details', animal.id]" class="btn btn-primary">Detail</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
