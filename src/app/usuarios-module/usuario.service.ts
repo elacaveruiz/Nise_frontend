@@ -25,7 +25,6 @@ export class UsuarioService {
     return this.httpClient.get<Usuario>(`${this.usuarioURL}/${id}`);
   }
 
-
   getUsuariobyUsername(username: string): Observable<Usuario>{
     return this.httpClient.get<Usuario>(`${this.usernamesURL}/${username}`);
   }

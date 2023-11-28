@@ -24,7 +24,7 @@ export class InicioComponent implements OnInit {
   constructor( private router :Router, private LoginUsuarioService: LoginUsuarioService, private UsuarioService: UsuarioService){}
   ngOnInit(){
      let user = JSON.parse(localStorage.getItem('dato')!);
-     this.username = user?.username;
+     this.username = user.username;
      this.rol= user.rol;
 
      if(this.rol === 'PROTECTORA'){
@@ -54,5 +54,3 @@ export class InicioComponent implements OnInit {
     })
   }
 }
-
-
