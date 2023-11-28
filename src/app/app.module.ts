@@ -19,6 +19,7 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para los formularios
+import { SharedModule } from './shared.module';
 
 import { ProtectoraModule } from './protectoras-module/protectora.module';
 import { AnimalModule } from './animal-module/animal.module';
@@ -27,6 +28,7 @@ import { VeterinarioModule } from './veterinarios-module/veterinario.module';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
 import { UsuarioModule } from './usuarios-module/usuario.module';
+import { SolicitudModule } from './solicitud-module/solicitud.module';
 
 
 
@@ -34,8 +36,8 @@ import { UsuarioModule } from './usuarios-module/usuario.module';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    NavbarComponent,
+    // FooterComponent,
+    // NavbarComponent,
     CarouselComponent,
     AdopcionComponent,
     MostrarMascotasComponent,
@@ -56,12 +58,16 @@ import { UsuarioModule } from './usuarios-module/usuario.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule, //para poder importar componentes
     ProtectoraModule, //importo el nuevo module que he creado
     AnimalModule,
     VacunaModule,
     VeterinarioModule,
     UsuarioModule,
+    SolicitudModule,
 
+  ],
+  exports: [
   ],
     providers: [],
     bootstrap: [AppComponent]

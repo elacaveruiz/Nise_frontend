@@ -13,6 +13,10 @@ import { AnimalProtectoraComponent } from './animal-protectora/animal-protectora
 import { MostrarGatosComponent } from './mostrar-gatos/mostrar-gatos.component';
 import { MostrarPerrosComponent } from './mostrar-perros/mostrar-perros.component';
 import { MostrarOtrosComponent } from './mostrar-otros/mostrar-otros.component';
+import { MostrarGatosDetailComponent } from './mostrar-gatos-detail/mostrar-gatos-detail.component';
+import { MostrarOtrosDetailComponent } from './mostrar-otros-detail/mostrar-otros-detail.component';
+import { MostrarPerrosDetailComponent } from './mostrar-perros-detail/mostrar-perros-detail.component';
+import { SharedModule } from '../shared.module';
 
 
 
@@ -26,13 +30,17 @@ import { MostrarOtrosComponent } from './mostrar-otros/mostrar-otros.component';
     AnimalProtectoraComponent,
     MostrarGatosComponent,
     MostrarPerrosComponent,
-    MostrarOtrosComponent
+    MostrarOtrosComponent,
+    MostrarGatosDetailComponent,
+    MostrarOtrosDetailComponent,
+    MostrarPerrosDetailComponent
   ],
   imports: [
     BrowserModule,
     AnimalRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
- 
+
 })
 export class AnimalModule { }

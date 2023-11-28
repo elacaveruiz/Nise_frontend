@@ -1,37 +1,66 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
 
-body{
-    background: rgb(105, 116, 167);
-    width: auto;
-    height: auto;
-    padding-bottom: 5rem;
-}
-
-.top_bar{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    padding-top: .5rem;
-}
-
-.top_bar img{
-    height: auto;
-    width: 7rem;
-}
-
 section{
-    width: 90%;
-    padding-left: 2.5rem;
-    margin-right: 2rem;
-    display: flex;
-
-    justify-content: space-around;
-    /* flex-flow: row wrap; */
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* justify-content: space-evenly; */
+    background-color: rgb(240, 255, 249);
+    width: 100%;
+    height: 100%;
+    font-family: 'Yusei Magic';
 }
 
+h2{
+    font-family: 'Margarine';
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+h4{
+    color: #5e885d;
+    font-weight: bold;
+}
+
+.imagendiv{
+    /* background-color: #8db398; */
+    /* background-color: #a2d1b5; */
+    background-image: url(../../../assets/imagenes/adopcion/pawOpacity.jpg);
+}
+
+.logo{
+    height: 5rem;
+    width: auto;
+    margin: 1rem 0 2rem 15rem;
+}
+
+.divSpan{
+    /* background-color: rgb(82, 183, 136); */
+    background-color: #5d8c5c;
+}
+
+span{
+    display: block;
+    font-size: .8rem;
+    margin-top: -1rem;
+    color: #919090;
+}
+
+#ficha{
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.504);
+}
+
+.container{
+    margin-bottom: 2rem;
+}
+
+.tarjetas{
+    display: flex;
+
+    justify-content: space-evenly;
+    /* flex-flow: row; */
+    flex-direction: row;
+}
 
 
 .card{
@@ -44,27 +73,13 @@ section{
     border-radius: 1.5%;
 }
 
-
-
-h2{
-    font-family: 'Margarine';
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-h3{
-    font-family: 'Yusei Magic';
-    font-size: 1.45rem;
-    padding-left: 1rem;
-}
-
-
 .img_mascota{ /*si aumento esto, tbm debo aumentar el gap de section */
     height: 20rem;
     width: 16rem;
     transition: transform 0.5s;
     animation: girar 3s linear ;
 }
+
 
 .datosAnimal{
     height: 5rem; /* Aqui le muevo para q el cuadrito gris suba o baje*/
@@ -79,6 +94,7 @@ h3{
     background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)
 }
 
+
 p{
     font-size: 15px;
     margin: 9%;
@@ -86,9 +102,11 @@ p{
     opacity: 0;
 }
 
+
 .card:hover{
     cursor: pointer;
 }
+
 
 .card:hover .datosAnimal{
     height: 8rem; /* Este es el tamaño del cuadrito negro:hover */
@@ -97,36 +115,8 @@ p{
     background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)
 }
 
+
 .card:hover p{
     opacity: 1;
     visibility: visible;
 }
-
-/* .dropdown_menu {
-    right: 2rem;
-    top: 100px;
-    height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .dropdown_menu.open {
-    height: 300px;
-    z-index: 1;
-  }
-
-  .dropdown_menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .dropdown_menu .action_btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  } */

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Animal } from './animal';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
+
+  private animalSeleccionadoSubject: BehaviorSubject<Animal | null>= new BehaviorSubject<Animal | null>(null);
+  private animalSeleccionado$: Observable<Animal | null> = this.animalSeleccionadoSubject.asObservable();
 
   constructor(private httpClient: HttpClient) {}
 
@@ -81,6 +84,25 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/buscar/tipo?tipoAnimal=2`)
   }
 
+  mostrarPerrosDetail(id: number): Observable<Animal>{
+    return this.httpClient.get<Animal>(`${this.animalURL}/buscar/tipo/${id}?tipoAnimal=0`);
+  }
 
+  mostrarGatosDetail(id: number): Observable<Animal>{
+    return this.httpClient.get<Animal>(`${this.animalURL}/buscar/tipo/${id}?tipoAnimal=1`);
+  }
+
+  mostrarOtrosDetail(id: number): Observable<Animal>{
+    return this.httpClient.get<Animal>(`${this.animalURL}/buscar/tipo/${id}?tipoAnimal=2`);
+  }
+
+
+  setAnimalSeleccionado(animal: Animal){
+    this.animalSeleccionadoSubject.next(animal);
+  }
+
+  getAnimalSeleccionado(): Observable<Animal | null>{
+    return this.animalSeleccionado$;
+  }
 
 }

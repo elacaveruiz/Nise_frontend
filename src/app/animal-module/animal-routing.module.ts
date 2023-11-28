@@ -9,6 +9,9 @@ import { AnimalProtectoraComponent } from './animal-protectora/animal-protectora
 import { MostrarPerrosComponent } from './mostrar-perros/mostrar-perros.component';
 import { MostrarGatosComponent } from './mostrar-gatos/mostrar-gatos.component';
 import { MostrarOtrosComponent } from './mostrar-otros/mostrar-otros.component';
+import { MostrarPerrosDetailComponent } from './mostrar-perros-detail/mostrar-perros-detail.component';
+import { MostrarGatosDetailComponent } from './mostrar-gatos-detail/mostrar-gatos-detail.component';
+import { MostrarOtrosDetailComponent } from './mostrar-otros-detail/mostrar-otros-detail.component';
 
 
 const routes: Routes = [
@@ -20,8 +23,11 @@ const routes: Routes = [
       {path: 'animalListar/animal-details/:id', component: AnimalDetailComponent},
       {path: 'animalProtectoras', component: AnimalProtectoraComponent},
       {path: 'mostrarPerros', component: MostrarPerrosComponent},
+      {path: 'mostrarPerros/:id', component: MostrarPerrosDetailComponent},
       {path: 'mostrarGatos', component: MostrarGatosComponent},
+      {path: 'mostrarGatos/:id', component: MostrarGatosDetailComponent},
       {path: 'mostrarOtros', component: MostrarOtrosComponent},
+      {path: 'mostrarOtros/:id', component: MostrarOtrosDetailComponent},
     ]
 
   }

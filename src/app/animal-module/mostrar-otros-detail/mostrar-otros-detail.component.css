@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+/* Para corregir lo del footer*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section{
+    background-color: rgb(240, 255, 249);
+    width: 100%;
+    height: 100%;
+    font-family: 'Yusei Magic'; 
+}
+
+h1{
+    font-family: 'Margarine';
+    font-weight: bold;
+}
+
+h4{
+    color: #5e885d;
+    font-weight: bold;
+}
+
+.imagendiv{
+    /* background-color: #8db398; */
+    /* background-color: #a2d1b5; */
+    background-image: url(../../../assets/imagenes/adopcion/pawOpacity.jpg);
+}
+
+.logo{
+    height: 5rem;
+    width: auto;
+    margin: 1rem 0 2rem 15rem;
+}
+
+#animal{
+    height: auto;
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+.divSpan{
+    /* background-color: rgb(82, 183, 136); */
+    background-color: #5d8c5c;
+}
+
+#ficha{
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.504);
+    margin-bottom: 2rem;
+}
+
+span{
+    display: block;
+    font-size: .8rem;
+    margin-top: -1rem;
+    color: #919090;
+}
+
+#caracteristicas{
+    line-height: 1.15rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.boton{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;  
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+#bannerVeterinario{
+    margin-top: 3rem;
+    width: 45rem;
+    height: 11rem;
+    border-radius: 1rem;
+}
+
+/* BOTON */
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px 20px 22px;
+    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: #e8e8e8;
+    border-color: #8db398;
+    border-style: solid;
+    border-width: 9px;
+    border-radius: 35px;
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(134, 124, 124);
+    transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
+    border-color 400ms ease-in-out,
+    background-color 400ms ease-in-out;
+    word-spacing: 2px;
+  }
+  
+  @keyframes movingBorders {
+    0% {
+      border-color: #8db398;
+    }
+  
+    50% {
+      border-color: #59a76f;
+    }
+  
+    90% {
+      border-color: #8db398;
+    }
+  }
+  
+  button:hover {
+    background-color: #eee;
+    transform: scale(105%);
+    animation: movingBorders 3s infinite;
+  }
+  
+  button svg {
+    margin-right: 11px;
+    fill: #5d8c5c;
+    transition: opacity 100ms ease-in-out;
+  }
+  
+  .filled {
+    position: absolute;
+    opacity: 0;
+    top: 20px;
+    left: 22px;
+  }
+  
+  @keyframes beatingHeart {
+    0% {
+      transform: scale(1);
+    }
+  
+    15% {
+      transform: scale(1.15);
+    }
+  
+    30% {
+      transform: scale(1);
+    }
+  
+    45% {
+      transform: scale(1.15);
+    }
+  
+    60% {
+      transform: scale(1);
+    }
+  }
+  
+  button:hover .empty {
+    opacity: 0;
+  }
+  
+  button:hover .filled {
+    opacity: 1;
+    animation: beatingHeart 1.2s infinite;
+  }
