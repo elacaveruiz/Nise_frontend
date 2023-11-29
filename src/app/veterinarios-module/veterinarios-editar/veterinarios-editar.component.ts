@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Veterinario } from '../veterinario';
 import { VeterinarioService } from '../veterinario.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { data, error } from 'jquery';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,33 +11,24 @@ import { data, error } from 'jquery';
 })
 export class VeterinariosEditarComponent implements OnInit{
 
-
   id: number;
   veterinario: Veterinario = new Veterinario();
   constructor(private veterinarioService: VeterinarioService,
     private route: ActivatedRoute,
-    private router: Router) {}
-
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
-
-    this.veterinarioService.getVeterinarioById(this.id).subscribe(data => {
-      this.veterinario = data;
-    }, error => console.log(error))
   }
 
-
   onSubmit(){
-    this.veterinarioService.updateVeterinario(this.id, this.veterinario).subscribe(data => {
-      this.gotoVeterinarioList();
+    this.veterinarioService.updateVeterinario(this.id, this.veterinario).subscribe( data => {
+      this.goToVeterinarioList();
     }
     , error => console.log(error));
   }
 
-
-  gotoVeterinarioList(){
+  goToVeterinarioList(){
     this.router.navigate(['/']);
   }
 }
