@@ -6,9 +6,23 @@
 
     <section class="filtros">
         <h3>Filtrar</h3>
-
+        <form (submit)="buscarPorRaza()">
+            <label for="raza">Buscar por Raza:</label>
+            <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
+            <button type="submit">Buscar</button>
+          </form>
         <div class="dropdown_menu">
-            <button> Especie <i class='bx bxs-down-arrow'></i> </button>
+            <form enctype="multipart/form-data">
+
+                <div class="form-group" >
+                    <label>Tamaño</label>
+                    <select id="tamanyo" name="tamanyo">
+                    <option value="GRANDE">Grande</option>
+                    <option value="MEDIANO">Mediano</option>
+                    <option value="PEQUEÑO">Pequeño</option>
+                    </select>
+                </div>
+                </form>
             <!-- <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
             <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
             <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>

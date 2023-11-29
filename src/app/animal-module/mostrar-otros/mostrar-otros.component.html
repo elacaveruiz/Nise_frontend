@@ -2,7 +2,11 @@
     <a routerLink="/Inicio" routerLinkActive="active"> Inicio</a>
     <h1>Otros</h1>
 </div>
-
+<form (submit)="buscarPorRaza()">
+    <label for="raza">Buscar por Raza:</label>
+    <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
+    <button type="submit">Buscar</button>
+  </form>
 <table class = "table table-striped table-bordered">
     <thead>
         <tr>

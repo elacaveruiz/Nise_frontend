@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class MostrarOtrosComponent {
 
   animales: Animal[];
+  razaABuscar: string;
 
   constructor(private animalService: AnimalService,
     private router: Router){}
@@ -25,5 +26,14 @@ export class MostrarOtrosComponent {
       this.animales = data;
     })
   }
-
+  buscarPorRaza(): void {
+    if (this.razaABuscar) {
+      const razaSinEspacios = this.razaABuscar.trim();
+      this.animalService.filtroRaza(razaSinEspacios.toLowerCase()).subscribe(data => {
+        this.animales = data;
+      });
+    } else {
+      this.getOtros();
+    }
+  }
 }

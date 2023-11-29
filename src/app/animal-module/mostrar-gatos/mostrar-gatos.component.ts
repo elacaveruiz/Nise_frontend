@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class MostrarGatosComponent {
 
   animales: Animal[];
+  terminoBusqueda: string = '';
+  resultados: string[] = [];
+  razaABuscar: string;
 
   constructor(private animalService: AnimalService,
     private router: Router){}
@@ -25,5 +28,22 @@ export class MostrarGatosComponent {
       this.animales = data;
     })
   }
+  
+  buscar() {
+    // Puedes implementar la lógica de búsqueda aquí, por ejemplo, filtrando los gatos que coincidan con el término de búsqueda.
+    // Por ahora, simplemente agregaremos un resultado de ejemplo.
+    this.resultados.push(`Resultado: ${this.terminoBusqueda}`);
+  }
 
+  buscarPorRaza(): void {
+    if (this.razaABuscar) {
+      const razaSinEspacios = this.razaABuscar.trim();
+      this.animalService.filtroRaza(razaSinEspacios.toLowerCase()).subscribe(data => {
+        this.animales = data;
+      });
+    } else {
+      this.getGatos();
+    }
+  }
 }
+

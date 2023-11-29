@@ -81,6 +81,10 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/buscar/tipo?tipoAnimal=2`)
   }
 
+  //FILTRO
+  filtroRaza(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}`);
+  }
 
 
 }
