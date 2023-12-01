@@ -10,7 +10,6 @@ export class AnimalService {
 
   constructor(private httpClient: HttpClient) {}
 
-
   private animalURL= "http://localhost:8080/animal";
   private animalProtectoraURL= "http://localhost:8080/animal/protectorasanimal"
 
@@ -86,6 +85,22 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/buscar/tipo?tipoAnimal=2`)
   }
 
+  //FILTRO
+  filtroRaza(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=0`);
+  }
+
+  filtroRaza1(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=1`);
+  }
+
+  filtroRaza2(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=2`);
+  }
+
+filtroSexoTamanyoYTipoAnimal(sexo: string, tamanyo: string, tipoAnimal: string): Observable<Animal[]> {
+  return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?sexo=${sexo}&tipoTamanyo=${tamanyo}&tipoAnimal=${tipoAnimal}`);
+}
   getUserData(): number {
     const userDataID = localStorage.getItem('id');
     console.log(userDataID);
