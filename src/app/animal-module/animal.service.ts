@@ -86,5 +86,8 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}`);
   }
 
+  filtroSexoTamanyoYTipoAnimal(sexo: string, tamanyo: string, tipoAnimal: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?sexo=${sexo}&tipoTamanyo=${tamanyo}&tipoAnimal=${tipoAnimal}`);
+  }
 
 }

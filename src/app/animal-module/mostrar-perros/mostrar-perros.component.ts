@@ -14,6 +14,10 @@ export class MostrarPerrosComponent {
 
   animales: Animal[];
   razaABuscar: string;
+  sexoElegido='';
+  tipoAnimalElegido: string = "0";
+  tamanyoElegido: string = '';
+  
 
   constructor(private animalService: AnimalService, private router: Router) {}
 
@@ -22,6 +26,7 @@ export class MostrarPerrosComponent {
   }
 
   private getPerrros(): void {
+
     this.animalService.mostrarPerros().subscribe(data => {
       this.animales = data;
     });
@@ -37,5 +42,33 @@ export class MostrarPerrosComponent {
       this.getPerrros();
     }
   }
+
+  onSelected(value: string, tipoAnimalElegido: string) {
+    this.sexoElegido = value;
+  
+    if (this.sexoElegido !== '' || this.sexoElegido !== null || this.tamanyoElegido !== '' || this.tamanyoElegido !== null ) {
+      this.animalService.filtroSexoTamanyoYTipoAnimal(this.sexoElegido, this.tamanyoElegido, this.tipoAnimalElegido)
+        .subscribe(data => {
+          this.animales = data;
+        });
+    } else{
+      this.getPerrros();
+    }
+  }
+  
+  onSelected1(value: string, tamanyoElegido: string) {
+    this.tamanyoElegido = value;
+  
+    if (this.sexoElegido !== '' || this.sexoElegido !== null || this.tamanyoElegido !== '' || this.tamanyoElegido !== null) {
+      this.animalService.filtroSexoTamanyoYTipoAnimal(this.sexoElegido, this.tamanyoElegido, this.tipoAnimalElegido)
+        .subscribe(data => {
+          this.animales = data;
+        });
+    } else {
+      this.getPerrros();
+    }
+  }
+  
+
   
 }

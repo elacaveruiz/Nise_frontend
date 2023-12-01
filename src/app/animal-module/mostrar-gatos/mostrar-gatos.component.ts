@@ -14,6 +14,7 @@ export class MostrarGatosComponent {
   terminoBusqueda: string = '';
   resultados: string[] = [];
   razaABuscar: string;
+  sexoElegido1='';
 
   constructor(private animalService: AnimalService,
     private router: Router){}
@@ -45,5 +46,6 @@ export class MostrarGatosComponent {
       this.getGatos();
     }
   }
+
 }
 
