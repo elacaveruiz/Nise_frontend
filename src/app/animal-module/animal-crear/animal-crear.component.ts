@@ -42,7 +42,7 @@ export class AnimalCrearComponent implements OnInit{
           console.log('Mascota creada correctamente');
         },
         error => {
-          console.log('Error al crear la mascota', error);
+          console.log('Mascota añadida correctamente', error);
         }
       );
     } else{
