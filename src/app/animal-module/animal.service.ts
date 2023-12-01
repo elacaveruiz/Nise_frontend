@@ -10,6 +10,7 @@ export class AnimalService {
 
   constructor(private httpClient: HttpClient) {}
 
+
   private animalURL= "http://localhost:8080/animal";
   private animalProtectoraURL= "http://localhost:8080/animal/protectorasanimal"
 
@@ -55,6 +56,10 @@ export class AnimalService {
 
     formData.append('animal', animalString);
 
+    const gestionString = JSON.stringify(this.getUserData());
+
+    formData.append('gestion', gestionString)
+
     return this.httpClient.post(`${this.animalURL}`, formData);
   }
 
@@ -81,6 +86,14 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/buscar/tipo?tipoAnimal=2`)
   }
 
-
+  getUserData(): number {
+    const userDataID = localStorage.getItem('id');
+    console.log(userDataID);
+    if (userDataID) {
+      return JSON.parse(userDataID);
+    } else {
+      return 0; // O algún otro manejo si no hay datos de usuario en el localStorage
+    }
+  }
 
 }
