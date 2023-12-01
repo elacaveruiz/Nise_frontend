@@ -11,6 +11,18 @@
             <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
             <button type="submit">Buscar</button>
           </form>
+        
+        <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
+            <option default = ''></option>
+            <option value="0">HEMBRA</option>
+            <option value="1">MACHO</option>
+        </select>
+        <select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
+          <option default = ''></option>
+          <option value="0">PEQUEÑO</option>
+          <option value="1">MEDIANO</option>
+          <option value="2">GRANDE</option>
+        </select>
 
             <!-- <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
             <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>

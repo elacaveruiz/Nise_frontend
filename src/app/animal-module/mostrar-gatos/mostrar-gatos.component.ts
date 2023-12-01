@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 export class MostrarGatosComponent {
 
   animales: Animal[];
-  terminoBusqueda: string = '';
-  resultados: string[] = [];
   razaABuscar: string;
-  sexoElegido1='';
+  sexoElegido='';
+  tipoAnimalElegido: string = "1";
+  tamanyoElegido: string = '';
 
   constructor(private animalService: AnimalService,
     private router: Router){}
@@ -30,19 +30,55 @@ export class MostrarGatosComponent {
     })
   }
   
-  buscar() {
-    // Puedes implementar la lógica de búsqueda aquí, por ejemplo, filtrando los gatos que coincidan con el término de búsqueda.
-    // Por ahora, simplemente agregaremos un resultado de ejemplo.
-    this.resultados.push(`Resultado: ${this.terminoBusqueda}`);
-  }
-
   buscarPorRaza(): void {
     if (this.razaABuscar) {
       const razaSinEspacios = this.razaABuscar.trim();
-      this.animalService.filtroRaza(razaSinEspacios.toLowerCase()).subscribe(data => {
+      this.animalService.filtroRaza1(razaSinEspacios.toLowerCase()).subscribe(data => {
         this.animales = data;
       });
     } else {
+      this.animales.pop();
+      this.getGatos();
+    }
+  }
+
+  onSelected(value: string, tipoAnimalElegido: string) {
+    this.sexoElegido = value;
+    if (
+      (this.sexoElegido !== '' && this.sexoElegido !== null) ||
+      (this.tamanyoElegido !== '' && this.tamanyoElegido !== null)
+    ) {
+      this.animalService
+        .filtroSexoTamanyoYTipoAnimal(
+          this.sexoElegido,
+          this.tamanyoElegido,
+          this.tipoAnimalElegido
+        )
+        .subscribe((data) => {
+          this.animales = data;
+        });
+    } else if (this.sexoElegido === '' && this.tamanyoElegido === '') {
+      this.getGatos();
+    }
+  }
+  
+  onSelected1(value: string, tamanyoElegido: string) {
+    this.tamanyoElegido = value;
+    if (
+      (this.sexoElegido !== '' && this.sexoElegido !== null) ||
+      (this.tamanyoElegido !== '' && this.tamanyoElegido !== null)
+    ) {
+      this.animalService
+        .filtroSexoTamanyoYTipoAnimal(
+          this.sexoElegido,
+          this.tamanyoElegido,
+          this.tipoAnimalElegido
+        )
+        .subscribe((data) => {
+          this.animales = data;
+        });
+    } else {
+      this.animales.pop();
       this.getGatos();
     }
   }
