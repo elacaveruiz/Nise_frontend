@@ -58,6 +58,10 @@ export class AnimalService {
 
     formData.append('animal', animalString);
 
+    const gestionString = JSON.stringify(this.getUserData());
+
+    formData.append('gestion', gestionString)
+
     return this.httpClient.post(`${this.animalURL}`, formData);
   }
 
@@ -84,6 +88,10 @@ export class AnimalService {
     return this.httpClient.get<Animal[]>(`${this.animalURL}/buscar/tipo?tipoAnimal=2`)
   }
 
+  //FILTRO
+  filtroRaza(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=0`);
+  }
   mostrarPerrosDetail(id: number): Observable<Animal>{
     return this.httpClient.get<Animal>(`${this.animalURL}/buscar/tipo/${id}?tipoAnimal=0`);
   }
@@ -97,12 +105,33 @@ export class AnimalService {
   }
 
 
+  filtroRaza1(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=1`);
+  }
   setAnimalSeleccionado(animal: Animal){
     this.animalSeleccionadoSubject.next(animal);
   }
 
+  filtroRaza2(raza: string): Observable<Animal[]> {
+    return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?raza=${raza}&tipoAnimal=2`);
+  }
+
+filtroSexoTamanyoYTipoAnimal(sexo: string, tamanyo: string, tipoAnimal: string): Observable<Animal[]> {
+  return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?sexo=${sexo}&tipoTamanyo=${tamanyo}&tipoAnimal=${tipoAnimal}`);
   getAnimalSeleccionado(): Observable<Animal | null>{
     return this.animalSeleccionado$;
   }
 
 }
+  getUserData(): number {
+    const userDataID = localStorage.getItem('id');
+    console.log(userDataID);
+    if (userDataID) {
+      return JSON.parse(userDataID);
+    } else {
+      return 0; // O algún otro manejo si no hay datos de usuario en el localStorage
+    }
+  }
+
+}
+

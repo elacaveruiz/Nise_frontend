@@ -1,3 +1,26 @@
+<section class="filtros">
+  <h3>Filtrar</h3>
+  <form (submit)="buscarPorRaza()">
+    <label for="raza">Buscar por Raza:</label>
+    <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
+    <option default = ''></option>
+    <option value="0">HEMBRA</option>
+    <option value="1">MACHO</option>
+  </select>
+  <select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
+    <option default = ''></option>
+    <option value="0">PEQUEÑO</option>
+    <option value="1">MEDIANO</option>
+    <option value="2">GRANDE</option>
+  </select>
+
+</section>
+
+
 <section>
     <div class="imagendiv">
         <img src="../../assets/imagenes/logonise.png" class="logo">
@@ -8,7 +31,6 @@
     <span></span>
         <div class="container" id="ficha">
             <h2>Estos son nuestros gatos en adopción!</h2>
-
             <div class="tarjetas" >
                 <div class=" eeeeeee" *ngFor= "let animal of animales">
                     <a [routerLink]="['/animal/mostrarGatos', animal.id]">
@@ -22,9 +44,7 @@
                     </a>
                 </div>
             </div>
-        </div>
 </section>
-
 <app-navbar></app-navbar>
 <app-footer></app-footer>
 

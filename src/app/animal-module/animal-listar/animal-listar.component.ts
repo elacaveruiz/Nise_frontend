@@ -12,6 +12,8 @@ import { data } from 'jquery';
 export class AnimalListarComponent implements OnInit{
   animals: Animal[];
 
+  onSubmit: any;
+
   constructor(private animalService: AnimalService,
     private router: Router){}
   
