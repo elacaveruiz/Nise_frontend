@@ -1,0 +1,13 @@
+<p>solicitud-crear works!</p>
+<p>Cuentanos porque quieres adoptarlo!</p>
+
+<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
+    <label>
+      Motivo:
+      <input type="text" formControlName="motivo">
+    </label>
+    <br>
+  
+    <button type="submit">Enviar Solicitud</button>
+  </form>
+    

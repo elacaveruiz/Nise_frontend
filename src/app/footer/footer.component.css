@@ -31,6 +31,7 @@ footer{
   background-color: var(--dark);
   color: white;
   background-color: #121212;
+  flex-shrink: 0;
 }
 
 .copyright-container{
@@ -133,7 +134,7 @@ footer .social-link:nth-of-type(4){/*Nth of type inside that container*/
 
 /*MEDIA QUERY*/
 @media (max-width: 768px){
-  
+
   .footer-container{
       padding: 2rem;
       flex-direction: column;

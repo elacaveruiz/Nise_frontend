@@ -1,3 +1,6 @@
+<h2>Mascotas Module</h2>
+<a routerLink = "/animal/animalListar" routerLinkActive="active">Listar</a>
+<a routerLink = "/animal/animalCrear" routerLinkActive="active">Crear</a>
 <div class = "row">
     <h2> Animal List</h2>
 </div>
@@ -35,8 +38,6 @@
                 <button (click) = "deleteAnimal(animal.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
                 <button [routerLink]="['animal-details', animal.id]" class="btn btn-primary" style="margin-left: 10px">Detail</button>
             </td>
-            
         </tr>
     </tbody>
 </table>
-

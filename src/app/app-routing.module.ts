@@ -18,6 +18,7 @@ import { VeterinarioComponent } from './veterinarios-module/veterinario.componen
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
 import { UsuariosComponent } from './usuarios-module/usuario.component';
+import { SolicitudComponent } from './solicitud-module/solicitud.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'registerProtectora', component: RegisterProtectoraComponent},
   {path: 'registerUsuario', component: RegisterUsuarioComponent},
   {path: 'usuarios', component: UsuariosComponent},
+  {path: 'solicitudes', component: SolicitudComponent},
 
 
 ];

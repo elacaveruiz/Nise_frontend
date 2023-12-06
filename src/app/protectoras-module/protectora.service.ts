@@ -36,4 +36,9 @@ export class ProtectoraService {
   deleteProtectora(id: number): Observable<any>{
     return this.httpClient.delete(`${this.protectoraURL}/${id}`);
   }
+
+  getProtectoraByAnimalId(animalId: number): Observable<any>{
+    return this.httpClient.get(`http://localhost:8080/animal/${animalId}/protectora`);
+  }
+
 }

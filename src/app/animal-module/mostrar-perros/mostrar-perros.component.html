@@ -1,51 +1,57 @@
-<!-- mostrar-perros.component.html -->
 
-<form (submit)="buscarPorRaza()">
-    <label for="raza">Buscar por Raza:</label>
-    <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
-    <button type="submit">Buscar</button>
-  </form>
+<div class="wrapper">
+    <section>
+        <div class="imagendiv">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+        </div>
+        <div class="divSpan">
+          <div class="filtros">
+            <h3>Filtrar</h3>
+            <form (submit)="buscarPorRaza()">
+              <label for="raza">Buscar por Raza:</label>
+              <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
+              <button type="submit">Buscar</button>
+            </form>
+          
+            <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
+                <option default = ''></option>
+                <option value="0">HEMBRA</option>
+                <option value="1">MACHO</option>
+            </select>
+            <select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
+              <option default = ''></option>
+              <option value="0">PEQUEÑO</option>
+              <option value="1">MEDIANO</option>
+              <option value="2">GRANDE</option>
+            </select>
+          </div>
+        </div>
+        <span></span>
+            <div class="container">
+                <h2>Estos son nuestras perros en adopción!</h2>
 
-<select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
-    <option default = ''></option>
-    <option value="0">HEMBRA</option>
-    <option value="1">MACHO</option>
-</select>
-<select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
-  <option default = ''></option>
-  <option value="0">PEQUEÑO</option>
-  <option value="1">MEDIANO</option>
-  <option value="2">GRANDE</option>
-</select>
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Raza</th>
-        <th>Edad</th>
-        <th>Chip</th>
-        <th>Tipo Animal</th>
-        <th>Tipo Sexo</th>
-        <th>Tipo Tamaño</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngIf="animales && animales.length > 0; else noResults">
-        <tr *ngFor="let animal of animales">
-          <td>{{ animal.nombre }}</td>
-          <td>{{ animal.raza }}</td>
-          <td>{{ animal.edad }}</td>
-          <td>{{ animal.chip }}</td>
-          <td>{{ animal.tipoAnimal }}</td>
-          <td>{{ animal.tipoSexo }}</td>
-          <td>{{ animal.tipoTamanyo }}</td>
-        </tr>
-      </ng-container>
-      <ng-template #noResults>
-        <tr>
-          <td colspan="7">No se encontraron resultados</td>
-        </tr>
-      </ng-template>
-    </tbody>
-  </table>
-  
+                <div class="tarjetas" >
+                  <ng-container *ngIf="animales && animales.length > 0; else noResults">
+                    <div class=" eeeeeee" *ngFor= "let animal of animales">
+                        <a [routerLink]="['/animal/mostrarPerros', animal.id]">
+                            <div class="card">
+                                <img src="../../../assets/imagenes/adopcion/gato.jpg" class="img_mascota">
+                                <div class="datosAnimal">
+                                    <h3>{{animal.nombre }}</h3>
+                                    <p>{{animal.descripcion }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                  </ng-container>
+                  <ng-template #noResults>
+                    <p>No se encontraron resultados</p>
+                  </ng-template>  
+                </div>
+            </div>
+    </section>
+</div>
+
+<app-navbar></app-navbar>
+<app-footer></app-footer>
+

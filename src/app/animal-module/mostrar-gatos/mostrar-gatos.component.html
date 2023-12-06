@@ -1,62 +1,49 @@
-<body>
-    <section class="top_bar">
-        <img src="../../assets/imagenes/logonise.png">
-        <h2>Nuestros gatos en adopción</h2>
-    </section>
-
-    <section class="filtros">
-        <h3>Filtrar</h3>
-        <form (submit)="buscarPorRaza()">
-            <label for="raza">Buscar por Raza:</label>
-            <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
-            <button type="submit">Buscar</button>
-          </form>
-        
-        <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
-            <option default = ''></option>
-            <option value="0">HEMBRA</option>
-            <option value="1">MACHO</option>
-        </select>
-        <select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
-          <option default = ''></option>
-          <option value="0">PEQUEÑO</option>
-          <option value="1">MEDIANO</option>
-          <option value="2">GRANDE</option>
-        </select>
-
-            <!-- <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
-            <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
-            <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
-            <li><a routerLink="/Quienes_somos" routerLinkActive="active">¿Quienes Somos?</a></li>
-            <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
-            <li><a href="/Login" class="action_btn">Inicio de sesión</a></li> -->
-        
-
-        <!-- <div class="form-group">
-            <label for="especie"><b>Especie: </b></label>
-            <select class="form-control" name="especie">
-                <option value="" selected></option>
-                <option value="">Perro</option>
-                <option value="">Gato</option>
-                <option value="">Otros</option>
+<section>
+    <div class="imagendiv">
+        <img src="../../assets/imagenes/logonise.png" class="logo">
+    </div>
+    <div class="divSpan">
+        <div class="filtros">
+            <h3>Filtrar</h3>
+            <form (submit)="buscarPorRaza()">
+              <label for="raza">Buscar por Raza:</label>
+              <input type="text" id="raza" [(ngModel)]="razaABuscar" name="raza">
+              <button type="submit">Buscar</button>
+            </form>
+            <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
+              <option default = ''></option>
+              <option value="0">HEMBRA</option>
+              <option value="1">MACHO</option>
             </select>
-        </div> -->
-
-    </section>
-
-    <section>
-        <div class=" eeeeeee" *ngFor= "let animal of animales">
-            <a routerLink="/InformacionMascota" routerLinkActive="active">
-                <div class="card">
-                        <img src="../../assets/imagenes/mostar_mascotas/gato1.jpg" class="img_mascota">
-                        <div class="datosAnimal">
-                            <h3>{{animal.nombre }}</h3>
-                            <p>{{animal.tipoSexo }}</p>
-                        </div>
-                </div>
-            </a>
+            <select id="tipoTamanyo" name="tipoTamanyo" class="form-control" #tamanyoElegido (change)="onSelected1(tamanyoElegido.value, tipoAnimalElegido)">
+              <option default = ''></option>
+              <option value="0">PEQUEÑO</option>
+              <option value="1">MEDIANO</option>
+              <option value="2">GRANDE</option>
+            </select>
         </div>
+          
+    </div>
+    <span></span>
+        <div class="container" id="ficha">
+            <h2>¡Estos son nuestros gatos en adopción!</h2>
 
-    </section>
+            <div class="tarjetas" >
+                <div class=" eeeeeee" *ngFor= "let animal of animales">
+                    <a [routerLink]="['/animal/mostrarGatos', animal.id]">
+                        <div class="card">
+                            <img src="../../../assets/imagenes/adopcion/gato.jpg" class="img_mascota">
+                            <div class="datosAnimal">
+                                <h3>{{animal.nombre }}</h3>
+                                <p>{{animal.descripcion }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+</section>
 
-</body>
+<app-navbar></app-navbar>
+<app-footer></app-footer>
+
