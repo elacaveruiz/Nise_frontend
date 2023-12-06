@@ -1,5 +1,5 @@
 import { mascotasDTO } from "./mascotasDTO";
-import { usuarioDTO } from "./usuarioDTO" 
+import { usuarioDTO } from "./usuarioDTO"
 import { protectoraDTO } from "./protectoraDTO"
 
 
@@ -11,5 +11,5 @@ export class Solicitud {
 
     animalDTO: mascotasDTO[] = [];
     usuarioDTO: usuarioDTO[] = [];
-    protectoraDTO: protectoraDTO[] = [];
+    protectoraDTO: protectoraDTO;
 }

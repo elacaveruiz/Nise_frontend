@@ -9,7 +9,7 @@ import { SolicitudCrearComponent } from './solicitud-crear/solicitud-crear.compo
 const routes: Routes = [
   {
     path: 'solicituds', component: SolicitudComponent, children: [
-      {path: 'solicitud', component: SolicitudCrearComponent},
+      {path: 'solicitud/:id', component: SolicitudCrearComponent},
     ]
   }
 ];

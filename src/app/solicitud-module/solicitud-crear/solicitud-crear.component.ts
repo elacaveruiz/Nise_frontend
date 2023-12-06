@@ -3,8 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { SolicitudService } from '../solicitud.service';
 import { Usuario } from 'src/app/inicio/usuario';
 import { UsuarioService } from 'src/app/usuarios-module/usuario.service';
-import { data } from 'jquery';
+import { data, param } from 'jquery';
 import { AnimalService } from 'src/app/animal-module/animal.service';
+import { ActivatedRoute } from '@angular/router';
+import { ProtectoraService } from 'src/app/protectoras-module/protectora.service';
 
 @Component({
   selector: 'app-solicitud-crear',
@@ -15,35 +17,57 @@ export class SolicitudCrearComponent implements OnInit{
 
   solicitudForm: FormGroup;
   usuarioLogueado: Usuario;
+  username: string;
+  animalId: number; //tengo que ver como recupero este id
+  protectoraId: number;
 
   constructor(
     private formBuilder: FormBuilder,
     private solicitudService: SolicitudService,
     private usuarioService: UsuarioService,
-    private animalService: AnimalService
+    private animalService: AnimalService,
+    private protectoraService: ProtectoraService,
+    private route: ActivatedRoute
   ){}
 
   ngOnInit() {
+    let user = JSON.parse(localStorage.getItem('dato')!);
+    this.username = user.username;
+
+    //AQUI BUSCO COMO CONSEGUIR EL ID DEL ANIMAL Q LE HE PASADO PREVIAMENTE
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id')
+        if(idParam !== null){
+          this.animalId = +idParam;
+
+          this.protectoraService.getProtectoraByAnimalId(this.animalId).subscribe(data => {
+            this.protectoraId = data.id;
+            this.solicitudForm.get('protectoraDTO')?.setValue({ id: this.protectoraId});
+
+            this.usuarioService.getUsuariobyUsername(this.username).subscribe(data => {
+              this.usuarioLogueado = data;
+              this.solicitudForm.get('usuarioDTO')?.setValue(data);
+
+          });
+
+          this.animalService.getAnimalById(this.animalId).subscribe(animal => {
+            this.solicitudForm.get('animalDTO')?.setValue(animal);
+        });
+      });
+    }
+  });
+
+
     this.solicitudForm = this.formBuilder.group({
       estadoSolicitud: 'PENDIENTE',
       motivo: '',
-      animalDTO: null,
-      usuarioDTO: null
-      // protectoraDTO: null
+      animalDTO: [],
+      usuarioDTO: [],
+      protectoraDTO: []
     });
 
-    const userId = JSON.parse(localStorage.getItem('id') || '');
-    if (userId){
-      this.usuarioService.getUsuarioById(userId).subscribe(user => {
-        this.usuarioLogueado = user;
-        this.solicitudForm.get('usuarioDTO')?.setValue(user);
-      });
-    }
-
-    this.animalService.getAnimalSeleccionado().subscribe(animal => {
-      this.solicitudForm.get('animalDTO')?.setValue(animal);
-    });
   }
+
 
   onSubmit(){
     const solicitudData = this.solicitudForm.value;
