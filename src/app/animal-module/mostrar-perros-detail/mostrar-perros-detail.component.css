@@ -170,3 +170,8 @@ button {
     opacity: 1;
     animation: beatingHeart 1.2s infinite;
   }
+
+
+  .modal-backdrop {
+    display: none;
+  }

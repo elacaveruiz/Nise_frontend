@@ -25,6 +25,9 @@ import { ModalComponent } from './modal/modal.component';
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [
+    SolicitudCrearComponent
+  ]
  
 })
 export class SolicitudModule { } //esto se cambia
