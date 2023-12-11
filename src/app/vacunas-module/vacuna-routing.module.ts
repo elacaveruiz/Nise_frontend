@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'vacuna', component: VacunasComponent, children: [
       {path: 'vacunasListar', component: VacunasListarComponent}, //path -> nombre q le doy
-      {path: 'vacunasCrear', component: VacunasCrearComponent},
+      {path: 'vacunasListar/vacunasCrear', component: VacunasCrearComponent},
       {path: 'vacunasListar/update-vacuna/:id', component: VacunasEditarComponent},
       {path: 'vacunasListar/vacuna-details/:id', component: VacunasDetailComponent},
     ]
@@ -26,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class VacunasRoutingModule { } 
+export class VacunasRoutingModule { }

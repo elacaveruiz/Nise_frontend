@@ -61,6 +61,7 @@ export class SolicitudCrearComponent implements OnInit{
     this.solicitudForm = this.formBuilder.group({
       estadoSolicitud: 'PENDIENTE',
       motivo: '',
+      tituloMotivo: '',
       animalDTO: [],
       usuarioDTO: [],
       protectoraDTO: []

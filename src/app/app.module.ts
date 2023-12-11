@@ -29,6 +29,7 @@ import { RegisterUsuarioComponent } from './register-usuario/register-usuario.co
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
 import { UsuarioModule } from './usuarios-module/usuario.module';
 import { SolicitudModule } from './solicitud-module/solicitud.module';
+import { GestionProtectoraModule } from './gestionProtectora-module/gestionProtectora.module';
 
 
 
@@ -65,6 +66,7 @@ import { SolicitudModule } from './solicitud-module/solicitud.module';
     VeterinarioModule,
     UsuarioModule,
     SolicitudModule,
+    GestionProtectoraModule,
 
   ],
   exports: [

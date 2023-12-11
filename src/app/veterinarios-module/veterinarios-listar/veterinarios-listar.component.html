@@ -1,28 +1,52 @@
-<h1>Veterinarios listar working!</h1>
-<table class="table table-striped">
+<section>
+    <main class="table">
 
-    <thead>
-        <tr></tr>
-            <th>Nombre</th>
-            <th>direccion</th>
-            <th>telefono</th>
-            <th>email</th>
-            <th>Botones</th>
-    </thead>
-    <tbody>
-        <tr *ngFor= "let veterinario of veterinarios">
-            <td> {{veterinario.nombre }} </td>
-            <td> {{veterinario.direccion }} </td>
-            <td> {{veterinario.telefono }} </td>
-            <td> {{veterinario.email }} </td>
-            <td><button  [routerLink]="['update-veterinario', veterinario.id]" class="btn btn-primary">Update</button>
-                <button  (click)="deleteVeterinario(veterinario.id)" style="margin-left: 10px"  class = "btn btn-danger"> Delete</button>
-                <button [routerLink]="['veterinario-details', veterinario.id]" class="btn btn-primary">Detail</button></td>
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Veterinarios asociadas</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Buscar veterinario...">
+            </div>
+        </div>
 
-        </tr>
+        <div class="buttonAdd">
+            <i class='bx bxs-plus-circle' [routerLink]="['veterinariosCrear']"></i>
+            <p>Añadir</p>
+        </div>
+        <div class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let veterinario of veterinarios">
+                        <td> <strong> {{veterinario.id}} </strong> </td>
+                        <td> {{veterinario.nombre}} </td>
+                        <td> {{veterinario.direccion}} </td>
+                        <td> {{veterinario.telefono}} </td>
+                        <td> <p>{{veterinario.email}}</p> </td>
+                        <td class="opciones">
+                            <div class="buttonEdit">
+                                <i class='bx bxs-edit'[routerLink]="['update-veterinario', veterinario.id]" ></i>
+                            </div>
+                            <div class="buttonDelete">
+                                <i (click)="deleteVeterinario(veterinario.id)" class='bx bxs-trash'></i>
+                            </div>
+                            <div class="buttonDetail">
+                                <i class='bx bxs-detail' [routerLink]="['veterinario-details', veterinario.id]" ></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-
-    </tbody>
-
-
-</table>
+    </main>
+</section>

@@ -1,26 +1,50 @@
-<div class = "row">
-    <h2> Vacunas List</h2>
-</div>
+<section>
+    <main class="table">
 
-<table class = "table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th> Nombre </th>
-            <th> tipoAnimal </th>
-            <th> num_dosis </th>
-            <th> Actions </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let vacuna of vacunas" >
-            <td> {{ vacuna.nombre }} </td>
-            <td> {{ vacuna.tipoAnimal }} </td>
-            <td> {{ vacuna.num_dosis }} </td>
-            <td>
-                <button [routerLink]="['update-vacuna', vacuna.id]" class="btn btn-primary">Update</button>
-                <button (click) = "deleteVacuna(vacuna.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button [routerLink]="['vacuna-details', vacuna.id]" class="btn btn-primary">Detail</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Vacunas</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Buscar vacunas...">
+            </div>
+        </div>
+
+        <div class="buttonAdd">
+            <i class='bx bxs-plus-circle' [routerLink]="['vacunasCrear']"></i>
+            <p>Añadir</p>
+        </div>
+        <div class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Especie</th>
+                        <th>Número de dosis</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let vacuna of vacunas">
+                        <td> <strong> {{vacuna.id}} </strong> </td>
+                        <td> {{vacuna.nombre}} </td>
+                        <td> {{vacuna.tipoAnimal | titlecase }} </td>
+                        <td> <p>{{vacuna.num_dosis}}</p> </td>
+                        <td class="opciones">
+                            <div class="buttonEdit">
+                                <i class='bx bxs-edit'[routerLink]="['update-vacuna', vacuna.id]" ></i>
+                            </div>
+                            <div class="buttonDelete">
+                                <i (click)="deleteVacuna(vacuna.id)" class='bx bxs-trash'></i>
+                            </div>
+                            <div class="buttonDetail">
+                                <i class='bx bxs-detail' [routerLink]="['vacuna-details', vacuna.id]" ></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+</section>
