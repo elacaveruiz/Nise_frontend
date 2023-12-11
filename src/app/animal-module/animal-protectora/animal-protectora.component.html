@@ -1,3 +1,10 @@
+<div>
+  <h2> Mascotas de {{username}}</h2>
+  <a class="btn btn-primary ms-3 me-3 mb-3" routerLink="/Inicio" routerLinkActive="active"> Inicio</a>
+  <button class="btn btn-primary ms-3 me-3 mb-3" (click)="getAnimal()">Listar</button>
+  <button class="btn btn-primary ms-3 me-3 mb-3" (click)="getMostraringresos()">Ingresos</button>
+  <button class="btn btn-primary ms-3 me-3 mb-3" (click)="getMostraradopcion()">Adoptados</button>
+</div>
 <div class="prueba">
     <section>
         <main class="table">
@@ -34,7 +41,7 @@
                     <tbody>
                         <tr *ngFor= "let animal of animales">
                             <td> <strong> {{animal.id}} </strong> </td>
-                            <td> {{animal.imagenUrl}} </td>
+                            <td> <img width="100px" [src]="animal.imagenUrl"></td>
                             <td> {{animal.nombre}} </td>
                             <td> {{animal.raza}} </td>
                             <td> {{animal.edad}} años </td>

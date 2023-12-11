@@ -1,22 +1,150 @@
+<header *ngIf="rol === ''">
 
-<section class="home" id="home" >
-    <div class="content">
-        <h1>Veterinarios en tu zona</h1>
-        <p>Te presentamos una serie de veterinarios dedicados a brindar atención de alta calidad a tus mascotas cerca de ti. Estos profesionales se preocupan por la salud y la felicidad de tus compañeros peludos, desde chequeos de rutina hasta servicios especializados, nuestros veterinarios están aquí para cuidar de tus mascotas. Descubre sus servicios y confía en su experiencia para mantenerlos en las mejores condiciones. <br/>¡Conoce a los veterinarios locales listos para ayudarte!</p>
+    <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+    <nav class="navbar">
+        <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+        <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
+        <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
+        <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
+        <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
+    </nav>
+    <div class="inicio_sesion">
+      <a routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</a>
     </div>
-</section>
-<section class="bgvetes" *ngFor="let veterinario of veterinarios">
-    <div class="card">
-        <div class="card-content">
-            <h1 class="card-title">{{veterinario.nombre}}</h1>
-            <p class="card-para">{{veterinario.direccion}}</p>
-            <p class="card-para">{{veterinario.telefono}}</p>
-            <p class="card-para">{{veterinario.email}}</p>
-            <a [href]="veterinario.mapa">ver mapa</a>
+
+    <div class="toggle_btn" (click)="toggleClass()" >
+      <img src="../../assets/imagenes/menu.png"  alt="">
+    </div>
+
+    <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+      <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+      <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+      <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+      <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+      <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+      <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
+    </div>
+
+  </header>
+
+  <header *ngIf="rol === 'USUARIO'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/Inicio" routerLinkActive="active" class="usuario">Inicio</a>
+      <a routerLink="/Adopcion" routerLinkActive="active"class="usuario">Adopción</a>
+      <a routerLink="/Veterinario" routerLinkActive="active"class="usuario">Veterinarios Cercanos</a>
+      <a routerLink="/Ayudanos" routerLinkActive="active"class="usuario">Ayudanos a mejorar</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="usuario">Contacta con nosotros</a>
+      <a routerLink="/usuarios/perfil" routerLinkActive="active"class="usuario">Mi perfil</a>
+  </nav>
+  <div class="inicio_sesion">
+    <a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+    <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+    <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+    <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Mi perfil</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+  </div>
+
+  </header>
+
+  <header *ngIf="rol === 'PROTECTORA'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+      <a routerLink="/animal/animalProtectoras" routerLinkActive="active"class="a2">Gestionar Mascotas</a>
+      <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Gestionar Adopciones</a>
+      <a routerLink="/usuarios/perfil" routerLinkActive="active"class="a5">Nuestro perfil</a>
+  </nav>
+  <div class="inicio_sesion">
+    <a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Gestionar Mascotas</a></li>
+    <li><a routerLink="/Veterinario" routerLinkActive="active">Gestionar Adopciones</a></li>
+    <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Nuestro perfil</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+  </div>
+
+  </header>
+
+  <header *ngIf="rol === 'ADMIN'">
+
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+  <nav class="navbar">
+      <a routerLink="/usuarios/usuariosListar" routerLinkActive="active"class="admin">Gestion de Usuarios</a>
+      <a routerLink="/protectora/protectorasListar" routerLinkActive="active"class="admin">Gestion de Protectoras</a>
+      <a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active"class="admin">Gestion de Veterinarios</a>
+      <a routerLink="/vacuna/vacunasListar" routerLinkActive="active"class="admin">Gestion de Vacunas</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Protectoras</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Usuarios</a>
+  </nav>
+  <div class="inicio_sesion">
+    <a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a>
+  </div>
+
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Gestion de Usuarios</a></li>
+    <li><a routerLink="/protectora/protectorasListar" routerLinkActive="active">Gestion de Protectoras</a></li>
+    <li><a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active">Gestion de Veterinarios</a></li>
+    <li><a routerLink="/vacuna/vacunasListar" routerLinkActive="active">Gestion de Vacunas</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Protectoras</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Usuarios</a></li>
+    <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+  </div>
+
+  </header>
+  <section class="home" id="home">
+
+      <div class="content">
+          <h3>Veterinarios en tu zona</h3>
+          <p>
+            Aqui mostramos una serie de veterinarios dedicados a brindar atencion tanto a nuestras mascostas como a las tuyas.
+            Estos profesionales se preocupan por la salud y la felicidad de tus compañeros peludos, desde chequeos de rutina hasta servicios
+            mas especializados, nuestros veterinarios estan aqui para cuidar mascotas.
+            Descubre sus servicios y confia en su experiencia para mantenerlos en las mejores condiciones.
+          </p>
+          <p class="text-center mb-5">Conoce a los veterinarios locales listos para ayudarte. </p>
+      </div>
+      <div class="container text-center margenes">
+        <div class="row">
+        <article class="card col-lg-3 col-md-4 col-xs-6 mb-5 me-5" *ngFor= "let vete of veterinarios">
+            <div class="card-int" >
+                <div class="img">
+                </div>
+                <div class="card-data">
+                    <p class="title">{{vete.nombre}}</p>
+                    <p class="mb-2">{{vete.direccion}} <br> {{vete.telefono}} <br> {{vete.email}}</p>
+                    <a class="action_btn"  [href]="vete.mapa">more info</a>
+                </div>
+            </div>
+        </article>
         </div>
-        </div>
-</section>
-
-
-
-  
+      </div>
+  </section>
