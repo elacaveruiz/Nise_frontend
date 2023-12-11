@@ -8,6 +8,7 @@ import { SolicitudCrearComponent } from './solicitud-crear/solicitud-crear.compo
 import { SolicitudProtectoraComponent } from './solicitud-protectora/solicitud-protectora.component';
 import { SolicitudComponent } from './solicitud.component';
 import { ModalComponent } from './modal/modal.component';
+import { SolicitudDetailModalComponent } from './solicitud-detail-modal/solicitud-detail-modal.component';
 
 
 
@@ -17,7 +18,8 @@ import { ModalComponent } from './modal/modal.component';
     SolicitudComponent,
     SolicitudCrearComponent,
     SolicitudProtectoraComponent,
-    ModalComponent
+    ModalComponent,
+    SolicitudDetailModalComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,6 @@ import { ModalComponent } from './modal/modal.component';
     FormsModule,
     ReactiveFormsModule
   ],
- 
+
 })
 export class SolicitudModule { } //esto se cambia

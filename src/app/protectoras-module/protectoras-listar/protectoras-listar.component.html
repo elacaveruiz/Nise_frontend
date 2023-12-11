@@ -1,42 +1,52 @@
-<div class="cuerpo">
-    <div class="cabecera">
-    <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>    
-    <h1>Protectoras</h1>
-    <button class="icon-btn add-btn">
-    <div class="add-icon"></div>
-    <div class="btn-txt">Añadir</div>
-    </button>
-</div>
-    
-    
-<main class="table">
-    <section class="table__body">
-    <table>
-    <thead>
-    <tr>
-    <th>ID</th>
-    <th> Nombre </th>
-    <th> Localidad</th>
-    <th> Teléfono</th>
-    <th> Email</th>
-    <th> Opciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor= "let protectora of protectoras">
-    <td> {{protectora.id}}</td>
-    <td> {{protectora.nombre}}</td>
-    <td> {{protectora.localidad}} </td>
-    <td> {{protectora.telefono}} </td>
-    <td>{{protectora.email}}</td>
-    <td>
-        <button [routerLink]="['update-protectora', protectora.id]" > Editar</button>
-        <button (click)="deleteProtectora(protectora.id)" style="margin-left: 10px;"> Eliminar</button>
-        <button [routerLink]="['protectora-details', protectora.id]" style="margin-left: 10px;" >Detail</button>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-    </section>
-</main>
-  
+<section>
+    <main class="table">
+
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Protectoras asociadas</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Buscar protectora...">
+            </div>
+        </div>
+
+        <div class="buttonAdd">
+            <i class='bx bxs-plus-circle' [routerLink]="['protectorasCrear']"></i>
+            <p>Añadir</p>
+        </div>
+        <div class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th> Nombre </th>
+                        <th> Localidad</th>
+                        <th> Teléfono</th>
+                        <th> Email</th>
+                        <th> Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let protectora of protectoras">
+                        <td> <strong> {{protectora.id}} </strong> </td>
+                        <td> {{protectora.nombre}} </td>
+                        <td> {{protectora.localidad}} </td>
+                        <td> {{protectora.telefono}} </td>
+                        <td> <p>{{protectora.email}}</p> </td>
+                        <td class="opciones">
+                            <div class="buttonEdit">
+                                <i class='bx bxs-edit'[routerLink]="['update-protectora', protectora.id]" ></i>
+                            </div>
+                            <div class="buttonDelete">
+                                <i (click)="deleteProtectora(protectora.id)" class='bx bxs-trash'></i>
+                            </div>
+                            <div class="buttonDetail">
+                                <i class='bx bxs-detail' [routerLink]="['protectora-details', protectora.id]" ></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+</section>

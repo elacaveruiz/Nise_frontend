@@ -1,1 +1,45 @@
-<p>solicitud-protectora works!</p>
+<div class="prueba">
+    <section>
+        <main class="table">
+
+            <div class="table__header">
+                <img src="../../assets/imagenes/logonise.png" class="logo">
+                <h1>Solicitudes de adopción de {{username}}</h1>
+            </div>
+
+            <div class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Título</th>
+                            <th>Animal a adoptar</th>
+                            <th>Solicitado por</th>
+                            <th>Estado solicitud</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor= "let solicitud of solicitudes">
+                            <td> <strong> {{solicitud.id}} </strong> </td>
+                            <td> {{solicitud.tituloMotivo}} </td>
+                            <td> {{solicitud.animalDTO}} </td>
+                            <td> {{solicitud.usuarioDTO}} </td>
+                            <td> {{solicitud.estadoSolicitud}} </td>
+                            <td class="opciones">
+                                <div class="buttonDetail">
+                                    <i class='bx bxs-detail' [routerLink]="['solicitud-details', solicitud.id]" ></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </section>
+
+
+
+</div>
+

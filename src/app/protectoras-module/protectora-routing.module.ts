@@ -13,7 +13,7 @@ const routes: Routes = [
       {path: 'protectorasListar', component: ProtectorasListarComponent}, //path -> nombre q le doy
       {path: 'protectorasListar/protectora-details/:id', component: ProtectorasDetailComponent}, //path -> nombre q le doy
       {path: 'protectorasListar/update-protectora/:id', component: ProtectorasEditarComponent}, //path -> nombre q le doy
-      {path: 'protectorasCrear', component: ProtectorasCrearComponent},
+      {path: 'protectorasListar/protectorasCrear', component: ProtectorasCrearComponent},
     ]
 
   }
