@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalService } from '../animal.service';
 import { Animal } from '../animal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal-protectora',
@@ -16,15 +17,34 @@ export class AnimalProtectoraComponent {
     const user =  JSON.parse(localStorage.getItem('dato')!);
     this.username = user.username;
     this.getAnimal();
+    //this.getMostraringresos();
+    //this.getMostraradopcion();
 
   }
 
- constructor(private animalService: AnimalService){}
+ constructor(private animalService: AnimalService, private router : Router){}
 
 
-  private getAnimal(){
+  public getAnimal(){
     this.animalService.getAnimalByProtectora().subscribe(data => {
       this.animales = data;
     });
   }
+
+ public getMostraringresos(){
+    this.animales.pop();
+    this.animalService.getIngresos().subscribe(data => {
+      this.animales = data;
+    })
+
+  }
+  public getMostraradopcion(){
+    this.animales.pop();
+    this.animalService.getAdopcion().subscribe(data => {
+      this.animales = data;
+    })
+  }
+
+
+
 }

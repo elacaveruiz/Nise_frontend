@@ -16,20 +16,21 @@ export class MostrarGatosComponent {
   tipoAnimalElegido: string = "1";
   tamanyoElegido: string = '';
 
+
   constructor(private animalService: AnimalService,
     private router: Router){}
 
   ngOnInit(): void {
-    this.getGatos();
-  }
+   this.getGatos();
 
+  }
 
   private getGatos(){
     this.animalService.mostrarGatos().subscribe(data => {
       this.animales = data;
     })
   }
-  
+
   buscarPorRaza(): void {
     if (this.razaABuscar) {
       const razaSinEspacios = this.razaABuscar.trim();
@@ -61,7 +62,7 @@ export class MostrarGatosComponent {
       this.getGatos();
     }
   }
-  
+
   onSelected1(value: string, tamanyoElegido: string) {
     this.tamanyoElegido = value;
     if (

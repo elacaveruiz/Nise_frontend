@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../usuario';
+import { Usuariodatos } from '../usuariodatos'; 
 import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
 import { Protectora } from '../protectora';
@@ -15,7 +16,7 @@ export class PerfilComponent implements OnInit{
   username: string;
   usuarios: Usuario;
   protectoras: Protectora;
-  // loginDTO: loginDTO[];
+  usuariodatos: Usuariodatos;
 
   constructor(private usuarioService: UsuarioService,
     private router: Router){}
@@ -37,6 +38,7 @@ export class PerfilComponent implements OnInit{
     this.usuarioService.getUsuariobyUsername(this.username)
     .subscribe(data => {
       this.usuarios = data;
+     // this.usuariodatos= data;
     })
  }
  private protectoraPerfil(){

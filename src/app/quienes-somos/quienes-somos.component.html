@@ -1,49 +1,140 @@
-<header>
+<header *ngIf="rol === ''">
 
-    <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+  <a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
 
-    <nav class="navbar">
-        <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
-        <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
-        <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
-        <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
-        <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
-    </nav>
+  <nav class="navbar">
+      <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+      <a routerLink="/Adopcion" routerLinkActive="active"class="a2">Adopción</a>
+      <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Veterinarios Cercanos</a>
+      <a routerLink="/Ayudanos" routerLinkActive="active"class="a4">Ayudanos a mejorar</a>
+      <a routerLink="/Contacta" routerLinkActive="active"class="a5">Contacta con nosotros</a>
+  </nav>
+  <div class="inicio_sesion">
+    <button routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</button>
+  </div>
 
-    <div class="inicio_sesion">
-      <button routerLink="/Login" routerLinkActive="active" class="action_btn">Inicio de sesión</button>
-    </div>
-    <div class="toggle_btn" (click)="toggleClass()" >
-      <img src="../../assets/imagenes/menu.png"  alt="">
-    </div>
-    <div class="dropdown_menu " [ngClass]="{'open': isActive}">
-      <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
-      <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
-      <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
-      <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
-      <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
-      <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
-    </div>
+  <div class="toggle_btn" (click)="toggleClass()" >
+    <img src="../../assets/imagenes/menu.png"  alt="">
+  </div>
+
+  <div class="dropdown_menu " [ngClass]="{'open': isActive}">
+    <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+    <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+    <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+    <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+    <li><a href="/Login" class="action_btn">Inicio de sesión</a></li>
+  </div>
+
+</header>
+
+<header *ngIf="rol === 'USUARIO'">
+
+<a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+<nav class="navbar">
+    <a routerLink="/Inicio" routerLinkActive="active" class="usuario">Inicio</a>
+    <a routerLink="/Adopcion" routerLinkActive="active"class="usuario">Adopción</a>
+    <a routerLink="/Veterinario" routerLinkActive="active"class="usuario">Veterinarios Cercanos</a>
+    <a routerLink="/Ayudanos" routerLinkActive="active"class="usuario">Ayudanos a mejorar</a>
+    <a routerLink="/Contacta" routerLinkActive="active"class="usuario">Contacta con nosotros</a>
+    <a routerLink="/usuarios/perfil" routerLinkActive="active"class="usuario">Mi perfil</a>
+</nav>
+<div class="inicio_sesion">
+  <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+<div class="toggle_btn" (click)="toggleClass()" >
+  <img src="../../assets/imagenes/menu.png"  alt="">
+</div>
+
+<div class="dropdown_menu " [ngClass]="{'open': isActive}">
+  <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+  <li><a routerLink="/Adopcion" routerLinkActive="active">Adopción</a></li>
+  <li><a routerLink="/Veterinario" routerLinkActive="active">Veterinarios Cercanos</a></li>
+  <li><a routerLink="/Ayudanos" routerLinkActive="active">Ayudanos a mejorar</a></li>
+  <li><a routerLink="/Contacta" routerLinkActive="active">Contacta con nosotros</a></li>
+  <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Mi perfil</a></li>
+  <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+</div>
+
+</header>
+
+<header *ngIf="rol === 'PROTECTORA'">
+
+<a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+<nav class="navbar">
+    <a routerLink="/Inicio" routerLinkActive="active" class="a1">Inicio</a>
+    <a routerLink="/animal/animalProtectoras" routerLinkActive="active"class="a2">Gestionar Mascotas</a>
+    <a routerLink="/Veterinario" routerLinkActive="active"class="a3">Gestionar Adopciones</a>
+    <a routerLink="/usuarios/perfil" routerLinkActive="active"class="a5">Nuestro perfil</a>
+</nav>
+<div class="inicio_sesion">
+  <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+<div class="toggle_btn" (click)="toggleClass()" >
+  <img src="../../assets/imagenes/menu.png"  alt="">
+</div>
+
+<div class="dropdown_menu " [ngClass]="{'open': isActive}">
+  <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+  <li><a routerLink="/Adopcion" routerLinkActive="active">Gestionar Mascotas</a></li>
+  <li><a routerLink="/Veterinario" routerLinkActive="active">Gestionar Adopciones</a></li>
+  <li><a routerLink="/Perfil" routerLinkActive="active"class="a5">Nuestro perfil</a></li>
+  <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+</div>
+
+</header>
+
+<header *ngIf="rol === 'ADMIN'">
+
+<a href="/Inicio"  class="logo"><img src="../../assets/imagenes/logonise.png"></a>
+
+<nav class="navbar">
+    <a routerLink="/usuarios/usuariosListar" routerLinkActive="active"class="admin">Gestion de Usuarios</a>
+    <a routerLink="/protectora/protectorasListar" routerLinkActive="active"class="admin">Gestion de Protectoras</a>
+    <a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active"class="admin">Gestion de Veterinarios</a>
+    <a routerLink="/vacuna/vacunasListar" routerLinkActive="active"class="admin">Gestion de Vacunas</a>
+    <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Protectoras</a>
+    <a routerLink="/Contacta" routerLinkActive="active"class="admin">Adopcion de Usuarios</a>
+</nav>
+<div class="inicio_sesion">
+  <button routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</button>
+</div>
+
+<div class="toggle_btn" (click)="toggleClass()" >
+  <img src="../../assets/imagenes/menu.png"  alt="">
+</div>
+
+<div class="dropdown_menu " [ngClass]="{'open': isActive}">
+  <li><a routerLink="/Inicio" routerLinkActive="active">Inicio</a></li>
+  <li><a routerLink="/Adopcion" routerLinkActive="active">Gestion de Usuarios</a></li>
+  <li><a routerLink="/protectora/protectorasListar" routerLinkActive="active">Gestion de Protectoras</a></li>
+  <li><a routerLink="/veterinarios/veterinariosListar" routerLinkActive="active">Gestion de Veterinarios</a></li>
+  <li><a routerLink="/vacuna/vacunasListar" routerLinkActive="active">Gestion de Vacunas</a></li>
+  <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Protectoras</a></li>
+  <li><a routerLink="/Contacta" routerLinkActive="active">Gestion de Adopcion de Usuarios</a></li>
+  <li><a routerLink="/Login" routerLinkActive="active" class="action_btn" (click)="logout()">Cerrar Sesión</a></li>
+</div>
 
 </header>
 <section class="home" id="home">
 
     <div class="content">
         <h3>Ayudanos a mejorar</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eligendi voluptates similique pariatur voluptate ex, corrupti consequatur iusto.
-        At amet placeat necessitatibus dolor nihil! Delectus perspiciatis tempore distinctio odit modi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Minus sint ea ducimus est totam doloremque qui harum ab odit fuga corporis,
-        suscipit assumenda illum maiores inventore blanditiis. Possimus, doloremque labore?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Est commodi temporibus magni, alias minus quia beatae eum sit saepe sequi officia deleniti iure doloremque rerum unde explicabo, tenetur molestias! Iure?
+        <p>Buenas, en esta pagina prodras dejarnos tu opinion acerca de nuestro servicio, el trato acerca de las adopciones y mejoras que
+          creas que prodriamos implementar para mejorar y garantizar un total y correcto funcionamiento tanto de nuestra pagina web como de nuestro
+          servicio como protectora.
         <br/><br/>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eligendi voluptates similique pariatur voluptate ex, corrupti consequatur iusto.
-        At amet placeat necessitatibus dolor nihil! Delectus perspiciatis tempore distinctio odit modi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Minus sint ea ducimus est totam doloremque qui harum ab odit fuga corporis,
-        suscipit assumenda illum maiores inventore blanditiis. Possimus, doloremque labore?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Est commodi temporibus magni, alias minus quia beatae eum sit saepe sequi officia deleniti iure doloremque rerum unde explicabo, tenetur molestias! Iure?
+          Todas las opiniones seran bienvenidas siempre y cuando sean desde el respeto, nos tomamos muy enserio la opinion de nuestros
+          clientes y agradecemos las opiniones constructivas.
         </p>
-        <textarea cols="150" rows="10"></textarea>
-        <button class="pipo">
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <textarea cols="135" rows="5" class="ms-4" placeholder="    Dejanos una opinion" id="opinion" formControlName="opinion"></textarea>
+
+        <button class="pipo ms-4" type="submit">
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -54,6 +145,24 @@
             </div>
             <span>Postear comentario</span>
           </button>
+        </form>
     </div>
+  <table class="table__body mt-4">
+    <thead>
+        <tr>
+            <th> Usuario </th>
+            <th> Opiniones </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let comentario of Comentarios">
+            <td>
+                <p class="status delivered">{{comentario.usuarioDTO.nombre }}</p>
+            </td>
+            <td> <strong> {{comentario.opinion }} </strong></td>
+        </tr>
+
+    </tbody>
+</table>
 </section>
 <app-footer></app-footer>
