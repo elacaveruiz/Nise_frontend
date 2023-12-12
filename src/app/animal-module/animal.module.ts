@@ -17,30 +17,32 @@ import { MostrarGatosDetailComponent } from './mostrar-gatos-detail/mostrar-gato
 import { MostrarOtrosDetailComponent } from './mostrar-otros-detail/mostrar-otros-detail.component';
 import { MostrarPerrosDetailComponent } from './mostrar-perros-detail/mostrar-perros-detail.component';
 import { SharedModule } from '../shared.module';
+import { SolicitudModule } from "../solicitud-module/solicitud.module";
+
 
 
 
 @NgModule({
-  declarations: [
-    AnimalComponent,
-    AnimalListarComponent,
-    AnimalCrearComponent,
-    AnimalDetailComponent,
-    AnimalEditarComponent,
-    AnimalProtectoraComponent,
-    MostrarGatosComponent,
-    MostrarPerrosComponent,
-    MostrarOtrosComponent,
-    MostrarGatosDetailComponent,
-    MostrarOtrosDetailComponent,
-    MostrarPerrosDetailComponent
-  ],
-  imports: [
-    BrowserModule,
-    AnimalRoutingModule,
-    FormsModule,
-    SharedModule
-  ],
-
+    declarations: [
+        AnimalComponent,
+        AnimalListarComponent,
+        AnimalCrearComponent,
+        AnimalDetailComponent,
+        AnimalEditarComponent,
+        AnimalProtectoraComponent,
+        MostrarGatosComponent,
+        MostrarPerrosComponent,
+        MostrarOtrosComponent,
+        MostrarGatosDetailComponent,
+        MostrarOtrosDetailComponent,
+        MostrarPerrosDetailComponent
+    ],
+    imports: [
+        BrowserModule,
+        AnimalRoutingModule,
+        FormsModule,
+        SharedModule,
+        SolicitudModule
+    ]
 })
 export class AnimalModule { }

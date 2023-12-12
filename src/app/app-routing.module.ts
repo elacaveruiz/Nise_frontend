@@ -19,6 +19,7 @@ import { RegisterUsuarioComponent } from './register-usuario/register-usuario.co
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
 import { UsuariosComponent } from './usuarios-module/usuario.component';
 import { SolicitudComponent } from './solicitud-module/solicitud.component';
+import { GestionusuarioComponent } from './gestionusuario-module/gestionusuario.component';
 import { gestionProtectoraComponent } from './gestionProtectora-module/gestionProtectora.component';
 
 
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'registerUsuario', component: RegisterUsuarioComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'solicitudes', component: SolicitudComponent},
+  {path: 'gestionusuario', component: GestionusuarioComponent},
   {path: 'gestionProtectoras', component: gestionProtectoraComponent},
 
 

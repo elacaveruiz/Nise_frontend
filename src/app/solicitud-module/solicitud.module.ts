@@ -27,6 +27,10 @@ import { SolicitudDetailModalComponent } from './solicitud-detail-modal/solicitu
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [
+    SolicitudCrearComponent,
+  ]
 
 })
 export class SolicitudModule { } //esto se cambia
+
