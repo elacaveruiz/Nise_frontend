@@ -19,7 +19,7 @@ import { RegisterUsuarioComponent } from './register-usuario/register-usuario.co
 import { RegisterProtectoraComponent } from './register-protectora/register-protectora.component';
 import { UsuariosComponent } from './usuarios-module/usuario.component';
 import { SolicitudComponent } from './solicitud-module/solicitud.component';
-
+import { GestionusuarioComponent } from './gestionusuario-module/gestionusuario.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Inicio',pathMatch: 'full'},
@@ -32,6 +32,7 @@ const routes: Routes = [
   {path: 'MostrarMascotas', component: MostrarMascotasComponent},
   {path: 'protectoraregistro', component: RegistroProtectoraComponent },
   {path: 'InformacionMascota', component: InformacionMascotaComponent},
+  
 
 
 
@@ -43,7 +44,7 @@ const routes: Routes = [
   {path: 'registerUsuario', component: RegisterUsuarioComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'solicitudes', component: SolicitudComponent},
-
+  {path: 'gestionusuario', component: GestionusuarioComponent},
 
 ];
 
