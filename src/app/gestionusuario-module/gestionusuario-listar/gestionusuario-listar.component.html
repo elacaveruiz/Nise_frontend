@@ -11,10 +11,10 @@
     </thead>
     <tbody>
         <tr *ngFor= "let gestionusuario of gestionusuarios">
-            <td> {{gestionusuario.fecha }} </td>
-            <td> {{gestionusuario.donanteDTO }} </td>
-            <td> {{gestionusuario.receptorDTO }} </td>
-            <td> {{gestionusuario.animalDTO }} </td>
+            <td> {{gestionusuario.fecha_entrega }} </td>
+            <td> {{gestionusuario.donanteDTO.nombre }} </td>
+            <td> {{gestionusuario.receptorDTO.nombre }} </td>
+            <td> {{gestionusuario.animalDTO.nombre }} </td>
             
 
         </tr>
