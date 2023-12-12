@@ -1,0 +1,37 @@
+<section>
+    <main class="table">
+
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Historial de ingresos y adopciones de todas las protectoras </h1>
+        </div>
+
+        <div class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th> Protectora </th>
+                        <th> Mascota </th>
+                        <th> Tipo Gestión</th>
+                        <th> Fecha de ingreso</th>
+                        <th> Usuario</th>
+                        <th> Identificador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let gestionProtectora of gestionProtectoras">
+                        <td> <strong> {{gestionProtectora.id}} </strong> </td>
+                        <td> {{gestionProtectora.protectoraDTO.nombre}} </td>
+                        <td> {{gestionProtectora.animalDTO.nombre}} </td>
+                        <td> {{gestionProtectora.tipoGestion | titlecase }} </td>
+                        <td> {{gestionProtectora.fecha_adopcion}} </td>
+                        <td> {{gestionProtectora.usuarioDTO}} </td>
+                        <td> {{gestionProtectora.identificador}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+</section>

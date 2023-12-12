@@ -6,6 +6,8 @@ import { LoginUsuarioService } from '../login-registro/login-registro.service';
 import { Usuario } from './usuario';
 import { UsuarioService } from '../usuarios-module/usuario.service';
 import { Protectora } from './protectora';
+import { AnimalService } from '../animal-module/animal.service';
+import { Animal } from '../animal-module/animal';
 
 
 @Component({
@@ -19,13 +21,17 @@ export class InicioComponent implements OnInit {
   username: string;
   usuarios: Usuario;
   protectoras: Protectora;
+  animal: Animal[];
   id: number;
 
-  constructor( private router :Router, private LoginUsuarioService: LoginUsuarioService, private UsuarioService: UsuarioService){}
-  ngOnInit(){
+  constructor( private router :Router, private LoginUsuarioService: LoginUsuarioService, private UsuarioService: UsuarioService,
+    private AnimalService: AnimalService){}
+  ngOnInit() {
+     this.animales();
      let user = JSON.parse(localStorage.getItem('dato')!);
      this.username = user.username;
      this.rol= user.rol;
+
 
      if(this.rol === 'PROTECTORA'){
       this.protectoraPerfil();
@@ -53,4 +59,13 @@ export class InicioComponent implements OnInit {
     localStorage.setItem('id', JSON.stringify(data.id));
     })
   }
+
+  private animales(){
+    this.AnimalService.getAnimalesList().subscribe(data => {
+    this.animal = data;
+    console.log(data);
+    })
+  }
+
+
 }

@@ -30,6 +30,8 @@ import { RegisterProtectoraComponent } from './register-protectora/register-prot
 import { UsuarioModule } from './usuarios-module/usuario.module';
 import { SolicitudModule } from './solicitud-module/solicitud.module';
 import { GestionusuarioModule } from './gestionusuario-module/gestionusuario.module';
+import { GestionProtectoraModule } from './gestionProtectora-module/gestionProtectora.module';
+
 
 
 
@@ -66,6 +68,7 @@ import { GestionusuarioModule } from './gestionusuario-module/gestionusuario.mod
     UsuarioModule,
     SolicitudModule,
     GestionusuarioModule,
+    GestionProtectoraModule,
 
   ],
   exports: [

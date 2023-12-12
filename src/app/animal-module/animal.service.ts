@@ -16,6 +16,9 @@ export class AnimalService {
 
   private animalURL= "http://localhost:8080/animal";
   private animalProtectoraURL= "http://localhost:8080/animal/protectorasanimal"
+  private animalingresosURL= "http://localhost:8080/animal/ingresos"
+  private animaladopcionURL= "http://localhost:8080/animal/adopcion"
+  private animalesultimosURL= "http://localhost:8080/animal/ultimo"
 
   //LISTAR
   getAnimalList(): Observable<Animal[]>{
@@ -35,6 +38,31 @@ export class AnimalService {
     }
     return this.httpClient.get<Animal[]>(`${this.animalProtectoraURL}`, opciones);
   }
+
+  getIngresos() : Observable<Animal[]>{
+    let parametros = new HttpParams();
+    parametros = parametros.append('id', localStorage.getItem('id')!);
+    const opciones = {
+      params : parametros
+    }
+    return this.httpClient.get<Animal[]>(`${this.animalingresosURL}`, opciones);
+  }
+
+  getAdopcion() : Observable<Animal[]>{
+    let parametros = new HttpParams();
+    parametros = parametros.append('id', localStorage.getItem('id')!);
+    const opciones = {
+      params : parametros
+    }
+    return this.httpClient.get<Animal[]>(`${this.animaladopcionURL}`, opciones);
+  }
+
+   //LISTAR ULTIMOS ANIMALES
+   getAnimalesList(): Observable<Animal[]>{
+    return this.httpClient.get<Animal[]>(`${this.animalesultimosURL}`);
+  }
+
+
 
   //CREAR
   createAnimal(animal: Animal, imagen: File): Observable<any>{

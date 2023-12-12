@@ -1,4 +1,4 @@
-export class mascotasDTO {
+export class animalDTO {
     id: number;
     nombre: string;
     descripcion: string;
