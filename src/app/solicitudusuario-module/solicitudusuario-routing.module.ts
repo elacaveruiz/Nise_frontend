@@ -9,7 +9,8 @@ import { SolicitudusuarioCrearComponent } from './solicitudusuario-crear/solicit
 const routes: Routes = [
   {
     path: 'solicitudusuario', component: SolicitudusuarioComponent, children:[
-      {path: 'solicitudusuario/:id', component: SolicitudusuarioCrearComponent}
+      {path: 'solicitudusuario/:id', component: SolicitudusuarioCrearComponent},
+      {path: 'solicitudusuario/crear', component: SolicitudCrearComponent}
     ]
     
     
@@ -18,7 +19,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class SolicitudusuarioRoutingModule { } 

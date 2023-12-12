@@ -3,20 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SolicitudusuarioCrearComponent } from './solicitudusuario-crear/solicitudusuario-crear.component';
-import { SolicitudUsuarioComponent } from './solicitud-usuario/solicitud-usuario.component'; //para los formularios
+import { SolicitudusuarioComponent } from './solicitudusuario.component'; //para los formularios
 import { SolicitudusuarioRoutingModule } from './solicitudusuario-routing.module';
+import { SolicitudusuarioCrearComponent } from './solicitudusuario-crear/solicitudusuario-crear.component';
 
 
 @NgModule({
   declarations: [
-    SolicitudusuarioCrearComponent,
-    SolicitudUsuarioComponent
+    SolicitudusuarioComponent,
+    SolicitudusuarioCrearComponent
   ],
   imports: [
+    SolicitudusuarioRoutingModule,
     BrowserModule,
-    SolicitudusuarioRoutingModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
+  exports: [
+    SolicitudusuarioCrearComponent,
+  ]
 
 })
 export class SolicitudusuarioModule{}
