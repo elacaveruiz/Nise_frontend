@@ -38,11 +38,11 @@ export class SolicitudusuarioCrearComponent implements OnInit{
 
         this.usuarioService.getUsuarioByAnimalId(this.animalId).subscribe(data =>{
           this.ofertanteId = data.id;
-          this.solicitudUsuarioForm.get('usuarioDTO')?.setValue({id: this.ofertanteId});
+          this.solicitudUsuarioForm.get('ofertanteDTO')?.setValue({id: this.ofertanteId});
 
-        this.usuarioService.getUsuariobyUsername(this.username).subscribe(data => {
-          this.usuarioLogueado = data;
-          this.solicitudUsuarioForm.get('usuarioDTO')?.setValue(data);
+        this.usuarioService.getUsuariobyUsername(this.username).subscribe(data1 => {
+          this.usuarioLogueado = data1;
+          this.solicitudUsuarioForm.get('adoptanteDTO')?.setValue(data1);
         });
 
         this.animalService.getAnimalById(this.animalId).subscribe(animal => {
