@@ -23,7 +23,7 @@ export class SolicitudusuarioCrearComponent implements OnInit{
     private formBuilder: FormBuilder,
     private solicitudUsuarioService: SolicitudusuarioService,
     private usuarioService: UsuarioService,
-    privateanimalService: AnimalService,
+    private animalService: AnimalService,
     private route: ActivatedRoute
   ){}
 
@@ -31,21 +31,21 @@ export class SolicitudusuarioCrearComponent implements OnInit{
     let user = JSON.parse(localStorage.getItem('dato')!);
     this.username = user.username;
 
-    //this.route.paramMap.subscribe(params => {
-      //const idParam = params.get('id')
-      //if(idParam !== null){
-        //this.animalId = +idParam;
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id')
+      if(idParam !== null){
+        this.animalId = +idParam;
 
-        //this.usuarioService.getUsuariobyUsername(this.username).subscribe(data => {
-          //this.usuarioLogueado = data;
-          //this.solicitudUsuarioForm.get('usuarioDTO')?.setValue(data);
-        //});
+        this.usuarioService.getUsuariobyUsername(this.username).subscribe(data => {
+          this.usuarioLogueado = data;
+          this.solicitudUsuarioForm.get('usuarioDTO')?.setValue(data);
+        });
 
-        //this.animalService.getAnimalById(this.animalId).subscribe(animal => {
-          //this.solicitudUsuarioForm.get('animalDTO')?.setValue(animal);
-        //})
-      //}
-    //});
+        this.animalService.getAnimalById(this.animalId).subscribe(animal => {
+          this.solicitudUsuarioForm.get('animalDTO')?.setValue(animal);
+        })
+      }
+    });
 
     this.solicitudUsuarioForm = this.formBuilder.group({
       estadoSolicitud: 'PENDIENTE',

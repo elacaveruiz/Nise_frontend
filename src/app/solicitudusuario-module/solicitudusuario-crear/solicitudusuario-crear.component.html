@@ -1,16 +1,16 @@
 
-<form>[formGroup]="solicitudUsuarioForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="solicitudUsuarioForm" (ngSubmit)="onSubmit()">
     
 
-    <label>
-      Titulo de tu solicitud:
+    <label class="prueba">
+      Titulo:
       <input type="text" formControlName="tituloMotivo">
     </label>
-    <label>
+    <label class="prueba">
       Motivo:
       <input type="text" formControlName="motivo">
     </label>
     <br>
 
     <button type="submit">Enviar Solicitud</button>
-  </form>
+</form>
