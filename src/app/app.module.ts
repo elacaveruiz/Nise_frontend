@@ -13,7 +13,7 @@ import { VeterinariosComponent } from './veterinarios/veterinarios.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
-import { RegistroProtectoraComponent } from './registro-protectora/registro-protectora.component';
+
 import { InicioComponent } from './inicio/inicio.component';
 
 
@@ -48,7 +48,6 @@ import { GestionProtectoraModule } from './gestionProtectora-module/gestionProte
     QuienesSomosComponent,
     ContactanosComponent,
     LoginRegistroComponent,
-    RegistroProtectoraComponent,
     InicioComponent,
     RegisterUsuarioComponent,
     RegisterProtectoraComponent,
