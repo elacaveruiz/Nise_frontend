@@ -5,4 +5,5 @@ export class Veterinario {
     telefono: number;
     email: string;
     mapa: string;
+    imagenUrl: string;
 }

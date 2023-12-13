@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Animal } from '../animal';
 import { AnimalService } from '../animal.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { data } from 'jquery';
 
 @Component({
   selector: 'app-animal-editar',
@@ -14,27 +13,39 @@ export class AnimalEditarComponent implements OnInit {
 
   id: number;
   animal: Animal = new Animal();
-  constructor(private animalService: AnimalService,
+
+  constructor(
+    private animalService: AnimalService,
     private route: ActivatedRoute,
-    private router: Router) {}
+    private router: Router
+    ) {}
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    ngOnInit(): void {
+      this.id = this.route.snapshot.params['id'];
 
-    this.animalService.getAnimalById(this.id).subscribe(data => {
-      this.animal = data;
-    }, error => console.log(error))
-  }
-
-  onSubmit(){
-    this.animalService.updateAnimal(this.id, this.animal).subscribe(data => {
-      this.gotoAnimalList();
+      this.animalService.getAnimalById(this.id).subscribe(
+        (data: Animal) => {
+          this.animal = data;
+        },
+        (error: any) => {
+          console.error(error);
+        }
+      );
     }
-    , error => console.log(error));
-  }
 
-  gotoAnimalList(){
-    this.router.navigate(['/']);
-  }
+    onSubmit(): void {
+      this.animalService.updateAnimal(this.id, this.animal).subscribe(
+        (data: any) => {
+          this.gotoAnimalList();
+        },
+        (error: any) => {
+          console.error(error);
+        }
+      );
+    }
+
+    gotoAnimalList(): void {
+      this.router.navigate(['/']);
+    }
 
 }
