@@ -33,4 +33,8 @@ export class UsuarioService {
     return this.httpClient.get<Protectora>(`${this.usernamesProtectorasURL}/${username}`);
   }
 
+  getUsuarioByAnimalId(animalId: number): Observable<any>{
+    return this.httpClient.get(`http://localhost:8080/animal/${animalId}/usuario`);
+  }
+
 }

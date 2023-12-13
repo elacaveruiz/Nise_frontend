@@ -36,6 +36,10 @@ export class SolicitudusuarioCrearComponent implements OnInit{
       if(idParam !== null){
         this.animalId = +idParam;
 
+        this.usuarioService.getUsuarioByAnimalId(this.animalId).subscribe(data =>{
+          this.ofertanteId = data.id;
+          this.solicitudUsuarioForm.get('usuarioDTO')?.setValue({id: this.ofertanteId});
+
         this.usuarioService.getUsuariobyUsername(this.username).subscribe(data => {
           this.usuarioLogueado = data;
           this.solicitudUsuarioForm.get('usuarioDTO')?.setValue(data);
@@ -43,9 +47,10 @@ export class SolicitudusuarioCrearComponent implements OnInit{
 
         this.animalService.getAnimalById(this.animalId).subscribe(animal => {
           this.solicitudUsuarioForm.get('animalDTO')?.setValue(animal);
-        })
-      }
-    });
+        });
+      });
+    }
+  });
 
     this.solicitudUsuarioForm = this.formBuilder.group({
       estadoSolicitud: 'PENDIENTE',

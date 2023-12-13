@@ -18,7 +18,7 @@ import { MostrarOtrosDetailComponent } from './mostrar-otros-detail/mostrar-otro
 import { MostrarPerrosDetailComponent } from './mostrar-perros-detail/mostrar-perros-detail.component';
 import { SharedModule } from '../shared.module';
 import { SolicitudModule } from "../solicitud-module/solicitud.module";
-
+import { SolicitudusuarioModule } from '../solicitudusuario-module/solicitudusuario.module';
 
 
 
@@ -42,7 +42,8 @@ import { SolicitudModule } from "../solicitud-module/solicitud.module";
         AnimalRoutingModule,
         FormsModule,
         SharedModule,
-        SolicitudModule
+        SolicitudModule,
+        SolicitudusuarioModule
     ]
 })
 export class AnimalModule { }
