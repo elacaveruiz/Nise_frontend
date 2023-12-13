@@ -24,7 +24,7 @@
 
     <div class="campo">
       <label> Animal de preferencia</label>
-      <select id="preferenciaTipoAnimal" name="tipoAnimal" >
+      <select id="preferenciaTipoAnimal" name="tipoAnimal" formControlName="preferenciaTipoAnimal">
           <option value="PERRO">Perro</option>
           <option value="GATO">Gato</option>
           <option value="OTRO">Otro</option>
@@ -33,7 +33,7 @@
 
   <div class="campo">
       <label> Sexo de preferencia</label>
-      <select id="preferenciaTipoTamanyo" name="tipoSexo">
+      <select id="preferenciaSexo" name="tipoSexo" formControlName="preferenciaSexo">
           <option value="HEMBRA">Hembra</option>
           <option value="MACHO">Macho</option>
       </select>
@@ -41,10 +41,12 @@
 
   <div class="campo">
       <label> Tamaño de preferencia</label>
-      <select id="preferenciaSexo" name="tipoTamanyo">
-          <option value="GRANDE">Grande</option>
-          <option value="MEDIANO">Mediano</option>
+      <select id="preferenciaTipoTamanyo" name="tipoTamanyo" formControlName="preferenciaTipoTamanyo">
           <option value="PEQUEÑO">Pequeño</option>
+          <option value="MEDIANO">Mediano</option>
+          <option value="GRANDE">Grande</option>
+        
+         
       </select>
   </div>
 

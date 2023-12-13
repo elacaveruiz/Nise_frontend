@@ -22,9 +22,26 @@ export class VeterinarioService {
   }
 
   //CREAR
-  createVeterinario(veterinario: Veterinario): Observable<Object>{
-    return this.httpClient.post(`${this.veterinarioURL}`, veterinario);
-  }
+ //CREAR
+ createVeterinario(veterinario: Veterinario, imagen: File): Observable<any>{
+  const formData = new FormData();
+
+  const veterinarioToSend = {
+    nombre: veterinario.nombre,
+    direccion: veterinario.direccion,
+    telefono: veterinario.telefono,
+    email: veterinario.email,
+    mapa: veterinario.mapa
+  };
+
+  formData.append('imagen', imagen, imagen.name);
+
+  const veterinarioString = JSON.stringify(veterinarioToSend);
+
+  formData.append('veterinario', veterinarioString);
+  
+  return this.httpClient.post(`${this.veterinarioURL}`, formData);
+}
 
   //EDITAR
   updateVeterinario(id: number, veterinario: Veterinario): Observable<Object>{
