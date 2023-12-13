@@ -8,6 +8,7 @@ import { UsuariosListarComponent } from './usuarios-listar/usuarios-listar.compo
 import { UsuariosDetailComponent } from './usuarios-detail/usuarios-detail.component';
 import { UsuariosComponent } from './usuario.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosUpdateComponent } from './usuarios-update/usuarios-update.component';
 import { AnimalUsuarioComponent } from './animal-usuario/animal-usuario.component';
 
 
@@ -19,6 +20,7 @@ import { AnimalUsuarioComponent } from './animal-usuario/animal-usuario.componen
     UsuariosListarComponent,
     UsuariosDetailComponent,
     PerfilComponent,
+    UsuariosUpdateComponent,
     AnimalUsuarioComponent
   ],
   imports: [
