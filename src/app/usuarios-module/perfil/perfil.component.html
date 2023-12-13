@@ -2,7 +2,7 @@
 <div *ngIf="rol === 'USUARIO' || rol === 'ADMIN' && rol !== ''">
 
 <div class = "row" >
-    <h2> Bienvenido {{usuarios.nombre}}</h2>
+    <h2> Bienvenido {{username}}</h2> <button routerLink="/" class="btn btn-primary">Inicio</button>
 </div>
 
 <table class = "table table-striped table-bordered">
@@ -22,25 +22,56 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor= "let usuario of usuariodatos">
             <td> {{username}} </td>
-            <td> {{usuarios.nombre }} </td>
-            <td> {{usuarios.telefono }} </td>
-            <td> {{usuarios.direccion }} </td>
-            <td> {{usuarios.email }} </td>
-            <td> {{usuarios.dni }} </td>
-            <td> {{usuarios.preferenciaTipoAnimal }} </td>
-            <td> {{usuarios.preferenciaTipoTamanyo }} </td>
-            <td> {{usuarios.preferenciaSexo }} </td>
-            <td> {{usuariodatos.loginDTO.rol }} </td>
+            <td> {{usuario.nombre }} </td>
+            <td> {{usuario.telefono }} </td>
+            <td> {{usuario.direccion }} </td>
+            <td> {{usuario.email }} </td>
+            <td> {{usuario.dni }} </td>
+            <td> {{usuario.preferenciaTipoAnimal }} </td>
+            <td> {{usuario.preferenciaTipoTamanyo }} </td>
+            <td> {{usuario.preferenciaSexo }} </td>
+            <td> {{usuario.loginDTO.username }} </td>
             <td>
                 <!-- <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
                 <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
-                <button [routerLink]="['mascota-details', usuarios.id]" class="btn btn-primary">Detail</button>
+                <button [routerLink]="['update-usuario', usuario.id]" class="btn btn-primary">Update</button>
             </td>
         </tr>
     </tbody>
 </table>
+ <h2>Lista de animales donados</h2>
+  <table class = "table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>imagen</th>
+      <th>nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor= "let usuario of animalesdonados">
+      <img width="100px" [src]="usuario.imagenUrl">
+      <td> {{usuario.nombre }} </td>
+    </tr>
+    </tbody>
+  </table>
+  <h2>Lista de animales Adoptados</h2>
+  <table class = "table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>imagen</th>
+      <th>nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor= "let animal of animalesAdoptados">
+      <img width="100px" [src]="animal.imagenUrl">
+      <td> {{animal.nombre }} </td>
+    </tr>
+    </tbody>
+  </table>
+
 </div>
 
 
@@ -71,7 +102,7 @@
             <td>
                 <!-- <button [routerLink]="['update-mascota', mascota.id]" class="btn btn-primary">Update</button>
                 <button (click) = "deleteMascota(mascota.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
-                <button [routerLink]="['mascota-details', usuarios.id]" class="btn btn-primary">Detail</button>
+                <button [routerLink]="['mascota-details', protectoras.id]" class="btn btn-primary">Detail</button>
             </td>
         </tr>
     </tbody>
