@@ -38,6 +38,7 @@ export class PerfilComponent implements OnInit{
     this.usuarioService.getUsuariobyUsername(this.username)
     .subscribe(data => {
       this.usuarios = data;
+      localStorage.setItem('id', JSON.stringify(data.id));
      // this.usuariodatos= data;
     })
  }

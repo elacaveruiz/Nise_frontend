@@ -10,20 +10,43 @@ import { VeterinarioService } from '../veterinario.service';
 })
 export class VeterinariosCrearComponent implements OnInit {
 
-  veterinario : Veterinario = new Veterinario();
+  veterinario : Veterinario = {id: 0,
+                                nombre: '',
+                                direccion: '',
+                                telefono: 0,
+                                email: '',
+                                mapa: '',
+                                imagenUrl: ''};
+  imagenSeleccionada: File;
+
   constructor(private veterinarioService: VeterinarioService,
     private router: Router){}
 
-  ngOnInit(): void {
-
+  onImageSeleccionada(event: any): void {
+    console.log('Se ha añadido o cambiado una imagen: ', event);
+    this.imagenSeleccionada = event.target.files[0];
   }
 
-  saveVeterinario(){
-    this.veterinarioService.createVeterinario(this.veterinario).subscribe( data => {
-      console.log(data);
-      this.gotoVeterinarioList();
-    },
-    error => console.log(error))
+  saveVeterinario(): void{
+    console.log('veterinario:', this.veterinario);
+    console.log('imagenSeleccionada', this.imagenSeleccionada);
+
+    if (this.veterinario && this.imagenSeleccionada) {
+      this.veterinarioService.createVeterinario(this.veterinario, this.imagenSeleccionada).subscribe(
+        () => {
+          console.log('Veterinario creado correctamente');
+        },
+        error => {
+          console.log('Veterinario no añadido', error);
+        }
+      );
+    } else{
+      console.error('El veterinario o la imagen no están definidos')
+    }  
+  }
+  
+  ngOnInit(): void {
+
   }
 
   gotoVeterinarioList(){

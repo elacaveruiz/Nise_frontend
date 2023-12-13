@@ -1,5 +1,5 @@
 <body>
-  
+
 
   <div class="img">
     <img src="../../assets/imagenes/registroprotectoraperro.jpg">
@@ -8,36 +8,36 @@
     <form class="form" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
       <p class="title">Registro de protectoras</p>
       <p class="message">Regístrate como protectora</p>
-      
+
         <label>
           <input required="" placeholder="" class="input" type="text" id="nombre" formControlName="nombre">
           <span>Nombre:</span>
         </label>
-  
+
         <label>
             <input required="" placeholder="" class="input" type="text" id="localidad" formControlName="localidad">
             <span>Localidad:</span>
         </label>
-  
+
         <label>
           <input required="" placeholder="" class="input" type="text" id="telefono" formControlName="telefono">
           <span>telefono:</span>
         </label>
-  
+
         <label>
           <input required="" placeholder="" class="input" type="text" id="email" formControlName="email">
           <span>email:</span>
         </label>
-  
+
         <label formGroupName="loginDTO">
           <input required="" placeholder="" class="input" type="text" id="username" formControlName="username">
           <span>username:</span>
         </label>
-        <label formGroupName="loginDTO">  
-          <input required="" placeholder="" class="input" type="text" id="password" formControlName="password">
+        <label formGroupName="loginDTO">
+          <input required="" placeholder="" class="input" type="password" id="password" formControlName="password">
           <span>password:</span>
         </label>
-        
+
         <button class="submit" type="submit">Registrar</button>
       </form>
   </div>

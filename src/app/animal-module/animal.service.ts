@@ -89,19 +89,24 @@ export class AnimalService {
 
     const gestionString = JSON.stringify(this.getUserData());
 
-    formData.append('gestion', gestionString)
+    formData.append('gestion', gestionString);
+
+    const gestionRole = this.getUserRole();
+
+    formData.append('rol', gestionRole);
 
     return this.httpClient.post(`${this.animalURL}`, formData);
   }
 
   //EDITAR
   updateAnimal(id: number, animal: Animal): Observable<Object>{
-    return this.httpClient.put(`${this.animalURL}/${id}`, animal);
+    return this.httpClient.put<Animal>(`${this.animalURL}/${id}`, animal);
+
   }
 
   //BORRAR
   deleteAnimal(id: number): Observable<Object>{
-    return this.httpClient.delete(`${this.animalURL}/${id}`);
+    return this.httpClient.delete<Animal>(`${this.animalURL}/${id}`);
   }
 
   //INTERFAZ USUARIO
@@ -148,12 +153,13 @@ filtroSexoTamanyoYTipoAnimal(sexo: string, tamanyo: string, tipoAnimal: string):
   return this.httpClient.get<Animal[]>(`${this.animalURL}/filtros?sexo=${sexo}&tipoTamanyo=${tamanyo}&tipoAnimal=${tipoAnimal}`);
   }
   getUserData(): number {
-    const userDataID = localStorage.getItem('id');
+    const userDataID = JSON.parse(localStorage.getItem('id')!);
     console.log(userDataID);
-    if (userDataID) {
-      return JSON.parse(userDataID);
-    } else {
-      return 0; // O algún otro manejo si no hay datos de usuario en el localStorage
-    }
+    return userDataID;
+  }
+
+  getUserRole(): string {
+    let userDataRole = JSON.parse(localStorage.getItem('dato')!);
+    return userDataRole.rol;
   }
 }

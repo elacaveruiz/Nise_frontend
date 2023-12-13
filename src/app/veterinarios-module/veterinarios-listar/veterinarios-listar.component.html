@@ -19,6 +19,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Imagen</th>
                         <th>Dirección</th>
                         <th>Teléfono</th>
                         <th>Email</th>
@@ -29,6 +30,7 @@
                     <tr *ngFor= "let veterinario of veterinarios">
                         <td> <strong> {{veterinario.id}} </strong> </td>
                         <td> {{veterinario.nombre}} </td>
+                        <img width="100px" [src]="veterinario.imagenUrl">
                         <td> {{veterinario.direccion}} </td>
                         <td> {{veterinario.telefono}} </td>
                         <td> <p>{{veterinario.email}}</p> </td>

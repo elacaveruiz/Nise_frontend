@@ -23,16 +23,31 @@
     </div>
 
     <div class="campo">
-        <input type="text" id="preferenciaTipoAnimal" formControlName="preferenciaTipoAnimal" placeholder="Animal preferido">
-    </div>
+      <label> Animal de preferencia</label>
+      <select id="preferenciaTipoAnimal" name="tipoAnimal" >
+          <option value="PERRO">Perro</option>
+          <option value="GATO">Gato</option>
+          <option value="OTRO">Otro</option>
+      </select>
+  </div>
 
-    <div class="campo">
-        <input type="text" id="preferenciaTipoTamanyo" formControlName="preferenciaTipoTamanyo" placeholder="Tamaño preferido">
-    </div>
+  <div class="campo">
+      <label> Sexo de preferencia</label>
+      <select id="preferenciaTipoTamanyo" name="tipoSexo">
+          <option value="HEMBRA">Hembra</option>
+          <option value="MACHO">Macho</option>
+      </select>
+  </div>
 
-    <div class="campo">
-        <input type="text" id="preferenciaSexo" formControlName="preferenciaSexo" placeholder="Sexo preferido">
-    </div>
+  <div class="campo">
+      <label> Tamaño de preferencia</label>
+      <select id="preferenciaSexo" name="tipoTamanyo">
+          <option value="GRANDE">Grande</option>
+          <option value="MEDIANO">Mediano</option>
+          <option value="PEQUEÑO">Pequeño</option>
+      </select>
+  </div>
+
 
     <div formGroupName="loginDTO">   
       <div class="campo">
