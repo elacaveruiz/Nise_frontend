@@ -1,9 +1,11 @@
 
 <div class="wrapper">
     <section>
-        <div class="imagendiv">
-            <img src="../../assets/imagenes/logonise.png" class="logo">
-        </div>
+      <div class="imagendiv">
+        <a href="/Inicio">
+        <img src="../../assets/imagenes/logonise.png" class="logo">
+        </a>
+      </div>
         <div class="divSpan">
           <div class="filtros">
             <div class="selectors">
@@ -15,7 +17,7 @@
                 </div>
                 <button class="button" type="submit">B</button>
               </form>
-            
+
               <select id="tipoSexo" name="tipoSexo" class="form-control" #sexo (change)="onSelected(sexo.value, tipoAnimalElegido)">
                   <option default = 'Selecciona uno'></option>
                   <option value="0">HEMBRA</option>
@@ -50,7 +52,7 @@
                   </ng-container>
                   <ng-template #noResults>
                     <p>No se encontraron resultados</p>
-                  </ng-template>  
+                  </ng-template>
                 </div>
             </div>
     </section>

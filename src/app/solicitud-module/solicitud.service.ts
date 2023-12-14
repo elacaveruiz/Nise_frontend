@@ -24,6 +24,12 @@ export class SolicitudService {
     return this.http.post<Solicitud>(this.solicitudUsuarioURL, solicitud);
   }
 
+  //LISTAR SIMPLE
+    getSolicitudeList(): Observable<Solicitud[]>{
+      return this.http.get<Solicitud[]>(`${this.solicitudURL}`)
+    }
+
+
 
   getSolicitudByProtectora(): Observable<Solicitud[]>{
     let parametros = new HttpParams();
@@ -37,6 +43,11 @@ export class SolicitudService {
   //ONE BY ONE
   getSolicitudById(id: number): Observable<Solicitud>{
     return this.http.get<Solicitud>(`${this.solicitudURL}/${id}`);
+  }
+
+  //EDITAR Y DETAIL
+  updateSolicitud(id: number, solicitud: Solicitud): Observable<Object>{
+    return this.http.put(`${this.solicitudURL}/${id}`, solicitud);
   }
 
 }

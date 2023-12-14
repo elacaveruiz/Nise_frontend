@@ -38,6 +38,6 @@ export class VeterinariosEditarComponent implements OnInit{
   }
 
   goToVeterinarioList(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/veterinarios/veterinariosListar']);
   }
 }

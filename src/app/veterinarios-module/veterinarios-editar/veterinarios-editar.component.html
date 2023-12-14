@@ -1,37 +1,52 @@
-<h3>Editar veterinario</h3>
+<section>
+    <main class="table">
 
-<form (ngSubmit) = "onSubmit()"  #veterinarioForm="ngForm">
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Editar veterinario</h1>
+        </div>
 
-    <div class="form-group">
-        <label> Nombre </label>
-        <input type="text" class="form-control" id="nombre"
-            [(ngModel)]="veterinario.nombre" name= "nombre">
-    </div>
+        <div class="table__body">
+            <form (ngSubmit) = "onSubmit()"  #veterinarioForm="ngForm">
 
-    <div class="form-group">
-        <label> Localidad </label>
-        <input type="text" class="form-control" id="localidad"
-            [(ngModel)]="veterinario.direccion" name= "localidad">
-    </div>
 
-    <div class="form-group">
-        <label> Telefono </label>
-        <input type="text" class="form-control" id="telefono"
-            [(ngModel)]="veterinario.telefono" name= "telefono">
-    </div>
+                <div class="form-group">
+                    <label> Nombre </label>
+                    <input type="text" class="form-control" id="nombre"
+                        [(ngModel)] = "veterinario.nombre" name= "nombre">
+                </div>
 
-    <div class="form-group">
-        <label> email </label>
-        <input type="text" class="form-control" id="email"
-            [(ngModel)]="veterinario.email" name= "email">
-    </div>
 
-    <div class="form-group">
-        <label> link mapa </label>
-        <input type="text" class="form-control" id="mapa"
-            [(ngModel)]="veterinario.mapa" name= "mapa">
-    </div>
+                <div class="form-group">
+                    <label> Localidad </label>
+                    <input type="text" class="form-control" id="localidad"
+                        [(ngModel)] = "veterinario.direccion" name= "localidad">
+                </div>
 
-    <button type="submit">Guardar</button>
 
-</form>
+                <div class="form-group">
+                    <label> Teléfono </label>
+                    <input type="text" class="form-control" id="telefono"
+                        [(ngModel)] = "veterinario.telefono" name= "telefono">
+                </div>
+
+
+                <div class="form-group">
+                    <label> Email </label>
+                    <input type="text" class="form-control" id="email"
+                        [(ngModel)] = "veterinario.email" name= "email">
+                </div>
+
+
+                <div class="form-group">
+                    <label> Link mapa </label>
+                    <input type="text" class="form-control" id="mapa"
+                        [(ngModel)] = "veterinario.mapa" name= "mapa">
+                </div>
+
+
+                <button class="button" type="submit">Editar</button>
+
+
+            </form>
+

@@ -15,7 +15,7 @@ export class VacunasCrearComponent implements OnInit{
     private router: Router){}
 
   ngOnInit(): void {
-    
+
   }
 
   saveVacuna(){
@@ -27,7 +27,7 @@ export class VacunasCrearComponent implements OnInit{
   }
 
   gotoVacunaList(){
-    this.router.navigate(['/vacunasListar']);
+    this.router.navigate(['/vacuna/vacunasListar']);
   }
 
   onSubmit(){

@@ -1,10 +1,15 @@
-<div class="row">
-    <div class="card col-md-6 offset-md-3 offset-md-3">
-        <div class="row">
-            <h3 class="text-center"> Update mascota </h3>
-            <hr />
-            <div class="card-body">
+<div class="prueba">
+    <section>
+        <main class="table">
+
+            <div class="table__header">
+                <img src="../../assets/imagenes/logonise.png" class="logo">
+                <h1>Editar una mascota</h1>
+            </div>
+
+            <div class="table__body">
                 <form (ngSubmit)="onSubmit()">
+
 
                     <div class="form-group">
                         <label> nombre</label>
@@ -12,11 +17,13 @@
                             name="nombre">
                     </div>
 
+
                     <div class="form-group">
                         <label> descripcion</label>
                         <input type="text" class="form-control" id="descripcion" [(ngModel)]="animal.descripcion"
                             name="descripcion">
                     </div>
+
 
                     <div class="form-group">
                         <label> raza</label>
@@ -24,11 +31,13 @@
                             name="raza">
                     </div>
 
+
                     <div class="form-group">
                         <label> Edad</label>
                         <input type="text" class="form-control" id="edad" [(ngModel)]="animal.edad"
                             name="edad">
                     </div>
+
 
                     <div class="form-group">
                         <label> ¿Está disponible?</label>
@@ -36,37 +45,42 @@
                             name="disponibilidad" style="margin-left: 10px;">
                     </div>
 
+
                     <div class="form-group">
                         <label> ¿Tiene chip?</label>
                         <input type="checkbox" id="chip" [(ngModel)]="animal.chip"
                             name="chip" style="margin-left: 10px;">
                     </div>
 
+
                     <div class="form-group">
                         <label> tipoAnimal</label>
-                        <select id="tipoAnimal" [(ngModel)]="animal.tipoAnimal" name="tipoAnimal" >
+                        <select id="tipoAnimal" [(ngModel)]="animal.tipoAnimal" name="tipoAnimal" class="styled-select">
                             <option value="PERRO">Perro</option>
                             <option value="GATO">Gato</option>
                             <option value="OTRO">Otro</option>
                         </select>
                     </div>
 
+
                     <div class="form-group">
                         <label> tipoSexo</label>
-                        <select id="tipoSexo" [(ngModel)]="animal.tipoSexo" name="tipoSexo">
+                        <select id="tipoSexo" [(ngModel)]="animal.tipoSexo" name="tipoSexo" class="styled-select">
                             <option value="HEMBRA">Hembra</option>
                             <option value="MACHO">Macho</option>
                         </select>
                     </div>
 
+
                     <div class="form-group">
                         <label> tipoTamanyo</label>
-                        <select id="tipoTamanyo" [(ngModel)]="animal.tipoTamanyo" name="tipoTamanyo">
+                        <select id="tipoTamanyo" [(ngModel)]="animal.tipoTamanyo" name="tipoTamanyo" class="styled-select">
                             <option value="GRANDE">Grande</option>
                             <option value="MEDIANO">Mediano</option>
                             <option value="PEQUEÑO">Pequeño</option>
                         </select>
                     </div>
+
 
                     <div class="form-group">
                         <label> Fecha entrada protectora (DD/MM/YYYY)</label>
@@ -74,11 +88,18 @@
                             name="fechaEntradaProtectora">
                     </div>
 
+
                     <br />
-                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="button" type="submit">Editar</button>
+
 
                 </form>
+
             </div>
-        </div>
-    </div>
+
+        </main>
+    </section>
+
+
+
 </div>

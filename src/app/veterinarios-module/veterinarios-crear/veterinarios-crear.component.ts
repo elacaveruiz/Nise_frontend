@@ -42,15 +42,15 @@ export class VeterinariosCrearComponent implements OnInit {
       );
     } else{
       console.error('El veterinario o la imagen no están definidos')
-    }  
+    }
   }
-  
+
   ngOnInit(): void {
 
   }
 
   gotoVeterinarioList(){
-    this.router.navigate(['/veterinariosListar']);
+    this.router.navigate(['/veterinarios/veterinariosListar']);
   }
 
   onSubmit(){

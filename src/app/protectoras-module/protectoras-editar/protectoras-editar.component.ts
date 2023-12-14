@@ -24,7 +24,7 @@ export class ProtectorasEditarComponent implements OnInit{
       this.protectora = data;
     }, error => console.log(error));
   }
-  
+
   onSubmit(){
     this.protectoraService.updateProtectora(this.id, this.protectora).subscribe( data => {
       this.goToProtectoraList();
@@ -33,7 +33,7 @@ export class ProtectorasEditarComponent implements OnInit{
   }
 
   goToProtectoraList(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/protectora/protectorasListar']);
   }
 
 }

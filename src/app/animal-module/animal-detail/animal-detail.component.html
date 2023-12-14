@@ -1,38 +1,47 @@
-<h2> Detalles de las mascotas</h2>
+<div class="prueba">
+    <section>
+        <main class="table">
+    
+            <div class="table__header">
+                <img src="../../assets/imagenes/logonise.png" class="logo">
+                <h1>Detalles del animal</h1>
+            </div>
+    
+            <div class="table__body">
+    
+                <div>
+                    <label><strong> Nombre: </strong> {{animal.nombre}} </label>
+                </div>
+                <div>
+                    <label><strong> Descripción : </strong> {{animal.descripcion}} </label>
+                </div>
+                <div>
+                    <label><strong> Raza: </strong> {{animal.raza}} </label>
+                </div>
+                <div>
+                    <label><strong> Edad: </strong> {{animal.edad}} </label>
+                </div>
+                <div>
+                    <label><strong> Disponibilidad: </strong> {{animal.disponibilidad ? 'Sí' : 'No'}} </label>
+                </div>
+                <div>
+                    <label><strong> Especie: </strong> {{animal.tipoAnimal | titlecase}} </label>
+                </div>
+                <div>
+                    <label><strong> Género: </strong> {{animal.tipoSexo | titlecase}} </label>
+                </div>
+                <div>
+                    <label><strong> Tamaño: </strong> {{animal.tipoTamanyo | titlecase}} </label>
+                </div>
+                <div>
+                    <label><strong> Fecha de entrada a protectora: </strong> {{animal.fechaEntradaProtectora}} </label>
+                </div>
+                <div>
+                    <img width="100px" [src]="animal.imagenUrl">
+                </div>
+            </div>
+    
+        </main>
+    </section>
 
-<div>
-    <div>
-        <label> <b> nombre: </b></label> {{animal.nombre}}
-    </div>
-    <div>
-        <label> <b> tipoAnimal: </b></label> {{animal.descripcion}}
-    </div>
-    <div>
-        <label> <b> raza </b></label> {{animal.raza}}
-    </div>
-    <div>
-        <label> <b> edad </b></label> {{animal.edad}}
-    </div>
-    <div>
-        <label> <b> disponibilidad </b></label> {{animal.disponibilidad}}
-    </div>
-    <div>
-        <label> <b> chip </b></label> {{animal.chip}}
-    </div>
-    <div>
-        <label> <b> tipoAnimal </b></label> {{animal.tipoAnimal}}
-    </div>
-    <div>
-        <label> <b> tipoSexo </b></label> {{animal.tipoSexo}}
-    </div>
-    <div>
-        <label> <b> tipoTamanyo </b></label> {{animal.tipoTamanyo}}
-    </div>
-    <div>
-        <label> <b> fecha_entrada_protectora </b></label> {{animal.fechaEntradaProtectora}}
-    </div>
-    <div>
-        <img width="100px" [src]="animal.imagenUrl">
-    </div>
 </div>
-
