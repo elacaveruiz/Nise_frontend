@@ -1,14 +1,26 @@
-<h2> Detalles de las vacunas</h2>
+<section>
+    <main class="table">
 
-<div>
-    <div>
-        <label> <b> nombre: </b></label> {{vacuna.nombre}}
-    </div>
-    <div>
-        <label> <b> tipoAnimal: </b></label> {{vacuna.tipoAnimal}}
-    </div>
-    <div>
-        <label> <b> num_dosis: </b></label> {{vacuna.num_dosis}}
-    </div>
-    <pre>{{ vacuna | json }}</pre>
-</div>
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Detalles de la vacuna</h1>
+        </div>
+
+        <div class="table__body">
+
+            <div>
+                <label><strong> Nombre: </strong> {{vacuna.nombre}} </label>
+            </div>
+            <div>
+                <label><strong> Especie: </strong> {{vacuna.tipoAnimal}} </label>
+            </div>
+            <div>
+                <label><strong> Número de dosis: </strong> {{vacuna.num_dosis}} </label>
+            </div>
+
+          <pre>{{ vacuna | json }}</pre>
+        </div>
+
+    </main>
+</section>
+

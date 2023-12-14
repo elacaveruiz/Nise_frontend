@@ -9,8 +9,6 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { LoginRegistroComponent } from './login-registro/login-registro.component';
 import { MostrarMascotasComponent } from './mostrar-mascotas/mostrar-mascotas.component';
-
-import { InformacionMascotaComponent } from './informacion-mascota/informacion-mascota.component';
 import { protectoraComponent } from './protectoras-module/protectora.component';
 import { AnimalComponent } from './animal-module/animal.component';
 import { VacunasComponent } from './vacunas-module/vacuna.component';
@@ -32,8 +30,6 @@ const routes: Routes = [
   {path: 'Contacta', component: ContactanosComponent},
   {path: 'Login', component: LoginRegistroComponent},
   {path: 'MostrarMascotas', component: MostrarMascotasComponent},
-  {path: 'InformacionMascota', component: InformacionMascotaComponent},
-
 
 
   {path: 'protectoras', component: protectoraComponent},

@@ -73,6 +73,7 @@
 
   .table__body {
     width: 95%;
+    height: 70%;
     max-height: calc(89% - 1.6rem);
     background-color: #fffb;
 

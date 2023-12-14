@@ -34,6 +34,6 @@ export class VacunasEditarComponent implements OnInit{
   }
 
   gotoVacunaList(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/vacuna/vacunasListar']);
   }
 }
