@@ -113,4 +113,8 @@ export class UsuarioService {
     let userDataRole = JSON.parse(localStorage.getItem('dato')!);
     return userDataRole.rol;
   }
+  getUsuarioByAnimalId(animalId: number): Observable<any>{
+    return this.httpClient.get(`http://localhost:8080/animal/${animalId}/usuario`);
+  }
+
 }

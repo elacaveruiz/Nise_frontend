@@ -1,27 +1,42 @@
-<p>gestionusuario-listar works!</p>
-<table class="table table-striped">
+<div class="prueba">
+    <section>
+        <main class="table">
 
-    <thead>
-        <tr></tr>
-            <th>Fecha</th>
-            <th>Donante</th>
-            <th>Receptor</th>
-            <th>Animal</th>
-           
-    </thead>
-    <tbody>
-        <tr *ngFor= "let gestionusuario of gestionusuarios">
-            <td> {{gestionusuario.fecha_entrega }} </td>
-            <td> {{gestionusuario.donanteDTO.nombre }} </td>
-            <td> {{gestionusuario.receptorDTO.nombre }} </td>
-            <td> {{gestionusuario.animalDTO.nombre }} </td>
-            
+            <div class="table__header">
+                <img src="../../assets/imagenes/logonise.png" class="logo">
+                <h1>Gestión usuario</h1>
+            </div>
 
-        </tr>
+            <div class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Fecha</th>
+                            <th>Donante</th>
+                            <th>Receptor</th>
+                            <th>Animal</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor= "let gestion of gestionusuarios">
+                            <td> {{gestion.id}} </td>
+                            <td> <strong> {{gestion.fecha_entrega}} </strong> </td>
+                            <td> {{gestion.donanteDTO.nombre}} </td>
+                            <td> {{gestion.receptorDTO.nombre}} </td>
+                            <td> {{gestion.animalDTO.nombre}} </td>
+                            
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </section>
 
 
-    </tbody>
 
-
-</table>
+</div>
 

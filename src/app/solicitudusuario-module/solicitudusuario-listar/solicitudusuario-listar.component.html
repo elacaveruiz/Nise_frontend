@@ -1,0 +1,28 @@
+<p>gestionusuario-listar works!</p>
+<table class="table table-striped">
+
+    <thead>
+        <tr></tr>
+            <th>Estado solicitud</th>
+            <th>Motivo</th>
+            <th>Animal</th>
+            <th>Adoptante</th>
+
+           
+    </thead>
+    <tbody>
+        <tr *ngFor= "let solicitudusuario of solicitudusuarios">
+            <td> {{solicitudusuario.estadoSolicitud }} </td>
+            <td> {{solicitudusuario.motivo }} </td>
+            <td> {{solicitudusuario.animalDTO.nombre }} </td>
+            <td> {{solicitudusuario.adoptanteDTO.nombre }} </td>
+            
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>
+

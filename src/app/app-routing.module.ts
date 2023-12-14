@@ -19,7 +19,7 @@ import { UsuariosComponent } from './usuarios-module/usuario.component';
 import { SolicitudComponent } from './solicitud-module/solicitud.component';
 import { GestionusuarioComponent } from './gestionusuario-module/gestionusuario.component';
 import { gestionProtectoraComponent } from './gestionProtectora-module/gestionProtectora.component';
-
+import { SolicitudusuarioComponent } from './solicitudusuario-module/solicitudusuario.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Inicio',pathMatch: 'full'},
@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: 'solicitudes', component: SolicitudComponent},
   {path: 'gestionusuario', component: GestionusuarioComponent},
   {path: 'gestionProtectoras', component: gestionProtectoraComponent},
-
+  {path: 'solicitudusuario', component: SolicitudusuarioComponent} 
 
 ];
 

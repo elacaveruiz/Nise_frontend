@@ -30,7 +30,7 @@ import { UsuarioModule } from './usuarios-module/usuario.module';
 import { SolicitudModule } from './solicitud-module/solicitud.module';
 import { GestionusuarioModule } from './gestionusuario-module/gestionusuario.module';
 import { GestionProtectoraModule } from './gestionProtectora-module/gestionProtectora.module';
-
+import { SolicitudusuarioModule } from './solicitudusuario-module/solicitudusuario.module';
 
 
 
@@ -66,6 +66,7 @@ import { GestionProtectoraModule } from './gestionProtectora-module/gestionProte
     SolicitudModule,
     GestionusuarioModule,
     GestionProtectoraModule,
+    SolicitudusuarioModule
 
   ],
   exports: [
