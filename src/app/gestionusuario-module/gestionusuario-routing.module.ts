@@ -9,7 +9,7 @@ import { GestionusuarioListarComponent } from './gestionusuario-listar/gestionus
 const routes: Routes = [
   {
     path: 'gestionusuario', component: GestionusuarioComponent, children:[
-      {path: 'gestionusuarioListar', component: GestionusuarioListarComponent},
+      {path: 'listar', component: GestionusuarioListarComponent},
     ]
   }
 ];
