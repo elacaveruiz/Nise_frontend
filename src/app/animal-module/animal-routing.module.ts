@@ -18,10 +18,12 @@ const routes: Routes = [
   {
     path: 'animal', component: AnimalComponent, children: [
       {path: 'animalListar', component: AnimalListarComponent},
-      {path: 'animalCrear', component: AnimalCrearComponent},
+      {path: 'animalProtectoras/animalCrear', component: AnimalCrearComponent},
       {path: 'animalListar/update-animal/:id', component: AnimalEditarComponent},
       {path: 'animalListar/animal-details/:id', component: AnimalDetailComponent},
       {path: 'animalProtectoras', component: AnimalProtectoraComponent},
+      {path: 'animalProtectoras/update-animal/:id', component: AnimalEditarComponent},
+      {path: 'animalProtectoras/animal-details/:id', component: AnimalDetailComponent},
       {path: 'mostrarPerros', component: MostrarPerrosComponent},
       {path: 'mostrarPerros/:id', component: MostrarPerrosDetailComponent},
       {path: 'mostrarGatos', component: MostrarGatosComponent},

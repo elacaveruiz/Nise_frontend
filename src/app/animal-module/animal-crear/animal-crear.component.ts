@@ -12,9 +12,9 @@ import { data, error } from 'jquery';
 export class AnimalCrearComponent implements OnInit{
 
   animal: Animal = {id: 0,
-                    nombre:' ',
-                    descripcion: ' ',
-                    raza: ' ',
+                    nombre:'',
+                    descripcion: '',
+                    raza: '',
                     edad: 0,
                     disponibilidad: true,
                     chip: false,
@@ -58,5 +58,4 @@ export class AnimalCrearComponent implements OnInit{
     console.log(this.animal);
     this.saveAnimal();
   }
-
 }

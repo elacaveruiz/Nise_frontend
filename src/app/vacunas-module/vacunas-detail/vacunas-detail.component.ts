@@ -12,8 +12,8 @@ export class VacunasDetailComponent implements OnInit{
 
   id: number
   vacuna: Vacuna
-  constructor(private route: ActivatedRoute,
-    private vacunaService: VacunaService) {}
+  constructor(private vacunaService: VacunaService,
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

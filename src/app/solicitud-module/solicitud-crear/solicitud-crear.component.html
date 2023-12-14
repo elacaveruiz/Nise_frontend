@@ -1,15 +1,16 @@
 
 <form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
 
-    <label>
-      Titulo de tu solicitud:
-      <input type="text" formControlName="tituloMotivo">
-    </label>
-    <label>
-      Motivo:
-      <input type="text" formControlName="motivo">
-    </label>
-    <br>
+    <div class="inputGroup">
+      <input type="text" required="" autocomplete="off" formControlName="tituloMotivo">
+      <label for="name">Titulo de tu solicitud</label>
+    </div>
+
+    <div class="inputGroup">
+      <textarea type="text" required="" autocomplete="off" formControlName="motivo"></textarea>
+      <label for="name">Motivo</label>
+    </div>
 
     <button type="submit">Enviar Solicitud</button>
-  </form>
+
+</form>

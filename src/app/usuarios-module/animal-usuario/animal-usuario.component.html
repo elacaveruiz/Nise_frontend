@@ -1,0 +1,90 @@
+<h3>Registrar mascotas</h3>
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Create mascota </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label> nombre</label>
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="animal.nombre"
+                            name="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label> descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" [(ngModel)]="animal.descripcion"
+                            name="descripcion">
+                    </div>
+
+                    <div class="form-group">
+                        <label> raza</label>
+                        <input type="text" class="form-control" id="raza" [(ngModel)]="animal.raza"
+                            name="raza">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Edad</label>
+                        <input type="number" class="form-control" id="edad" [(ngModel)]="animal.edad"
+                            name="edad">
+                    </div>
+
+                    <div class="form-group">
+                        <label> ¿Está disponible?</label>
+                        <input type="checkbox" id="disponibilidad" [(ngModel)]="animal.disponibilidad"
+                            name="disponibilidad" style="margin-left: 10px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label> ¿Tiene chip?</label>
+                        <input type="checkbox" id="chip" [(ngModel)]="animal.chip"
+                            name="chip" style="margin-left: 10px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label> tipoAnimal</label>
+                        <select id="tipoAnimal" [(ngModel)]="animal.tipoAnimal" name="tipoAnimal" >
+                            <option value="PERRO">Perro</option>
+                            <option value="GATO">Gato</option>
+                            <option value="OTRO">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label> tipoSexo</label>
+                        <select id="tipoSexo" [(ngModel)]="animal.tipoSexo" name="tipoSexo">
+                            <option value="HEMBRA">Hembra</option>
+                            <option value="MACHO">Macho</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label> tipoTamanyo</label>
+                        <select id="tipoTamanyo" [(ngModel)]="animal.tipoTamanyo" name="tipoTamanyo">
+                            <option value="GRANDE">Grande</option>
+                            <option value="MEDIANO">Mediano</option>
+                            <option value="PEQUEÑO">Pequeño</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label> Fecha entrada protectora (DD/MM/YYYY)</label>
+                        <input type="text" class="form-control" id="fechaEntradaProtectora" [(ngModel)]="animal.fechaEntradaProtectora"
+                            name="fechaEntradaProtectora">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Imagen de la Mascota:</label>
+                        <input type="file" class="form-control" name="imagen" id="imagen" (change)="onImageSeleccionada($event)" accept="image/*" required>
+                    </div>
+
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

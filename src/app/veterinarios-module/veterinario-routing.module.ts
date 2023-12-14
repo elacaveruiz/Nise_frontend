@@ -14,7 +14,7 @@ const routes: Routes = [
       {path: 'veterinariosListar', component: VeterinariosListarComponent}, //path -> nombre q le doy
       {path: 'veterinariosListar/veterinariosCrear', component: VeterinariosCrearComponent},
       {path: 'veterinariosListar/update-veterinario/:id', component: VeterinariosEditarComponent},
-      {path: 'veterinario-details/:id', component: VeterinariosEditarComponent},
+      {path: 'veterinariosListar/veterinario-details/:id', component: VeterinariosDetailComponent},
 
     ]
   }

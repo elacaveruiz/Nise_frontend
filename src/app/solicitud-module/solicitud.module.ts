@@ -7,8 +7,7 @@ import { SolicitudRoutingModule } from './solicitud-routing.module';
 import { SolicitudCrearComponent } from './solicitud-crear/solicitud-crear.component';
 import { SolicitudProtectoraComponent } from './solicitud-protectora/solicitud-protectora.component';
 import { SolicitudComponent } from './solicitud.component';
-import { ModalComponent } from './modal/modal.component';
-import { SolicitudDetailModalComponent } from './solicitud-detail-modal/solicitud-detail-modal.component';
+import { SolicitudDetailEditarModalComponent } from './solicitud-detail-editar-modal/solicitud-detail-editar-modal.component';
 
 
 
@@ -18,8 +17,7 @@ import { SolicitudDetailModalComponent } from './solicitud-detail-modal/solicitu
     SolicitudComponent,
     SolicitudCrearComponent,
     SolicitudProtectoraComponent,
-    ModalComponent,
-    SolicitudDetailModalComponent
+    SolicitudDetailEditarModalComponent
   ],
   imports: [
     BrowserModule,

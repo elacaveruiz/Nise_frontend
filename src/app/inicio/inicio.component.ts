@@ -63,7 +63,6 @@ export class InicioComponent implements OnInit {
   private animales(){
     this.AnimalService.getAnimalesList().subscribe(data => {
     this.animal = data;
-    console.log(data);
     })
   }
 

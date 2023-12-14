@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center"> Update Usuario </h3>
+      <hr />
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label> nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="usuario.nombre"
+                   name="nombre">
+          </div>
+
+          <div class="form-group">
+            <label> Telefono</label>
+            <input type="text" class="form-control" id="telefono" [(ngModel)]="usuario.telefono"
+                   name="telefono" maxlength="9">
+          </div>
+
+          <div class="form-group">
+            <label> Direccion</label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)]="usuario.direccion"
+                   name="direccion">
+          </div>
+          <div class="form-group">
+            <label> Email</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="usuario.email"
+                   name="email">
+          </div>
+          <div class="form-group">
+            <label> DNI</label>
+            <input type="text" class="form-control" id="dni" [(ngModel)]="usuario.dni"
+                   name="dni">
+          </div>
+          <div class="form-group">
+            <label> Animal Favorito</label>
+            <select id="tipo" name="tipo" class="form-control" [(ngModel)]="usuario.preferenciaTipoAnimal">
+              <option value="0">Perros</option>
+              <option value="1">Gatos</option>
+              <option value="2">Otros</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label> Sexo del Animal</label>
+            <select id="tipoSexo" name="tipoSexo" class="form-control" [(ngModel)]="usuario.preferenciaSexo">
+              <option value="0">Macho</option>
+              <option value="1">Hembra</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label> Tamaño del Animal</label>
+            <select id="tamanyo" name="tamanyo" class="form-control" [(ngModel)]="usuario.preferenciaTipoTamanyo">
+              <option value="0">Pequeño</option>
+              <option value="1">Mediano</option>
+              <option value="2">Grande</option>
+            </select>
+          </div>
+
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

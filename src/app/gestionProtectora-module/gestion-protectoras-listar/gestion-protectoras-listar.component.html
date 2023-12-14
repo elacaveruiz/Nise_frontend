@@ -22,11 +22,11 @@
                 <tbody>
                     <tr *ngFor= "let gestionProtectora of gestionProtectoras">
                         <td> <strong> {{gestionProtectora.id}} </strong> </td>
-                        <td> {{gestionProtectora.protectoraDTO.nombre}} </td>
-                        <td> {{gestionProtectora.animalDTO.nombre}} </td>
+                        <td> {{gestionProtectora.protectoraDTO?.nombre}} </td>
+                        <td> {{gestionProtectora.animalDTO?.nombre}} </td>
                         <td> {{gestionProtectora.tipoGestion | titlecase }} </td>
                         <td> {{gestionProtectora.fecha_adopcion}} </td>
-                        <td> {{gestionProtectora.usuarioDTO}} </td>
+                        <td> {{gestionProtectora.usuarioDTO?.nombre}} </td>
                         <td> {{gestionProtectora.identificador}} </td>
                     </tr>
                 </tbody>

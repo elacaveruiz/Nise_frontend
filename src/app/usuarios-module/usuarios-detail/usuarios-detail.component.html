@@ -1,33 +1,39 @@
-<h2> Detalles de los usuarios</h2>
+<section>
+    <main class="table">
 
-<div>
-    <div>
-        <label> <b> nombre: </b></label> {{usuario.nombre}}
-    </div>
-    <div>
-        <label> <b> telefono: </b></label> {{usuario.telefono}}
-    </div>
-    <div>
-        <label> <b> direccion </b></label> {{usuario.direccion}}
-    </div>
-    <div>
-        <label> <b> email </b></label> {{usuario.email}}
-    </div>
-    <div>
-        <label> <b> dni </b></label> {{usuario.dni}}
-    </div>
-    <div>
-        <label> <b> preferenciaTipoAnimal </b></label> {{usuario.preferenciaTipoAnimal}}
-    </div>
-    <div>
-        <label> <b> preferenciaTipoTamanyo </b></label> {{usuario.preferenciaTipoTamanyo}}
-    </div>
-    <div>
-        <label> <b> preferenciaSexo </b></label> {{usuario.preferenciaSexo}}
-    </div>
-    <div>
-        <label> <b> Username </b></label> Aqui va el Username
-    </div>
-</div>
+        <div class="table__header">
+            <img src="../../assets/imagenes/logonise.png" class="logo">
+            <h1>Detalles de {{usuario.nombre}}</h1>
+        </div>
 
+        <div class="table__body">
+
+            <div>
+                <label><strong> Nombre: </strong> {{usuario.nombre}} </label>
+            </div>
+            <div>
+                <label><strong> Teléfono: </strong> {{usuario.telefono}} </label>
+            </div>
+            <div>
+                <label><strong> Dirección: </strong> {{usuario.direccion}} </label>
+            </div>
+            <div>
+                <label><strong> Email: </strong> {{usuario.email}} </label>
+            </div>
+            <div>
+                <label><strong> DNI: </strong> {{usuario.dni}} </label>
+            </div>
+            <div>
+                <label><strong> Preferencia de la especie de mascota: </strong> {{usuario.preferenciaTipoAnimal | titlecase}} </label>
+            </div>
+            <div>
+                <label><strong> Preferencia del tamaño de la mascota: </strong> {{usuario.preferenciaTipoTamanyo | titlecase}} </label>
+            </div>
+            <div>
+                <label><strong> Preferencia del género de la mascota: </strong> {{usuario.preferenciaSexo | titlecase}} </label>
+            </div>
+        </div>
+
+    </main>
+</section>
 

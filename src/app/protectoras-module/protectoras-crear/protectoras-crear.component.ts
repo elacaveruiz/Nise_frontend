@@ -27,7 +27,7 @@ export class ProtectorasCrearComponent implements OnInit{
   }
 
   goToProtectoraList(){
-    this.router.navigate(['/protectoraListar']);
+    this.router.navigate(['/protectora/protectorasListar']);
   }
 
   onSubmit(){
