@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SolicitudusuarioComponent } from './solicitudusuario.component';
 import { SolicitudCrearComponent } from '../solicitud-module/solicitud-crear/solicitud-crear.component';
 import { SolicitudusuarioCrearComponent } from './solicitudusuario-crear/solicitudusuario-crear.component';
+import { SolicitudusuarioListarComponent } from './solicitudusuario-listar/solicitudusuario-listar.component';
 
 
 
@@ -10,8 +11,9 @@ const routes: Routes = [
   {
     path: 'solicitudusuario', component: SolicitudusuarioComponent, children:[
       {path: 'solicitudusuario/:id', component: SolicitudusuarioCrearComponent},
-      {path: 'solicitudusuario/crear', component: SolicitudCrearComponent}
-    ]
+      {path: 'crear', component: SolicitudusuarioCrearComponent},
+      {path: 'listar', component: SolicitudusuarioListarComponent}
+    ],
     
     
   }

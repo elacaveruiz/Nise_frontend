@@ -6,12 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SolicitudusuarioComponent } from './solicitudusuario.component'; //para los formularios
 import { SolicitudusuarioRoutingModule } from './solicitudusuario-routing.module';
 import { SolicitudusuarioCrearComponent } from './solicitudusuario-crear/solicitudusuario-crear.component';
+import { SolicitudusuarioListarComponent } from './solicitudusuario-listar/solicitudusuario-listar.component';
 
 
 @NgModule({
   declarations: [
     SolicitudusuarioComponent,
-    SolicitudusuarioCrearComponent
+    SolicitudusuarioCrearComponent,
+    SolicitudusuarioListarComponent
   ],
   imports: [
     SolicitudusuarioRoutingModule,

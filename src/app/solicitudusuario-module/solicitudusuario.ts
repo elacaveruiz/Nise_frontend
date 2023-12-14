@@ -6,7 +6,7 @@ export class Solicitudusuario {
     estadoSolicitud: string;
     tituloMotivo: string;
     motivo: string;
-    animalDTO: animalDTO [] = [];
-    adoptanteDTO: usuarioDTO [] = [];
+    animalDTO: animalDTO;
+    adoptanteDTO: usuarioDTO;
     ofertanteDTO: usuarioDTO;
 }

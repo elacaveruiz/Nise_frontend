@@ -4,6 +4,7 @@ import { Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Solicitudusuario } from './solicitudusuario';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,4 +35,9 @@ export class SolicitudusuarioService {
    getSolicitudUsuarioById(id: number): Observable<Solicitudusuario>{
     return this.http.get<Solicitudusuario>(`${this.solicitudUsuarioURL}/${id}`);
    }
+
+   //listar
+   getsolicitudUsuarioList(): Observable<Solicitudusuario[]>{
+    return this.http.get<Solicitudusuario[]>(`${this.listarSolicitudUsuario}`);
+  }
 }
